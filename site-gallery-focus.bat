@@ -16,8 +16,6 @@ if "%~2"=="--auto" (
 	set "auto=true"
 )
 
-if not exist !gallerydir!!filename!\ mkdir !gallerydir!!filename!
-
 set "title="MM/DD/YYYY Name""
 set "desc="keep lowercase, except for I""
 set "postdate=%date% %time:~0,-3%"
@@ -123,14 +121,14 @@ copy NUL index.html
 
 setlocal disabledelayedexpansion
 echo --- >> index.html
-echo import GalleryFocus from "../layouts/gallery-focus.astro"; >> index.html
+echo import GalleryFocus from "../../../layouts/gallery-focus.astro"; >> index.html
 echo --- >> index.html
 setlocal enabledelayedexpansion
 
 echo ^<GalleryFocus title="!title! - goatgirlclover" description="!desc!" image="/gallery/img/!filename!.png" alt="!alttext!" width="!W!" height="!H!"^>^</GalleryFocus^> >> index.html
 
 setlocal enabledelayedexpansion
-copy index.html !pagedir!!filename!.astro
+copy index.html "!pagedir!!filename!.astro"
 del index.html
 endlocal
 echo -----

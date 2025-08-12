@@ -37,7 +37,7 @@ echo -----
 
 for %%f in (..\gallery-imgs\*.png) do (
 	echo %%f
-	call site-gallery-focus.bat "C:\Users\Clover\Documents\website\%%f" --auto
+	call site-gallery-focus.bat "%%f" --auto
 	endlocal
 )
 

@@ -2,6 +2,7 @@
 import HeadGallery from "../layouts/fragment/head-gallery.astro";
 import Body from "../layouts/fragment/body.astro";
 const { title, description, image, alt, width, height } = Astro.props;
+const shortTitle = title.replace(/^"(.+(?="$))"$/, '$1').split("- goatgirlclover")[0].trim();
 ---
 
 <html lang="en">
@@ -16,8 +17,8 @@ const { title, description, image, alt, width, height } = Astro.props;
             <a tabindex=0 href={image} target="_blank" class="art"> 
                 <img width={width} height={height} src={image} loading="lazy" alt={alt}></a> 
             <div class="info"> 
-                <h1 class="title">!title!</h1> 
-                <p class="desc">!desc!</p> 
+                <h1 class="title">{shortTitle}</h1> 
+                <p class="desc">{description}</p> 
             </div> 
 	    </div> 
 
