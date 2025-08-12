@@ -125,7 +125,7 @@ echo import GalleryFocus from "../../../layouts/gallery-focus.astro"; >> index.h
 echo --- >> index.html
 setlocal enabledelayedexpansion
 
-echo ^<GalleryFocus title="!title! - goatgirlclover" description="!desc!" image="/gallery/img/!filename!.png" alt="!alttext!" width="!W!" height="!H!"^>^</GalleryFocus^> >> index.html
+echo ^<GalleryFocus title='!title! - goatgirlclover' description='!desc!' image='/gallery/img/!filename!.png' alt='!alttext!' width='!W!' height='!H!'^>^</GalleryFocus^> >> index.html
 
 setlocal enabledelayedexpansion
 copy index.html "!pagedir!!filename!.astro"

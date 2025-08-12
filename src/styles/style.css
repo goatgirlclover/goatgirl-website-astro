@@ -96,11 +96,10 @@ ul { margin-top: 0; margin-bottom: 0; }
   height: auto;
   user-select: text; 
   -webkit-user-select: text; 
-  pointer-events: none;
 }
 
 .emoji-spacer { overflow: clip !important; text-wrap: nowrap; white-space: nowrap; padding-left: 0.075em; padding-right: 0.075em; }
-.emoji { position: absolute; overflow: visible !important; width: 1.15em; margin-left: -1.15em; margin-top: 0.075em; }
+.emoji { pointer-events: none; position: absolute; overflow: visible !important; width: 1.15em; margin-left: -1.15em; margin-top: 0.075em; }
 
 .emoji::selection {
   background: transparent; /* hide oversized selection highlight, but enable copy */

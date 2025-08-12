@@ -105,11 +105,12 @@ function getRealEmoji(alt) {
                         C.setAttributeNS(null, "width", "16");
                         C.setAttributeNS(null, "height", "16");
                         C.setAttributeNS(null, "tabindex", "-1");
-
+                        
                         var E = document.createElement("span");
                         E.setAttributeNS(null, "class", "emoji-spacer");
-                        E.setAttributeNS(null, "aria-label", getEmojiAltText(g));
+                        E.setAttributeNS(null, "data-emoji", getEmojiAltText(g));
                         E.setAttributeNS(null, "title", getEmojiAltText(g));
+                        E.setAttributeNS(null, "aria-label", getEmojiAltText(g));
                         E.setAttributeNS(null, "width", 0);
                         E.setAttributeNS(null, "hidden", "");
                         E.setAttributeNS(null, "tabindex", "-1");
@@ -130,7 +131,7 @@ function getRealEmoji(alt) {
                         }
 
                         C.onerror = function() {
-                            this.parentNode && this.parentNode.replaceChild(e(this.parentNode.getAttributeNS(null, "aria-label"), !1), this)
+                            this.parentNode && this.parentNode.replaceChild(e(this.parentNode.getAttributeNS(null, "data-emoji"), !1), this)
                         }, r = !0, o.appendChild(E), o.appendChild(C)
                     } else o.appendChild(e(g, !1))
                 }
@@ -170,7 +171,7 @@ function recursiveSearchForText(node, text = "") {
         if (cleanedText !== '') { text += cleanedText; }  
     } else if (node.nodeType === Node.ELEMENT_NODE) {
         if (node.className === "emoji-spacer") {
-            text += getRealEmoji(node.getAttribute("aria-label"));
+            text += getRealEmoji(node.getAttribute("data-emoji"));
         } else {
             for (const child of node.childNodes) {
                 text = recursiveSearchForText(child, text);
@@ -189,7 +190,7 @@ document.body.addEventListener('copy', event => {
     if (range.startContainer == range.endContainer 
         && range.startContainer.parentNode && range.startContainer.parentNode.nodeType === Node.ELEMENT_NODE
         && range.startContainer.parentNode.className === "emoji-spacer") {
-        copiedText = getRealEmoji(range.startContainer.parentNode.getAttribute("aria-label"));
+        copiedText = getRealEmoji(range.startContainer.parentNode.getAttribute("data-emoji"));
     } else {
         for (let node of contents.childNodes.values()) {
             copiedText += recursiveSearchForText(node); 
