@@ -1,0 +1,55 @@
+---
+
+---
+
+<body>
+  <div class="header">
+    <div class="header-text">
+      <!-- <a href="/" id="site-title" class="active-page" tabindex="0">goatgirlclover!</a> -->
+      <a href="/" tabindex="0" id="site-logo">
+        <img width="512" height="187" alt="goatgirlclover!" src="/assets/img/logo.png">
+      </a>
+      <div class="header-href">
+        <div class="header-links">
+          <a href="/gallery/" tabindex="0">🎨 art</a>
+          <a href="/blog/" tabindex="0">💬 blog</a>
+          <a href="/about/" tabindex="0">✌️ about</a>
+          <a href="/links/" tabindex="0">🌐 links</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="main"> <!-- Actual page content -->
+    <slot></slot>
+  </div>
+
+  <div class="footer">
+    <div class="social-icons">
+      <a title="Bluesky" class="social-media bsky" target="_blank" rel="noopener"
+        href="https://bsky.app/profile/goatgirlclover.bsky.social" tabindex="0">
+        <img width="32px" height="32px" alt="Bluesky" src="/assets/icons/social/bluesky.svg">
+      </a>
+      <a title="Itaku" class="social-media itaku" target="_blank" rel="noopener"
+        href="https://itaku.ee/profile/goatgirlclover" tabindex="0">
+        <img width="48px" height="32px" alt="Itaku" src="/assets/icons/social/itaku.svg">
+      </a>
+      <a title="Tumblr" class="social-media tumblr" target="_blank" rel="noopener" href="https://goatgirlclover.tumblr.com"
+        tabindex="0">
+        <img width="32px" height="32px" alt="Tumblr" src="/assets/icons/social/tumblr.svg">
+      </a>
+      <a title="Github" class="social-media github" target="_blank" rel="noopener" href="https://github.com/goatgirlclover"
+        tabindex="0">
+        <img width="32px" height="32px" alt="Github" src="/assets/icons/social/github.svg">
+      </a>
+    </div>
+    <div class="username">@goatgirlclover</div>
+    <div class="footer-buttons">
+      <div class="dark-mode-toggle">
+        <input type="checkbox" id="toggleMode" title="dark mode" class="darkModeCheckbox" tabindex="0">
+        <label for="toggleMode" class="darkModeLabel"><img alt="Dark Mode" src="/assets/icons/dark.svg" width="32"></label>
+        <label for="toggleMode" class="lightModeLabel"><img alt="Light Mode" src="/assets/icons/light.svg" width="32"></label>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,29 @@
+---
+import HeadGallery from "../layouts/fragment/head-gallery.astro";
+import Body from "../layouts/fragment/body.astro";
+const { title, description, image, alt, width, height } = Astro.props;
+---
+
+<html lang="en">
+<HeadGallery title={title} description={description} image={image}></HeadGallery>
+<Body>
+    <div id="gallery-focus"> 
+        <div class="focus-header"> 
+            <a tabindex=0 href="/gallery" class="gallery-back"><h2>back to gallery</h2></a> 
+        </div> 
+
+        <div class="focus-container"> 
+            <a tabindex=0 href={image} target="_blank" class="art"> 
+                <img width={width} height={height} src={image} loading="lazy" alt={alt}></a> 
+            <div class="info"> 
+                <h1 class="title">!title!</h1> 
+                <p class="desc">!desc!</p> 
+            </div> 
+	    </div> 
+
+        <div class="focus-footer"> 
+        </div> 
+    </div> 
+</Body>
+<script type="text/javascript" src="/assets/scripts/emoji.js"></script>
+</html>
