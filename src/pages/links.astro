@@ -2,7 +2,7 @@
 import Base from "../layouts/base.astro";
 ---
 
-<Base title="links - goatgirlclover">
+<Base title="links - goatgirlclover" activePage="links">
   <div class="flex-sections">
     <div class="links-socials">
       <h1>where to find me</h1>
@@ -12,17 +12,17 @@ import Base from "../layouts/base.astro";
           <a class="social-media bsky" target="_blank" rel="noopener"
             href="https://bsky.app/profile/goatgirlclover.bsky.social" tabindex="0">
             <img width="32px" height="32px" src="/assets/icons/social/bluesky.svg">
-            <div>Bluesky</div>
+            <p>Bluesky</p>
           </a>
           <a class="social-media itaku" target="_blank" rel="noopener"
             href="https://itaku.ee/profile/goatgirlclover" tabindex="0">
             <img width="48px" height="32px" src="/assets/icons/social/itaku.svg">
-            <div>Itaku</div>
+            <p>Itaku</p>
           </a>
           <a class="social-media tumblr" target="_blank" rel="noopener"
             href="https://goatgirlclover.tumblr.com" tabindex="0">
             <img width="32px" height="32px" src="/assets/icons/social/tumblr.svg">
-            <div>Tumblr</div>
+            <p>Tumblr</p>
           </a>
         </div>
         <p>i mostly post on bluesky - itaku and tumblr are more gallery sites but i may forget to post there,,</p>
@@ -33,7 +33,7 @@ import Base from "../layouts/base.astro";
           <a class="social-media github" target="_blank" rel="noopener"
             href="https://github.com/goatgirlclover" tabindex="0">
             <img width="32px" height="32px" src="/assets/icons/social/github.svg">
-            <div>Github</div>
+            <p>Github</p>
           </a>
         </div>
       </div>
@@ -188,22 +188,48 @@ import Base from "../layouts/base.astro";
   <hr>
   
   <h1>site credits</h1>
-  <li>hosted on Nekoweb!</li>
-  <li><a target="_blank" href="https://32bit.cafe/">32bit.cafe</a> was a constant source of inspiration while working on this site. 
-    i'd recommend checking out its resources if you're ever interested in rolling your own site!</li>
-  <li>this site's blog is powered by Publii! 
-    <a href="https://cania.zone/blog/how-to-use-publii-to-make-a-blog-on-neocities-without-writing-html-and-minimal-css.html" 
-    target="_blank">i used this tutorial when first setting it up back on Neocities</a></li>
-  <li>this site's emoji set is <a target="_blank" href="https://mutant.tech">Mutant Standard</a> 
-    (licensed under <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>)</li>
-      <ul><li>unicode emojis are replaced using a modified version of <a target="_blank" href="https://github.com/jakejarvis/imagemoji">@jakejarvis/imagemoji</a> 
-          with partial regex from <a target="_blank" href="https://github.com/slevithan/emoji-regex-xs">@slevithan/emoji-regex-xs</a></li></ul>
+  <li>powered by 
+    <a target="_blank" href="https://nekoweb.org/">Nekoweb</a> 
+    and <a target="_blank" href="https://astro.build/">Astro</a>! 
+    i used 
+    <a target="_blank" href="https://jbc.lol/tutorials/astro/">this tutorial</a> 
+    and heavily referenced 
+    <a target="_blank" href="https://github.com/withastro/astro/tree/main/examples/blog">this blog example</a> 
+    while porting my site to Astro
+  </li>
+  <li>
+    blog originally handled by <a target="_blank" href="https://getpublii.com/">Publii</a>! 
+    more info on that route in <a href="/blog/post/how-i-made-this-website">this old blog post</a>
+  </li>
+  <li>
+    <a target="_blank" href="https://32bit.cafe/">32bit.cafe</a> 
+    was a constant source of inspiration while working on this site. 
+    i'd recommend checking out its resources if you're ever interested in creating your own site!
+  </li>
+  <li>
+    this site's emoji set is <a target="_blank" href="https://mutant.tech">Mutant Standard</a> 
+    (licensed under <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>)
+  </li>
+      <ul><li>
+        unicode emojis are replaced using a modified version of 
+        <a target="_blank" href="https://github.com/jakejarvis/imagemoji">@jakejarvis/imagemoji</a> 
+        with partial regex from 
+        <a target="_blank" href="https://github.com/slevithan/emoji-regex-xs">@slevithan/emoji-regex-xs</a>
+      </li></ul>
   <li>last.fm widget is modified code from 
       <a target="_blank" href="https://dainfloop.is-a.dev">DaInfLoop's website</a>
       (which itself uses <a href="https://github.com/biancarosa/lastfm-last-played" target="_blank">@biancarosa/lastfm-last-played</a>)
   </li>
-  <li>i use ImageMagick combined with some custom scripts to manage the gallery images and generate thumbnails</li>
-  <li>this site uses an edited version of normalize.css for more consistent formatting across browsers</li>
-  <li>prism.js runs exclusively on the blog to handle code syntax highlighting</li>
-  <li>the hearts pattern background over there is <a target="_blank" href="https://codepen.io/yoksel/pen/AMMzMa">modified CSS from yoksel on Codepen</a></li>
+  <li>
+    i use <a target="_blank" href="https://imagemagick.org">ImageMagick</a> 
+    combined with some custom scripts to manage the gallery images and generate thumbnails</li>
+  <li>
+    this site uses a modified version of 
+    <a target="_blank" href="https://necolas.github.io/normalize.css/">normalize.css</a> 
+    for more consistent formatting across browsers
+  </li>
+  <li>
+    the hearts pattern background over there is 
+    <a target="_blank" href="https://codepen.io/yoksel/pen/AMMzMa">modified CSS from yoksel on Codepen</a>
+  </li>
 </Base>

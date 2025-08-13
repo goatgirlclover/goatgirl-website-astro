@@ -10,4 +10,13 @@ export default defineConfig({
   },
 
   integrations: [genericBuildFilenames()],
+
+  markdown: {
+    shikiConfig: {
+      themes: {
+        light: 'github-light',
+        dark: 'github-dark-high-contrast',
+      },
+    },
+  },
 });
