@@ -221,14 +221,6 @@ textarea {
   margin-bottom: 0.5em;
 }
 
-li, li::marker  {
-  position: relative;
-  left: 1em;
-  padding-right: 1em;
-}
-
-ul:not(li + ul) > li { left: 0; padding-right: 0; }
-
 .flex-sections:has(> .shareable) {
   justify-content: center;
 }
