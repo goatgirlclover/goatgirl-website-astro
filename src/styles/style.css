@@ -137,15 +137,14 @@ main { /* actual page content */
 }
 
 main > :first-child, 
+article > :first-child,
 section:not(hr + section) > :first-child
 { margin-top: 0; }
 
 main > :last-child, 
-section:not(+ hr) > :last-child
+article > :last-child,
+section:not(:has(+ hr)) > :last-child
 { margin-bottom: 0; }
-
-article > :first-child { margin-top: 0 !important; }
-article > :last-child { margin-bottom: 0 !important; }
 
 .striped {
   background: repeating-linear-gradient(
