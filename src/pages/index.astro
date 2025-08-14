@@ -1,10 +1,11 @@
 ---
 import Base from "../layouts/base.astro";
+import '../styles/homepage.css';
 ---
 
 <Base title="goatgirlclover" activePage="home">
   <div class="flex-sections">
-    <div class="homepage-main">
+    <section class="homepage-main">
       <h1>welcome to my website! &#1054359</h1>
       <p>
         i'm clover! i'm a (mostly) furry artist/animator that loves designing
@@ -16,9 +17,9 @@ import Base from "../layouts/base.astro";
       <p style="text-align: center;">
         (under construction - things will shift around as i go! 👍)
       </p>
-    </div>
+    </section>
 
-    <div class="shareable">
+    <section class="shareable">
       <label for="site-button-code">site button!</label>
       <img
         class="site-button"
@@ -29,11 +30,11 @@ import Base from "../layouts/base.astro";
       />
 
       <textarea id="site-button-code">&lt;a target="_blank" href="https://goatgirl.nekoweb.org"&gt;&lt;img height="31" width="88" src="https://goatgirl.nekoweb.org/assets/buttons/88x31/goatgirlclover.gif" alt="goatgirlclover"/&gt;&lt;/a&gt;</textarea>
-    </div>
+    </section>
   </div>
 
   <div class="flex-sections">
-    <div class="scrollable">
+    <section class="scrollable">
       <h2>cool things i do</h2>
       <li>
         draw a buncha furries! i mostly post them on
@@ -63,9 +64,9 @@ import Base from "../layouts/base.astro";
           >FunkyUncleFM</a
         >, an online radio station managed by the BRC community!
       </li>
-    </div>
+    </section>
 
-    <div class="scrollable">
+    <section class="scrollable">
       <h2>sitemap</h2>
       <li>
         <b>homepage</b> (you are here!) - status.cafe and last.fm widgets, site changelog
@@ -82,13 +83,13 @@ import Base from "../layouts/base.astro";
       <li>
         <b>links</b> - links to my socials, webrings, some fun graphics, and credits for parts of this site all go here!
       </li>
-    </div>
+    </section>
   </div>
 
   <hr />
 
   <div class="flex-sections">
-    <div id="status-section">
+    <section id="status-section">
       <h2>status</h2>
       <div class="status-holder">
         <div id="status-bubble" class="speech-bubble right">
@@ -111,13 +112,13 @@ import Base from "../layouts/base.astro";
       </div>
 
       <script type="text/javascript" src="/assets/scripts/statusgoat.js"></script>
-    </div>
+    </section>
   </div>
 
   <hr />
 
   <div class="flex-sections">
-    <div id="lastfm-section">
+    <section id="lastfm-section">
       <p class="lastfm-widget striped">
         <strong id="lastfm-status"></strong>
         <img
@@ -142,9 +143,9 @@ import Base from "../layouts/base.astro";
       </p>
 
       <script type="text/javascript" src="/assets/scripts/lastfm.js" defer></script>
-    </div>
+    </section>
 
-    <div id="site-changelog" class="scrollable">
+    <section id="site-changelog" class="scrollable">
       <h2>changelog</h2>
       <li>
         2025-8-11 - finally added full alt text for <a href="/gallery/">the gallery!!</a>
@@ -167,6 +168,6 @@ import Base from "../layouts/base.astro";
         beyond the gallery, there wasn't much to see! 
         <a target="_blank" href="assets/img/sitev1.png">here's a pic of the old homepage</a>
       </li>
-    </div>
+    </section>
   </div>
 </Base>

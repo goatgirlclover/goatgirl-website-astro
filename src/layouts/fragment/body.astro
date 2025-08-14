@@ -4,28 +4,26 @@ const { activePage = "home" } = Astro.props;
 ---
 
 <body>
-  <div class="header">
-    <div class="header-text">
+  <header id="site-header">
+    <div>
       <a href="/" tabindex="0" id="site-logo">
         <Image width="512" height="187" alt="goatgirlclover!" src="/assets/img/logo.png">
       </a>
-      <div class="header-href">
-        <div class="header-links">
-          <a href="/gallery/" class={activePage == "gallery" ? "active-page" : undefined} tabindex="0">🎨 art</a>
-          <a href="/blog/" class={activePage == "blog" ? "active-page" : undefined} tabindex="0">💬 blog</a>
-          <a href="/about/" class={activePage == "about" ? "active-page" : undefined} tabindex="0">✌️ about</a>
-          <a href="/links/" class={activePage == "links" ? "active-page" : undefined} tabindex="0">🌐 links</a>
-        </div>
-      </div>
+      <nav class="header-links">
+        <a href="/gallery/" class={activePage == "gallery" ? "active-page" : undefined} tabindex="0">🎨 art</a>
+        <a href="/blog/" class={activePage == "blog" ? "active-page" : undefined} tabindex="0">💬 blog</a>
+        <a href="/about/" class={activePage == "about" ? "active-page" : undefined} tabindex="0">✌️ about</a>
+        <a href="/links/" class={activePage == "links" ? "active-page" : undefined} tabindex="0">🌐 links</a>
+      </nav>
     </div>
-  </div>
+  </header>
 
-  <div id="main"> <!-- Actual page content -->
+  <main> <!-- Actual page content -->
     <slot></slot>
-  </div>
+  </main>
 
-  <div class="footer">
-    <div class="social-icons">
+  <footer id="site-footer">
+    <nav class="social-icons">
       <a title="Bluesky" class="social-media bsky" target="_blank" rel="noopener"
         href="https://bsky.app/profile/goatgirlclover.bsky.social" tabindex="0">
         <img width="32px" height="32px" alt="Bluesky" src="/assets/icons/social/bluesky.svg">
@@ -42,7 +40,7 @@ const { activePage = "home" } = Astro.props;
         tabindex="0">
         <img width="32px" height="32px" alt="Github" src="/assets/icons/social/github.svg">
       </a>
-    </div>
+    </nav>
     <div class="username">@goatgirlclover</div>
     <div class="footer-buttons">
       <div class="dark-mode-toggle">
@@ -51,5 +49,5 @@ const { activePage = "home" } = Astro.props;
         <label for="toggleMode" class="lightModeLabel"><img alt="Light Mode" src="/assets/icons/light.svg" width="32"></label>
       </div>
     </div>
-  </div>
+  </footer>
 </body>

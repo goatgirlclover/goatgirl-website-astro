@@ -1,0 +1,74 @@
+/* BLOG */
+.blog-info {
+  margin-bottom: 12px; 
+}
+
+.blog-info > :not(:first-child) {
+  margin-top: 4px; margin-bottom: 4px;
+}
+
+.blog-info > :first-child {
+  margin-top: 0; margin-bottom: 0;
+}
+
+.blog-info > small + small::before {
+  content: "·";
+  padding: 0.5em;
+  margin-left: -2px;
+  font-weight: 900;
+}
+
+.blog-info + hr {
+  border: 1.5px solid var(--text-color) !important; 
+}
+
+.blog-content {
+  margin-top: 1.25em;
+}
+
+.blog-content hr {
+  width: 75%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border-width: 1.5px !important;
+}
+
+/* BLOG INDEX */
+.blog-index-header {
+  position: relative;
+  border-bottom: 3px solid var(--text-color);
+  padding-bottom: 1.25em; margin-bottom: 1.25em;
+}
+
+.blog-index-header > h1 { margin: 0; }
+.blog-index-header > .rss {  
+  width: 40px;
+  height: 40px;
+  right: 0;
+  top: 2px;
+  position: absolute;
+}
+
+.blog-posts .post:not(:last-child) {
+  margin-bottom: 1em; padding-bottom: 1em;
+  border-bottom: 3px solid var(--drop-shadow);
+}
+
+.blog-posts .post div {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.blog-posts .post div *,
+.blog-posts .post .desc {
+  margin: 0;
+}
+
+.blog-posts .post .title {
+  margin-bottom: 4px;
+}
+
+.blog-posts .post .date {
+  font-size: 1em;
+}

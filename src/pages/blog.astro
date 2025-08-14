@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
+import '../styles/blog.css';
 
 import Base from "../layouts/base.astro";
 
@@ -10,13 +11,13 @@ const posts = (await getCollection('blog')).sort(
 ---
 
 <Base title="blog - goatgirlclover" activePage="blog">
-    <div class="blog-index-header">
+    <header class="blog-index-header">
         <h1>blog posts</h1>
         <a class="rss" href="feed.xml">
             <img src="/assets/icons/rss.png" width="40px" height="40px">
         </a>
-    </div>
-    <div class="blog-posts">
+    </header>
+    <section class="blog-posts">
     {
         posts.map((post, i) => (
             <div class="post">
@@ -34,5 +35,5 @@ const posts = (await getCollection('blog')).sort(
             </div>
         ))
     }
-    </div>
+    </section>
 </Base>

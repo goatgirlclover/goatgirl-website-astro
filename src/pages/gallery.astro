@@ -1,12 +1,13 @@
 ---
 import Base from "../layouts/base.astro";
+import '../styles/gallery.css';
 ---
 
 <Base title="gallery - goatgirlclover" activePage="gallery">
     <h1>art gallery</h1>
     
     <h2 class="gallery-year">2025</h2>
-    <div class="gallery-grid" data-year="2025">
+    <section class="gallery-grid" data-year="2025">
 
       <a tabindex="0" href="/gallery/view/20250720_briar/" class="gallery-img">
         <img alt="07/20/2025 Briar" title="07/20/2025 Briar" class="thumb" src="/gallery/thumb/20250720_briar.jpg" width="192px" height="192px"
@@ -48,10 +49,10 @@ import Base from "../layouts/base.astro";
         <img alt="01/21/2025 Fay" title="01/21/2025 Fay" class="thumb" src="/gallery/thumb/20250121_fay.jpg" width="192px" height="192px"
           style="object-fit: cover;" loading="lazy"></a>
           
-    </div>
+    </section>
     
     <h2 class="gallery-year">2024</h2>
-    <div class="gallery-grid" data-year="2024">
+    <section class="gallery-grid" data-year="2024">
 
       <a tabindex="0" href="/gallery/view/20241218_sch0omp" class="gallery-img">
         <img alt="12/18/2024 sch0omp" title="12/18/2024 sch0omp" class="thumb" src="/gallery/thumb/20241218_sch0omp.jpg" width="192px" height="192px" style="object-fit: cover;"
@@ -96,9 +97,9 @@ import Base from "../layouts/base.astro";
         <img alt="01/03/2024 Clover Goat" title="01/03/2024 Clover Goat" class="thumb" src="/gallery/thumb/20240103_clovergoat.jpg" width="192px" height="192px" style="object-fit: cover;"
           loading="lazy"></a>
 
-    </div>
+    </section>
     <h2 class="gallery-year">2023</h2>
-    <div class="gallery-grid" data-year="2023">
+    <section class="gallery-grid" data-year="2023">
 
       <a tabindex="0" href="/gallery/view/20231214_catref2/" class="gallery-img">
         <img alt="12/14/2023 Cat Ref" title="12/14/2023 Cat Ref" class="thumb" src="/gallery/thumb/20231214_catref2.jpg" width="192px" height="192px" style="object-fit: cover;"
@@ -134,9 +135,9 @@ import Base from "../layouts/base.astro";
         <img alt="01/16/2023 Cleo Ref" title="01/16/2023 Cleo Ref" class="thumb" src="/gallery/thumb/20230116_cleoref.jpg" width="192px" height="192px" style="object-fit: cover;"
           loading="lazy"></a>
 
-    </div>
+    </section>
     <h2 class="gallery-year">2022</h2>
-    <div class="gallery-grid" data-year="2022">
+    <section class="gallery-grid" data-year="2022">
 
       <a tabindex="0" href="/gallery/view/20221211_cleosit/" class="gallery-img">
         <img alt="12/11/2023 Cleo Sit" title="12/11/2023 Cleo Sit" class="thumb" src="/gallery/thumb/20221211_cleosit.jpg" width="192px" height="192px" style="object-fit: cover;"
@@ -178,9 +179,9 @@ import Base from "../layouts/base.astro";
         <img alt="01/02/2022 Green" title="01/02/2022 Green" class="thumb" src="/gallery/thumb/20220102_green.jpg" width="192px" height="192px" style="object-fit: cover;"
           loading="lazy"></a>
 
-    </div>
+    </section>
     <h2 class="gallery-year">2021</h2>
-    <div class="gallery-grid" data-year="2021">
+    <section class="gallery-grid" data-year="2021">
 
       <a tabindex="0" href="/gallery/view/20211231_rockinduo2/" class="gallery-img">
         <img alt="12/31/2021 Rockin Duo" title="12/31/2021 Rockin Duo" class="thumb" src="/gallery/thumb/20211231_rockinduo2.jpg" width="192px" height="192px" style="object-fit: cover;"
@@ -242,5 +243,5 @@ import Base from "../layouts/base.astro";
       <a tabindex="0" href="/gallery/view/20201223_spark/" class="gallery-img fanart">
         <img alt="12/23/2020 Spark" title="12/23/2020 Spark" class="thumb" src="/gallery/thumb/20201223_spark.jpg" width="192px" height="192px" style="object-fit: cover;"
           loading="lazy"></a>
-    </div>
+    </section>
 </Base>

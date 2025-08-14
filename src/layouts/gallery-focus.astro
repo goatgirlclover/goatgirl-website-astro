@@ -13,21 +13,21 @@ const safeAlt = alt.replace(/"/g, '&quot;');
 <HeadGallery title={safeTitle} description={safeDescription} image={image}></HeadGallery>
 <Body activePage="gallery">
     <div id="gallery-focus"> 
-        <div class="focus-header"> 
+        <header class="focus-header"> 
             <a tabindex=0 href="/gallery" class="gallery-back"><h2>back to gallery</h2></a> 
-        </div> 
+        </header> 
 
-        <div class="focus-container"> 
+        <section class="focus-container"> 
             <a tabindex=0 href={image} target="_blank" class="art"> 
                 <img width={width} height={height} src={image} alt={safeAlt}></a> 
             <div class="info"> 
                 <h1 class="title">{shortTitle}</h1> 
                 <p class="desc">{description}</p> 
             </div> 
-	    </div> 
+	    </section> 
 
-        <div class="focus-footer"> 
-        </div> 
+        <footer class="focus-footer"> 
+        </footer> 
     </div> 
 </Body>
 <script type="text/javascript" src="/assets/scripts/emoji.js"></script>

@@ -1,0 +1,153 @@
+/* HOMEPAGE */
+.flex-sections .homepage-main {
+  flex-basis: 30em !important;
+  flex-grow: 4 !important;
+}
+
+/* HOMEPAGE - STATUS.CAFE */
+#statuscafe-username, #statuscafe-username * {
+  font-size: 0.9rem;
+  overflow: visible;
+} 
+
+#statuscafe-username .emoji-spacer, #statuscafe-username .emoji {
+  margin-right: 3px; 
+}
+
+#statuscafe-content {
+  font-size: 1.2rem;
+  font-weight: 500;
+  overflow: visible;
+}
+
+#status-section {
+  float: right;
+  min-width: min-content;
+  margin-top: auto;
+}
+
+#status-section h2 {
+  margin-bottom: 8px;
+}
+
+.status-holder {
+  display: flex;
+  justify-content: right;
+  flex-wrap: wrap;
+  gap: 8px;
+  overflow: hidden;
+  padding: 2px;
+}
+
+#status-goat {
+  width: 256px; 
+  height: auto;
+  user-select: none; 
+  -webkit-user-select: none;
+  position: relative;
+}
+
+#status-goat > img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(3px 3px var(--drop-shadow));
+}
+
+#status-goat::before {
+  content: attr(data-before);
+  position: absolute;
+  left: -25px;
+  top: 2px;
+  transform: rotate(-8deg);
+  font-size: 1.1em;
+}
+
+#status-bubble {
+  height: fit-content;
+  flex: 1 0 auto;
+  width: 0;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  width: min-content;
+  min-width: 11em;
+  margin-right: 30px !important; /* no flicker when changing style */
+}
+
+/* HOMEPAGE - LAST.FM */
+#lastfm-section {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 18rem;
+  margin: auto;
+  text-align: center;
+}
+
+#lastfm-section > h2 {
+  margin-bottom: 5px !important;
+  text-align: left;
+}
+
+.lastfm-widget  {
+  margin: 0 auto;
+  border: 3px solid var(--drop-shadow);
+  padding: 4px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.lastfm-widget small > a, #lastfm-song {
+  color: var(--text-color);
+}
+
+.lastfm-widget small > a:hover {
+  font-weight: 700;
+}
+
+.lastfm-cover {
+  height: auto;
+  width: 256px;
+  margin: 0 auto;
+  margin-top: -12px;
+  box-shadow: 3px 3px var(--drop-shadow);
+  border-radius: 5px;
+}
+
+#lastfm-song {
+  font-weight: bolder;
+  font-size: smaller;
+  top: -0.45em;
+  position: relative;
+  display: block;
+  margin: 0.25em 0;
+}
+
+#lastfm-song:hover {
+  font-weight: 800;
+}
+
+.lastfm-widget small, .lastfm-widget small > a {
+  font-size: x-small;
+  font-weight: 600;
+}
+
+.lastfm-widget small {
+  top: -1.65em;
+  position: relative;
+}
+
+#lastfm-status {
+  font-weight: 600;
+  font-size: small;
+}
+
+#lastfm-refresh {
+  position: absolute;
+  right: 5px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+body:not(:has(.darkModeCheckbox:checked)) #lastfm-refresh { 
+  filter: invert(1); 
+}

@@ -1,0 +1,80 @@
+/* GALLERY */
+.gallery-grid {   
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery-year { text-align: right;  }
+.gallery-year:first-of-type { margin-top: -2.5em; }
+
+.gallery-img { 
+  height: 192px;
+  max-width: 256px;
+  min-width: 96px;
+  box-sizing: content-box;
+  overflow: clip;
+}
+
+.gallery-img img {
+  height: 100%;
+  width: 100%;
+}
+  
+/* GALLERY ANIMATIONS */
+.gallery-img { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.gallery-img:not(:focus-visible) { border: 2px solid var(--content-background); }
+.gallery-img:focus-visible { z-index: 9999; }
+
+.gallery-img:hover { z-index: 99999; transform: scale(1.05); box-shadow: 8px 8px rgba(0,0,0,0.5); }
+.gallery-img:hover:not(:focus-visible) { outline: 2px solid var(--text-color); }
+
+/* GALLERY ALIGNMENT */
+
+/* left-center-aligned images (ex. ref sheets) */
+/* .thumb[src$="bd3.jpg"], .thumb[src$="brandnewworld.jpg"], .thumb[src*="ref"], .thumb[src$="cam2.jpg"], .thumb[src$="wizard.jpg"], .thumb[src$="doggo.jpg"], .thumb[src$="bun.jpg"] { object-position: 15% 50%; }
+
+/* top-center-aligned images (ex. single character) */
+/* .thumb[src$="goatside.jpg"], .thumb[src$="clovergoat.jpg"], .thumb[src$="cleo.jpg"], .thumb[src$="cleofront.jpg"], .thumb[src$="panda.jpg"], .thumb[src$="goat.jpg"], .thumb[src$="mae.jpg"], .thumb[src$="punches.jpg"], .thumb[src$="rat.jpg"], .thumb[src$="emery.jpg"], .thumb[src$="vendetta.jpg"], .thumb[src$="kerana.jpg"], .thumb[src$="spark.jpg"], .thumb[src$="fursonafits.jpg"], .thumb[src$="nutella.jpg"], .thumb[src$="goatpride.jpg"], .thumb[src$="green.jpg"], .thumb[src$="camheart.jpg"], .thumb[src$="gf.jpg"], .thumb[src$="lizard.jpg"]  { object-position: 50% 15%; }
+
+/* custom alignment */
+/* .thumb[src$="badger.jpg"] { object-position: 70% 50%; }
+
+/* GALLERY FOCUS */
+#gallery-focus { overflow: auto; }
+#gallery-focus .focus-container { 
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 0px 20px; 
+}
+
+#gallery-focus .info { 
+  float: left; 
+  flex-grow: 1; 
+  min-width: 35%;
+}
+
+#gallery-focus .art { 
+  float: left; 
+  overflow: visible; 
+  max-width: 100%; 
+  height: fit-content;
+}
+
+#gallery-focus .art img { 
+  height: unset;
+  width: unset;
+  max-height: calc(100vh - 50px);
+  max-width: 100%; 
+  object-fit: cover; 
+  display: block; 
+  min-width: 128px;
+  min-height: 128px;
+}
+
+.gallery-back { width: 100%; text-decoration: none; color: var(--text-color) !important; }
+.gallery-back:hover { color: var(--link-hover-color) !important; }
+
+.gallery-back > :first-child { margin-top: 0px; }
+#gallery-focus .info > :last-child { margin-bottom: 0px; }

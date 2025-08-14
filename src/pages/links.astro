@@ -1,10 +1,11 @@
 ---
 import Base from "../layouts/base.astro";
+import '../styles/links.css';
 ---
 
 <Base title="links - goatgirlclover" activePage="links">
   <div class="flex-sections">
-    <div class="links-socials">
+    <section class="links-socials">
       <h1>where to find me</h1>
       <div class="main-socials">
         <h2>social media</h2>
@@ -37,9 +38,9 @@ import Base from "../layouts/base.astro";
           </a>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="webring chao-garden">
+    <section class="webring chao-garden">
       <iframe
         src="https://chaogarden.netlify.app/?site=https://goatgirl.nekoweb.org"
         width="198" height="198"
@@ -48,7 +49,7 @@ import Base from "../layouts/base.astro";
         sandbox="allow-scripts allow-same-origin allow-popups"
         style="border:none; overflow:hidden;">
       </iframe>
-    </div>
+    </section>
   </div>
 
   <hr>
@@ -59,7 +60,7 @@ import Base from "../layouts/base.astro";
       <p>(watch out for flashing! click to expand)</p>
     </summary>
     
-    <div class="button-expand striped">
+    <div class="details-expand striped">
       <p>credits shown on hover where i could find them!
         <br>(some of these buttons are made by me! feel free to use them with or without credit)</p>
 
@@ -187,49 +188,51 @@ import Base from "../layouts/base.astro";
 
   <hr>
   
-  <h1>site credits</h1>
-  <li>powered by 
-    <a target="_blank" href="https://nekoweb.org/">Nekoweb</a> 
-    and <a target="_blank" href="https://astro.build/">Astro</a>! 
-    i used 
-    <a target="_blank" href="https://jbc.lol/tutorials/astro/">this tutorial</a> 
-    and heavily referenced 
-    <a target="_blank" href="https://github.com/withastro/astro/tree/main/examples/blog">this blog example</a> 
-    while porting my site to Astro
-  </li>
-  <li>
-    blog originally handled by <a target="_blank" href="https://getpublii.com/">Publii</a>! 
-    more info on that route in <a href="/blog/post/how-i-made-this-website">this old blog post</a>
-  </li>
-  <li>
-    <a target="_blank" href="https://32bit.cafe/">32bit.cafe</a> 
-    was a constant source of inspiration while working on this site. 
-    i'd recommend checking out its resources if you're ever interested in creating your own site!
-  </li>
-  <li>
-    this site's emoji set is <a target="_blank" href="https://mutant.tech">Mutant Standard</a> 
-    (licensed under <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>)
-  </li>
-      <ul><li>
-        unicode emojis are replaced using a modified version of 
-        <a target="_blank" href="https://github.com/jakejarvis/imagemoji">@jakejarvis/imagemoji</a> 
-        with partial regex from 
-        <a target="_blank" href="https://github.com/slevithan/emoji-regex-xs">@slevithan/emoji-regex-xs</a>
-      </li></ul>
-  <li>last.fm widget is modified code from 
-      <a target="_blank" href="https://dainfloop.is-a.dev">DaInfLoop's website</a>
-      (which itself uses <a href="https://github.com/biancarosa/lastfm-last-played" target="_blank">@biancarosa/lastfm-last-played</a>)
-  </li>
-  <li>
-    i use <a target="_blank" href="https://imagemagick.org">ImageMagick</a> 
-    combined with some custom scripts to manage the gallery images and generate thumbnails</li>
-  <li>
-    this site uses a modified version of 
-    <a target="_blank" href="https://necolas.github.io/normalize.css/">normalize.css</a> 
-    for more consistent formatting across browsers
-  </li>
-  <li>
-    the hearts pattern background over there is 
-    <a target="_blank" href="https://codepen.io/yoksel/pen/AMMzMa">modified CSS from yoksel on Codepen</a>
-  </li>
+  <section>
+    <h1>site credits</h1>
+    <li>powered by 
+      <a target="_blank" href="https://nekoweb.org/">Nekoweb</a> 
+      and <a target="_blank" href="https://astro.build/">Astro</a>! 
+      i used 
+      <a target="_blank" href="https://jbc.lol/tutorials/astro/">this tutorial</a> 
+      and heavily referenced 
+      <a target="_blank" href="https://github.com/withastro/astro/tree/main/examples/blog">this blog example</a> 
+      while porting my site to Astro
+    </li>
+    <li>
+      blog originally handled by <a target="_blank" href="https://getpublii.com/">Publii</a>! 
+      more info on that route in <a href="/blog/post/how-i-made-this-website">this old blog post</a>
+    </li>
+    <li>
+      <a target="_blank" href="https://32bit.cafe/">32bit.cafe</a> 
+      was a constant source of inspiration while working on this site. 
+      i'd recommend checking out its resources if you're ever interested in creating your own site!
+    </li>
+    <li>
+      this site's emoji set is <a target="_blank" href="https://mutant.tech">Mutant Standard</a> 
+      (licensed under <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>)
+    </li>
+        <ul><li>
+          unicode emojis are replaced using a modified version of 
+          <a target="_blank" href="https://github.com/jakejarvis/imagemoji">@jakejarvis/imagemoji</a> 
+          with partial regex from 
+          <a target="_blank" href="https://github.com/slevithan/emoji-regex-xs">@slevithan/emoji-regex-xs</a>
+        </li></ul>
+    <li>last.fm widget is modified code from 
+        <a target="_blank" href="https://dainfloop.is-a.dev">DaInfLoop's website</a>
+        (which itself uses <a href="https://github.com/biancarosa/lastfm-last-played" target="_blank">@biancarosa/lastfm-last-played</a>)
+    </li>
+    <li>
+      i use <a target="_blank" href="https://imagemagick.org">ImageMagick</a> 
+      combined with some custom scripts to manage the gallery images and generate thumbnails</li>
+    <li>
+      this site uses a modified version of 
+      <a target="_blank" href="https://necolas.github.io/normalize.css/">normalize.css</a> 
+      for more consistent formatting across browsers
+    </li>
+    <li>
+      the hearts pattern background over there is 
+      <a target="_blank" href="https://codepen.io/yoksel/pen/AMMzMa">modified CSS from yoksel on Codepen</a>
+    </li>
+  </section>
 </Base>

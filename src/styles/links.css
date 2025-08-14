@@ -1,0 +1,37 @@
+/* LINKS - BUTTONS */
+.button-holder {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: center;
+  padding: 10px;
+  gap: 4px;
+}
+
+.button-holder > img, .button-holder > a, .site-button {
+  outline: 1px dashed rgb(100, 100, 100);
+  image-rendering: auto;
+  width: 88px;
+  height: 31px;
+  margin: 0;
+}
+
+.button-holder > img:hover, .button-holder > a:hover, .site-button:hover {
+  width: 92px; 
+  height: 32px;
+  margin: -0.5px -2px;
+}
+
+.button-holder > a:hover > img {
+  width: 92px; 
+  height: 32px;
+}
+
+/* LINKS - WEBRING */
+.flex-sections .webring iframe {
+	float: right;
+}
+
+.flex-sections .webring {
+	flex: 0 1 0;
+}
