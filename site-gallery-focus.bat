@@ -1,9 +1,9 @@
 @echo off
 setlocal enabledelayedexpansion
 
-set "workingdir=C:\Users\Clover\Documents\website\scripts\"
-set "uploaddir=C:\Users\Clover\Documents\website\astro\public\"
-set "pagedir=C:\Users\Clover\Documents\website\astro\src\pages\gallery\view\"
+set "workingdir=%UserProfile%\Documents\website\scripts\"
+set "uploaddir=%UserProfile%\Documents\website\astro\public\"
+set "pagedir=%UserProfile%\Documents\website\astro\src\pages\gallery\view\"
 set "gallerydir=!uploaddir!gallery\view\"
 
 cd %workingdir%  

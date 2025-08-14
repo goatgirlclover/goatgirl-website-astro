@@ -20,13 +20,13 @@ echo -----
 cd ..\gallery-imgs
 cd 2048
 for %%f in (*.png) do (
-	xcopy /s/v/k/y/z "C:\Users\Clover\Documents\website\gallery-imgs\2048\%%f" "C:\Users\Clover\Documents\website\astro\public\gallery\img\%%f"
+	xcopy /s/v/k/y/z "%UserProfile%\Documents\website\gallery-imgs\2048\%%f" "%UserProfile%\Documents\website\astro\public\gallery\img\%%f"
 )
 
 cd ..
 cd 512
 for %%f in (*.jpg) do (
-	xcopy /s/v/k/y/z "C:\Users\Clover\Documents\website\gallery-imgs\512\%%f" "C:\Users\Clover\Documents\website\astro\public\gallery\thumb\%%f"
+	xcopy /s/v/k/y/z "%UserProfile%\Documents\website\gallery-imgs\512\%%f" "%UserProfile%\Documents\website\astro\public\gallery\thumb\%%f"
 )
 
 cd /D "%~dp0"
