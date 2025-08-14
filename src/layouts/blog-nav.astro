@@ -1,0 +1,14 @@
+---
+import { posts } from "../pages/blog.astro";
+
+const currentPostIndex = posts.findIndex((post) => post.id == Astro.params.slug);
+const previousPost = currentPostIndex + 1 === posts.length ? undefined : posts[currentPostIndex + 1];
+const nextPost = currentPostIndex === 0 ? undefined : posts[currentPostIndex - 1];
+---
+
+{(previousPost || nextPost) && (
+    <nav>
+    { nextPost && ( <p>next post: <br /><a href={`/blog/post/${nextPost.id}/`}>{nextPost.data.title}</a></p> ) }
+    { previousPost && ( <p>previous post: <br /><a href={`/blog/post/${previousPost.id}/`}>{previousPost.data.title}</a></p> ) }
+    </nav>
+)}

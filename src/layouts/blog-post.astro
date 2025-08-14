@@ -1,6 +1,7 @@
 ---
 import Base from "../layouts/base.astro";
 import FormattedDate from '../components/FormattedDate.astro';
+import BlogNav from './blog-nav.astro';
 import '../styles/blog.css';
 
 const { title, description, pubDate, updatedDate = undefined } = Astro.props;
@@ -18,4 +19,8 @@ const displayTitle = title.concat(" - goatgirlclover");
   <hr />
 
   <article class="blog-content"><slot></slot></article>
+
+  <hr />
+
+  <footer class="blog-footer"><BlogNav /></footer>
 </Base>

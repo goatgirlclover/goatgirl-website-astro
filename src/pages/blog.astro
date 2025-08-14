@@ -5,7 +5,7 @@ import '../styles/blog.css';
 
 import Base from "../layouts/base.astro";
 
-const posts = (await getCollection('blog')).sort(
+export const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 ---
