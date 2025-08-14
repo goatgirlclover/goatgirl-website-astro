@@ -1,8 +1,4 @@
 @echo off
-echo Remember to sync the blog through Publii if you haven't!
-pause
-
-echo -----
 echo Generating gallery thumbnails...
 echo -----
 
@@ -43,5 +39,5 @@ for %%f in (..\gallery-imgs\*.png) do (
 
 cd /D "%~dp0"
 
-echo Site updated! Remember to push!
+echo Site gallery updated!
 pause
