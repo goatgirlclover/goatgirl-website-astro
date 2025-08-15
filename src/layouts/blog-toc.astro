@@ -1,0 +1,28 @@
+---
+import type { MarkdownHeading } from 'astro';
+interface Props { headings: MarkdownHeading[]; }
+
+const { headings } = Astro.props;
+const filteredHeadings = headings.filter((heading) => heading.depth <= 2);
+
+const footnoteHeader = filteredHeadings.findLast((heading) => heading.text == "Footnotes");
+if (footnoteHeader) { footnoteHeader.text = "footnotes"; }
+---
+
+{filteredHeadings.length > 2 && 
+<hr />
+<div class="blog-toc">
+    <nav>
+    <h2>table of contents</h2>
+    <ul>
+        {
+        filteredHeadings.map((heading) => (
+            <li>
+            <a href={`#${heading.slug}`}>{heading.text}</a>
+            </li>
+        ))
+        }
+    </ul>
+    </nav>
+</div>
+}

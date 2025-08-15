@@ -1,11 +1,11 @@
 ---
 import Head from "../layouts/fragment/head.astro";
 import Body from "../layouts/fragment/body.astro";
-const { title = "goatgirlclover", activePage = "home" } = Astro.props;
+const { title = "goatgirlclover", activePage = "home", description = undefined, ogType = "website", pubDate = undefined, updatedDate = undefined } = Astro.props;
 ---
 
 <html lang="en">
-<Head title={title}></Head>
+<Head title={title} description={description} ogType={ogType} pubDate={pubDate} updatedDate={updatedDate}></Head>
 <Body activePage={activePage}><slot></slot></Body>
 <script type="text/javascript" src="/assets/scripts/emoji.js"></script>
 </html>

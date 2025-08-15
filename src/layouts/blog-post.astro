@@ -1,20 +1,30 @@
 ---
-import Base from "../layouts/base.astro";
+import type { CollectionEntry } from 'astro:content';
+import type { MarkdownHeading } from 'astro';
 import FormattedDate from '../components/FormattedDate.astro';
+
+import Base from "./base.astro";
 import BlogNav from './blog-nav.astro';
+import BlogToc from './blog-toc.astro';
+
 import '../styles/blog.css';
 
-const { title, description, pubDate, updatedDate = undefined } = Astro.props;
+type Props = CollectionEntry<'blog'>['data'] & { headings: MarkdownHeading[] };
+
+const { title, description, pubDate, updatedDate = undefined, headings } = Astro.props;
 const displayTitle = title.concat(" - goatgirlclover");
 ---
 
-<Base title={displayTitle} activePage="blog">
+<Base title={displayTitle} description={description} activePage="blog" 
+  ogType="article" pubDate={pubDate} updatedDate={updatedDate}>
   <header class="blog-info">
     <h1>{title}</h1>
     <p>{description}</p>
     <small>published <FormattedDate date={pubDate}/></small>
     {updatedDate && <small>last updated <FormattedDate date={updatedDate}/></small>}
   </header>
+
+  <BlogToc headings={headings} />
 
   <hr />
 
