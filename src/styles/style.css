@@ -35,7 +35,6 @@
 
   --speech-bubble-color: var(--light-content-bg);
 
-  --darker-bg-10: color-mix(in hsl, var(--content-background), var(--drop-shadow) 10%);
   --darker-bg-25: color-mix(in hsl, var(--content-background), var(--drop-shadow) 25%);
   --darker-bg-50: color-mix(in hsl, var(--content-background), var(--drop-shadow) 50%);
   --darker-bg-75: color-mix(in hsl, var(--content-background), var(--drop-shadow) 75%);
@@ -213,7 +212,7 @@ textarea {
   
   min-width: 15em;
   max-height: 20em;
-  background-color: var(--darker-bg-10);
+  background-color: var(--darker-bg-25);
 }
 
 .scrollable h2 {
