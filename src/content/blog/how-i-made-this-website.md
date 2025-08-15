@@ -92,8 +92,8 @@ echo ^<title^>!title! - goatgirlclover^</title^> >> index.html
 echo ^<meta property="og:title" content="!title! - goatgirlclover"^> >> index.html
 echo ^<meta property="og:description" content="!desc!"^> >> index.html
 echo ^<meta property="og:type" content="website"^> >> index.html
-echo ^<meta property="og:url" content="https://goatgirl.neocities.org"^> >> index.html
-echo ^<meta property="og:image" content="https://goatgirl.neocities.org/gallery/img/!filename!.png"^> >> index.html
+echo ^<meta property="og:url" content="!site!"^> >> index.html
+echo ^<meta property="og:image" content=!site!/gallery/img/!filename!.png"^> >> index.html
 echo ^<meta property="og:image:type" content="image/png"^> >> index.html
 REM (we do basically this same thing again for Twitter's embed properties)
 
@@ -140,9 +140,9 @@ all these puzzle pieces together result in a nice little place on the web all to
 *   the blog formatting is _rough_ and will definitely require tweaking as i go
 *   i _really_ want to give the me in the header some animations when you click on her. but that's complicated to do!
 
-i'll use this site primarily to store my art - blog posts will likely end up being more rare. maybe if you like my stuff you can check in every once in a while and see what i'm up to!? or you can [follow me on whichever social media i got that you can tolerate the most](https://goatgirl.nekoweb.org/links/) (@goatgirlclover everywhere). 
+i'll use this site primarily to store my art - blog posts will likely end up being more rare. maybe if you like my stuff you can check in every once in a while and see what i'm up to!? or you can [follow me on whichever social media i got that you can tolerate the most](/links/) (@goatgirlclover everywhere). 
 
-you can also [follow this blog's RSS feed](https://goatgirl.nekoweb.org/blog/feed.xml) if you wish! (i think it's actually Atom but i'm going to call it RSS) i've no idea how or how well it works, it's all handled through Publii, but if you're into RSSing it's there! the gallery will have its own feed once i wrap my mind around all that.
+you can also [follow this blog's RSS feed](/blog/feed.xml) if you wish! (i think it's actually Atom but i'm going to call it RSS) i've no idea how or how well it works, it's all handled through Publii, but if you're into RSSing it's there! the gallery will have its own feed once i wrap my mind around all that.
 
 or you can do none of these things! that's cool too!
 
