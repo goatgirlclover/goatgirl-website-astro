@@ -16,7 +16,7 @@ all scripts are licensed under MIT unless otherwise specified
 ## misc
 - site-gallery.bat and site-gallery-focus.bat are published under MIT (though i'm not sure why you'd want to use them?)
 - the "site credits" section of the website goes over licensed material in more detail
-- my site button (assets/buttons/88x31/goatgirlclover.gif) is free to share around as long as it links back to me :)
+- my site button (assets/buttons/88x31/goatgirlclover.gif) is free to share around as long as it links back to my site :)
 
 # MIT License
 Copyright (c) 2025 goatgirlclover
