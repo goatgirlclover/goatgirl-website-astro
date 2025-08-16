@@ -27,6 +27,8 @@
   height: 32px;
 }
 
+.cool-sites > h1 { margin-bottom: 4px; }
+
 /* LINKS - WEBRING */
 .flex-sections .webring iframe {
 	float: right;
