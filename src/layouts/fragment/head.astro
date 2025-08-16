@@ -4,8 +4,8 @@ const { title = "goatgirlclover", description = undefined, ogType = "website", p
 
 var publishedTime = pubDate?.toISOString(); 
 var modifiedTime = updatedDate?.toISOString(); 
-publishedTime = publishedTime.substring(0, publishedTime.indexOf('T'));
-modifiedTime = modifiedTime.substring(0, modifiedTime.indexOf('T'));
+publishedTime = publishedTime?.substring(0, publishedTime?.indexOf('T'));
+modifiedTime = modifiedTime?.substring(0, modifiedTime?.indexOf('T'));
 ---
 
 <head>
