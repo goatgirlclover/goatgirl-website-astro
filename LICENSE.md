@@ -1,4 +1,4 @@
-this site's repo is public for reference and inspiration purposes! in essence, it's fine to reference or even copy my site's code and styling, or copy its file structure for use with Astro, but its content is still my own (unless otherwise noted).
+this site's repo is public for reference and inspiration purposes! in essence, it's fine to reference or even copy my site's code and styling, or copy its file structure for use with Astro, but my content is still my own
 
 ## src/ folder
 unless otherwise specified:
@@ -11,11 +11,12 @@ the following content is copyrighted to goatgirlclover (me), all rights reserved
 - all files within the gallery/ folder and its subfolders
 - the favicon
 
-all scripts are licensed under MIT unless otherwise specified. my site button (assets/buttons/88x31/goatgirlclover.gif) is published under CC BY-NC-SA 4.0. 
+all scripts are licensed under MIT unless otherwise specified
 
 ## misc
 - site-gallery.bat and site-gallery-focus.bat are published under MIT (though i'm not sure why you'd want to use them?)
 - the "site credits" section of the website goes over licensed material in more detail
+- my site button (assets/buttons/88x31/goatgirlclover.gif) is free to share around as long as it links back to me :)
 
 # MIT License
 Copyright (c) 2025 goatgirlclover
