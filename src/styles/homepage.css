@@ -151,3 +151,6 @@
 body:not(:has(.darkModeCheckbox:checked)) #lastfm-refresh { 
   filter: invert(1); 
 }
+
+/* COUNTDOWN */
+.countdown { padding: 0.5em; margin: 0 auto; border-radius: 100px; }

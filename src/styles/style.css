@@ -135,14 +135,14 @@ main { /* actual page content */
   box-shadow: 6px 6px var(--drop-shadow);
 }
 
-main > :first-child, 
-article > :first-child,
-section:not(hr + section) > :first-child
+main > :first-child, main > center > :first-child, 
+article > :first-child, article > center > :first-child,
+section:not(hr + section) > :first-child, section:not(hr + section) > center > :first-child
 { margin-top: 0; }
 
-main > :last-child, 
-article > :last-child,
-section:not(:has(+ hr)) > :last-child
+main > :last-child, main > center > :last-child, 
+article > :last-child, article > center > :last-child,
+section:not(:has(+ hr)) > :last-child, section:not(:has(+ hr)) > center > :last-child
 { margin-bottom: 0; }
 
 .striped {
