@@ -38,6 +38,14 @@
   --darker-bg-25: color-mix(in hsl, var(--content-background), var(--drop-shadow) 25%);
   --darker-bg-50: color-mix(in hsl, var(--content-background), var(--drop-shadow) 50%);
   --darker-bg-75: color-mix(in hsl, var(--content-background), var(--drop-shadow) 75%);
+
+  --darker-green-25: #00937B; /* match site logo */
+  --darker-green-50: color-mix(in hsl, var(--clover-green), #002f52 20%);
+  --darker-green-75: color-mix(in hsl, var(--clover-green), #002f52 30%);
+
+  --darker-pink-25: color-mix(in hsl, var(--clover-pink), #460d0d 10%);
+  --darker-pink-50: color-mix(in hsl, var(--clover-pink), #460d0d 20%);
+  --darker-pink-75: color-mix(in hsl, var(--clover-pink), #460d0d 30%);
 }
 
 :root { /* dark mode values (default) */
@@ -153,6 +161,27 @@ section:not(:has(+ hr)) > :last-child, section:not(:has(+ hr)) > center > :last-
   );
   background-attachment: local;
 }
+
+.striped.green {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--clover-green), var(--clover-green) 20px,
+    var(--darker-green-25) 20px, var(--darker-green-25) 40px
+  );
+  background-attachment: local;
+}
+
+.striped.pink {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--clover-pink), var(--clover-pink) 20px,
+    var(--darker-pink-25) 20px, var(--darker-pink-25) 40px
+  );
+  background-attachment: local;
+}
+
+.striped.pink, .striped.pink * { color: white !important; }
+.striped.green, .striped.green * { color: white !important; }
 
 details > summary { 
   display: flex; 
