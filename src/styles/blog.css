@@ -19,7 +19,7 @@
 }
 
 .blog-info + hr, .blog-content + hr, .blog-toc + hr {
-  border: 1.5px solid var(--text-color) !important; 
+  border:none; border-bottom: 1.5px dashed var(--text-color) !important; 
 }
 
 .blog-content {
@@ -30,12 +30,11 @@
   width: 75%;
   margin-top: 25px;
   margin-bottom: 25px;
-  border-width: 1.5px !important;
 }
 
 .blog-content #footnote-label { visibility: hidden; height: 0; }
 .blog-content .footnotes {
-  border-top: 3px solid var(--drop-shadow); 
+  border-top: 3px dashed var(--drop-shadow); 
 }
 
 .blog-footer nav { display: flex; flex-wrap: wrap; }
@@ -64,7 +63,7 @@
 
 .blog-posts .post:not(:last-child) {
   margin-bottom: 1em; padding-bottom: 1em;
-  border-bottom: 3px solid var(--drop-shadow);
+  border-bottom: 3px dashed var(--drop-shadow);
 }
 
 .blog-posts .post div {

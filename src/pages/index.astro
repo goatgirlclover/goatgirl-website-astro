@@ -1,6 +1,7 @@
 ---
 import Base from "../layouts/base.astro";
 import '../styles/homepage.css';
+import '../styles/links.css';
 ---
 
 <Base title="goatgirlclover" activePage="home">
@@ -223,4 +224,39 @@ import '../styles/homepage.css';
       </ul>
     </section>
   </div>
+
+  <!-- <script is:inline>
+    function isPointOverText(x, y) {
+      const element = document.elementFromPoint(x, y);
+      if (element == null) return false;
+      const nodes = element.childNodes;
+      for (let i = 0, node; (node = nodes[i++]); ) {
+          if (node.nodeType === 3) {
+              const range = document.createRange();
+              range.selectNode(node);
+              const rects = range.getClientRects();
+              for (let j = 0, rect; (rect = rects[j++]); ) {
+                  if (
+                      x > rect.left &&
+                      x < rect.right &&
+                      y > rect.top &&
+                      y < rect.bottom
+                  ) {
+                      if (node.nodeType === Node.TEXT_NODE) return true;
+                  }
+              }
+          }
+      }
+      return false;
+    }
+
+    window.addEventListener("mousemove", (e) => {
+      if (isPointOverText(e.clientX, e.clientY)) { 
+        document.querySelector("body").className = "hovering-over-text";
+      }
+      else { 
+        document.querySelector("body").className = "not-doing-that";
+      }
+    })
+  </script> -->
 </Base>

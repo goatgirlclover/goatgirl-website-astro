@@ -153,7 +153,12 @@ body:not(:has(.darkModeCheckbox:checked)) #lastfm-refresh {
 }
 
 /* COUNTDOWN */
-.countdown { padding: 0.5em; margin: 0 auto; border-radius: 100px; }
+.countdown { 
+  padding: 0.5em; 
+  margin: 0 auto; 
+  border-radius: 100px; 
+  border: 3px solid black;
+}
 
 .countdown.unbeatable {
   background-image: url(/assets/unbeatableBanner.png); 

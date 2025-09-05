@@ -17,14 +17,7 @@
 }
 
 .button-holder > img:hover, .button-holder > a:hover, .site-button:hover {
-  width: 92px; 
-  height: 32px;
-  margin: -0.5px -2px;
-}
-
-.button-holder > a:hover > img {
-  width: 92px; 
-  height: 32px;
+  transform: scale(1.05);
 }
 
 .cool-sites > h1 { margin-bottom: 4px; }
