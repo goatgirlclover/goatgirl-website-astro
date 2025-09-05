@@ -102,6 +102,22 @@ a:hover, a:focus { color: var(--link-hover-color); }
 a:visited:hover, a:visited:focus { color: var(--link-visited-hover); }
 a:active { color: var(--link-active-color); }  
 
+@supports (mask-image: url()) and selector(:has(a,b)) {
+  main a[target="_blank"]:not(:has(img,div))::after {
+    display: inline;
+    content: '';
+    padding-right: 1em;
+    background-color: currentColor;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 6H7a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-5m-6 0l7.5-7.5M15 3h6v6'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 6H7a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-5m-6 0l7.5-7.5M15 3h6v6'/%3E%3C/svg%3E");
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 1em 1em;
+    mask-size: 1em 1em;
+  }
+}
+
+
 main:not(:has(main)) hr { border: none; border-bottom: 3px dashed var(--drop-shadow); }
 
 /* body:not(.hovering-over-text) { cursor: url("/assets/cursor.png") 4 1, auto; }
@@ -111,7 +127,7 @@ a { cursor: url("/assets/cursor_hover.png") 10 1, pointer; } */
 /* EMOJI (Mutant Standard */
 .emoji, .emoji-spacer { 
   display: inline-block;
-  width: 1em; 
+  width: 1em;
   height: auto;
   user-select: text; 
   -webkit-user-select: text; 
@@ -362,14 +378,22 @@ textarea {
 
 #site-logo {
   display: block;
-  width: fit-content;
+  max-width: fit-content;
+  max-height: fit-content;
   margin: 0 auto;
+  margin-top: 2px;
+  overflow: visible;
+  padding: 0 8px;
 }
 
 #site-logo img {
-  width: 100%;
-  max-width: 512px;
+  width: auto;
   height: auto;
+  max-width: 100%;
+  max-height: 160px;
+  margin-top: 4px;
+  margin-bottom: -4px;
+  
   transition: transform 0.2s;
   filter: drop-shadow(3px 3px var(--dark-drop-shadow));
   vertical-align: unset;

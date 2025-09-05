@@ -10,9 +10,8 @@
   overflow: visible;
 } 
 
-#statuscafe-username .emoji-spacer, #statuscafe-username .emoji {
-  margin-right: 3px; 
-}
+#statuscafe-username .emoji-spacer { margin-left: 0.15em; margin-right: 0.15em; }
+#statuscafe-username .emoji { margin-left: -1.3em; }
 
 #statuscafe-content {
   font-size: 1.2rem;
@@ -118,7 +117,8 @@
   top: -0.45em;
   position: relative;
   display: block;
-  margin: 0.25em 0;
+  margin-bottom: 0.1em;
+  margin-top: 0.2em;
 }
 
 #lastfm-song:hover {
@@ -136,7 +136,7 @@
 }
 
 #lastfm-status {
-  font-weight: 600;
+  font-weight: 400;
   font-size: small;
 }
 
@@ -157,7 +157,7 @@ body:not(:has(.darkModeCheckbox:checked)) #lastfm-refresh {
   padding: 0.5em; 
   margin: 0 auto; 
   border-radius: 100px; 
-  border: 3px solid black;
+  border: 3px solid var(--drop-shadow);
 }
 
 .countdown.unbeatable {
@@ -170,3 +170,7 @@ body:not(:has(.darkModeCheckbox:checked)) #lastfm-refresh {
     bottom: 3px;
   }
 }
+
+/* :root:has(.darkModeCheckbox:checked) .countdown.unbeatable {
+  background-image: url(/assets/unbeatableBannerLight.png); 
+} */
