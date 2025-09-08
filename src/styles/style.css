@@ -12,6 +12,11 @@
   100% { transform:rotate(360deg); } 
 }
 
+@media (prefers-reduced-motion: reduce) {
+  #status-goat, #lastfm-refresh { animation: none !important; }
+  #site-logo img, .gallery-img { transition: none !important; transform: none !important; }
+}
+
 /* VARIABLES */
 :root {
   --clover-green: #4cb07e;
@@ -169,9 +174,6 @@ main { /* actual page content */
   background-color: var(--content-background);
   border-radius: 20px;
   overflow: clip;
-  /* transition: margin 0.25s; */
-  /* width: calc(var(--content-width) - var(--content-padding) - var(--content-margin)); 
-  margin: 0 auto; */
 
   outline: 4px solid var(--content-border); 
   position: relative;
@@ -704,68 +706,15 @@ input[type="checkbox"]:focus ~ label {
   outline: 1.5px solid white;
 }
 
-/* HEART PATTERN PAGE BACKGROUND */
+/* page background */
 :root {
-  --pattern-heart-1: rgba(80, 60, 80, 0.5);
-  --pattern-heart-2: var(--pattern-heart-1);
-  
-  --pattern-heart-1-transparent: rgba(80,60,80,0);
-  --pattern-heart-2-transparent: var(--pattern-heart-1-transparent);
-  
-  --pattern-heart-size: 61px;
-  
-  background: 
-    linear-gradient( /* bottom right chunk of heart 1 */
-      135deg, 
-      var(--pattern-heart-1) calc(var(--pattern-heart-size)*0.3), 
-      var(--pattern-heart-1-transparent) calc(var(--pattern-heart-size)*0.3)) 
-    50vw calc(var(--pattern-heart-size) + 50vh), 
-    
-    linear-gradient( /* bottom left chunk of heart 1 */
-      -135deg, 
-      var(--pattern-heart-1) 
-      calc(var(--pattern-heart-size)*0.3), 
-      var(--pattern-heart-1-transparent) 
-      calc(var(--pattern-heart-size)*0.3)) 
-    50vw calc(var(--pattern-heart-size) + 50vh), 
-    
-    radial-gradient( /* top left chunk of heart 1 */
-      circle at calc(var(--pattern-heart-size)*2 - (var(--pattern-heart-size)*0.7*0.3)) calc(var(--pattern-heart-size)*1.85), 
-      var(--pattern-heart-1) calc(var(--pattern-heart-size)*.85*.3), 
-      var(--pattern-heart-1-transparent) calc(var(--pattern-heart-size)*.87*.3)) 
-    50vw calc(var(--pattern-heart-size)*-1 + 50vh), 
-    
-    radial-gradient( /* top right chunk of heart 1 */
-      circle at calc(var(--pattern-heart-size)*0.3*0.7) calc(var(--pattern-heart-size)*1.85), 
-      var(--pattern-heart-1) calc(var(--pattern-heart-size)*.85*.3), 
-      var(--pattern-heart-1-transparent) calc(var(--pattern-heart-size)*.87*.3)) 
-    50vw calc(var(--pattern-heart-size)*-1 + 50vh), 
-    
-    linear-gradient( /* bottom right chunk of heart 2 */
-      135deg, 
-      var(--pattern-heart-2) calc(var(--pattern-heart-size)*0.3), 
-      var(--pattern-heart-2-transparent) calc(var(--pattern-heart-size)*0.3)) 
-    calc(50vw + var(--pattern-heart-size)) 50vh, 
-    
-    linear-gradient( /* bottom left chunk of heart 2 */
-      -135deg, 
-      var(--pattern-heart-2) calc(var(--pattern-heart-size)*0.3), 
-      var(--pattern-heart-2-transparent) calc(var(--pattern-heart-size)*0.3)) 
-    calc(50vw + var(--pattern-heart-size)) 50vh, 
-    
-    radial-gradient( /* top left chunk of heart 2 */
-      circle at calc(var(--pattern-heart-size)*2 - (var(--pattern-heart-size)*0.7*0.3)) calc(var(--pattern-heart-size)*1.85), 
-      var(--pattern-heart-2) calc(var(--pattern-heart-size)*.85*.3), 
-      var(--pattern-heart-2-transparent) calc(var(--pattern-heart-size)*.87*.3)) 
-    calc(50vw + var(--pattern-heart-size)) 50vh, 
-    
-    radial-gradient( /* top right chunk of heart 2 */
-      circle at calc(var(--pattern-heart-size)*0.3*0.7) calc(var(--pattern-heart-size)*1.85), 
-      var(--pattern-heart-2) calc(var(--pattern-heart-size)*.85*.3), 
-      var(--pattern-heart-2-transparent) calc(var(--pattern-heart-size)*.87*.3)) 
-    calc(50vw + var(--pattern-heart-size)) 50vh;
-  
-  background-size: calc(var(--pattern-heart-size)*2) calc(var(--pattern-heart-size)*2);
+  background-image: url("/assets/backgroundAnim.gif");
+  background-size: 122px 122px;
   background-color: rgba(40, 30, 40, 1); /* behind all the hearts */
   background-repeat: repeat;
+  background-position: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { background-image: url("/assets/background.png"); }
 }
