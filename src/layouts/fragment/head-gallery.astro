@@ -1,12 +1,14 @@
 ---
 import '../../styles/style.css';
 import '../../styles/gallery.css';
-const { title, description, image, url = "/" } = Astro.props;
+const { title, description, image, url = import.meta.env.SITE } = Astro.props;
 
 // title = "!title! - goatgirlclover"
 // description = "!desc!"
 // image = "/gallery/img/!filename!.png"
 // url should automatically be converted at build by Astro...
+
+const longImage = url + image; 
 ---
 
 <head>
@@ -14,23 +16,25 @@ const { title, description, image, url = "/" } = Astro.props;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title}</title>
   <script type="text/javascript" src="/assets/scripts/darkmode.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pangolin&display=swap"
-    rel="stylesheet">
+    rel="stylesheet"> -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script is:inline type="text/javascript" src="/assets/scripts/darkmode.js"></script>
+  <script is:inline type="text/javascript" src="/assets/scripts/emoji.js"></script>
 
   <meta property="og:title" content={title}> 
   <meta property="og:description" content={description}> 
   <meta property="og:type" content="website"> 
   <meta property="og:url" content={url}> 
-  <meta property="og:image" content={image}> 
+  <meta property="og:image" content={longImage}> 
   <meta property="og:image:type" content="image/png"> 
   
   <meta name="twitter:title" content={title}> 
   <meta name="twitter:description" content={description}> 
   <meta name="twitter:card" content="summary_large_image"> 
-  <meta name="twitter:image" content={image}> 
+  <meta name="twitter:image" content={longImage}> 
 
   <meta name="viewport" content="width=device-width" />
   <meta name="generator" content={Astro.generator} />

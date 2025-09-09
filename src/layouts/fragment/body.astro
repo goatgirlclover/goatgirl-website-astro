@@ -41,11 +41,8 @@ const { activePage = "home" } = Astro.props;
     </nav>
     <div class="username">@goatgirlclover</div>
     <div class="footer-buttons">
-      <div class="dark-mode-toggle">
-        <input type="checkbox" id="toggleMode" title="dark mode" class="darkModeCheckbox" tabindex="0">
-        <label for="toggleMode" class="darkModeLabel"><img alt="Dark Mode" src="/assets/icons/dark.svg" width="32"></label>
-        <label for="toggleMode" class="lightModeLabel"><img alt="Light Mode" src="/assets/icons/light.svg" width="32"></label>
-      </div>
+      <a class="dark-mode" tabindex="0" href="javascript:toggleDarkMode()" data-aftercontent=": on">dark mode</a>
+      <a class="reduced-motion" tabindex="0" href="javascript:toggleReducedMotion()" data-aftercontent=": off">reduced motion</a>
     </div>
   </footer>
 </body>

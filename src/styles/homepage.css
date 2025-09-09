@@ -94,14 +94,6 @@
   position: relative;
 }
 
-.lastfm-widget small > a, #lastfm-song {
-  color: var(--text-color);
-}
-
-.lastfm-widget small > a:hover {
-  font-weight: 700;
-}
-
 .lastfm-cover {
   height: auto;
   width: 256px;
@@ -127,12 +119,20 @@
 
 .lastfm-widget small, .lastfm-widget small > a {
   font-size: x-small;
-  font-weight: 600;
+  font-weight: 400; 
 }
 
 .lastfm-widget small {
   top: -1.65em;
   position: relative;
+}
+
+.lastfm-widget small > a, #lastfm-song {
+  color: var(--text-color);
+}
+
+.lastfm-widget small > a:hover {
+  font-weight: 500;
 }
 
 #lastfm-status {
@@ -171,6 +171,6 @@ body:not(:has(.darkModeCheckbox:checked)) #lastfm-refresh {
   }
 }
 
-/* :root:has(.darkModeCheckbox:checked) .countdown.unbeatable {
+/* body.light-mode .countdown.unbeatable {
   background-image: url(/assets/unbeatableBannerLight.png); 
 } */

@@ -153,16 +153,17 @@ function getRealEmoji(alt) {
 });
 
 // Actually running the script
-imagemoji.parse(document.body, (icon) => `/assets/mutantstandard/emoji/${icon}.svg`);
-
-const targetNode = document.body;
-const config = { attributes: false, childList: true, subtree: true };
-const callback = (mutationList, observer) => {
+addEventListener("DOMContentLoaded", () => {
     imagemoji.parse(document.body, (icon) => `/assets/mutantstandard/emoji/${icon}.svg`);
-};
-const observer = new MutationObserver(callback);
-observer.observe(targetNode, config);
 
+    const targetNode = document.body;
+    const config = { attributes: false, childList: true, subtree: true };
+    const callback = (mutationList, observer) => {
+        imagemoji.parse(document.body, (icon) => `/assets/mutantstandard/emoji/${icon}.svg`);
+    };
+    const observer = new MutationObserver(callback);
+    observer.observe(targetNode, config);
+});
 
 // Allow copy text with replaced emojis 
 function recursiveSearchForText(node, text = "") {
@@ -181,7 +182,7 @@ function recursiveSearchForText(node, text = "") {
     return text;
 }
 
-document.body.addEventListener('copy', event => {
+addEventListener('copy', event => {
     let selection = document.getSelection(),
         range = selection.getRangeAt(0),
         contents = range.cloneContents(),
