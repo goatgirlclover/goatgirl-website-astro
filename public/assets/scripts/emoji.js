@@ -113,6 +113,8 @@ function getRealEmoji(alt) {
                         E.setAttributeNS(null, "aria-label", getEmojiAltText(g));
                         E.setAttributeNS(null, "hidden", "");
                         E.setAttributeNS(null, "tabindex", "-1");
+
+                        E.appendChild(C);
                         E.appendChild(document.createTextNode(" "));
                         
                         C.onload = function() {
@@ -131,7 +133,7 @@ function getRealEmoji(alt) {
 
                         C.onerror = function() {
                             this.parentNode && this.parentNode.replaceChild(e(this.parentNode.getAttributeNS(null, "data-emoji"), !1), this)
-                        }, r = !0, o.appendChild(E), o.appendChild(C)
+                        }, r = !0, o.appendChild(E)
                     } else o.appendChild(e(g, !1))
                 }
                 r && (p < l.length && o.appendChild(e(l.slice(p), !0)), null == (n = i.parentNode) || n.replaceChild(o, i))

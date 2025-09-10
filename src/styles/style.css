@@ -134,7 +134,7 @@ a:active { color: var(--link-active-color); }
 }
 
 
-main:not(:has(main)) hr { border: none; border-bottom: 3px dashed var(--drop-shadow); }
+main hr { border: none; border-bottom: 3px dashed var(--drop-shadow); }
 
 /* body:not(.hovering-over-text) { cursor: url("/assets/cursor.png") 4 1, auto; }
 .hovering-over-text { cursor: url("/assets/cursor_text.png") 14 11, text; }
@@ -142,15 +142,31 @@ a { cursor: url("/assets/cursor_hover.png") 10 1, pointer; } */
 
 /* EMOJI (Mutant Standard */
 .emoji, .emoji-spacer { 
-  display: inline-block;
-  width: 1em;
   height: auto;
   user-select: text; 
   -webkit-user-select: text; 
 }
 
-.emoji-spacer { overflow: clip !important; text-wrap: nowrap; white-space: nowrap; padding-left: 0.075em; padding-right: 0.075em; }
-.emoji { pointer-events: none; position: absolute; overflow: visible !important; width: 1.15em; margin-left: -1.15em; margin-top: 0.075em; }
+.emoji-spacer { 
+  display: inline; 
+  position: relative; 
+  overflow: visible !important; 
+  text-wrap: nowrap; 
+  white-space: nowrap; 
+  width: 1em; 
+  padding-left: 0.075em; 
+  padding-right: 0.075em; 
+}
+
+.emoji { 
+  display: inline-block; 
+  pointer-events: none; 
+  position: absolute; 
+  overflow: visible !important; 
+  width: 1.15em; 
+  margin-left: -0.075em; 
+  margin-top: 0.075em; 
+}
 
 .emoji::selection {
   background: transparent; /* hide oversized selection highlight, but enable copy */
