@@ -12,7 +12,7 @@ function toggleReducedMotion() {
   document.querySelector("button.reduced-motion").setAttribute("data-aftercontent", usingRM ? ": on" : ": off"); 
 }
 
-document.addEventListener("astro:page-load", () => {
+document.addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem('lightMode') === 'true') { toggleDarkMode(); }
 
   const prefersReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;

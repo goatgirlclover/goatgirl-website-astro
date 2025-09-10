@@ -152,7 +152,7 @@ function getRealEmoji(alt) {
 });
 
 // Actually running the script
-document.addEventListener("astro:page-load", () => {
+document.addEventListener("DOMContentLoaded", () => {
     imagemoji.parse(document.body, (icon) => `/assets/mutantstandard/emoji/${icon}.svg`);
 
     const targetNode = document.body;
