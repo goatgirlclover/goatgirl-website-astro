@@ -436,6 +436,7 @@ body:not(.light-mode) .astro-code span {
 }
 
 #site-header nav .emoji { margin-top: 3px; }
+#site-header nav img { width: 1.15em; position: relative; top: -0.3em; overflow: visible; margin: -0.5em 0; }
 
 /*#site-header > div a:hover { color: var(--inverse-text-color); } */
 
@@ -477,7 +478,7 @@ body:not(.light-mode) .astro-code span {
 #site-footer .username { 
   width: fit-content; 
   margin: 0 auto; 
-  padding-top: 10px;
+  padding-top: 4px;
   font-weight: 500;
   color: var(--light-content-bg); 
 }
@@ -503,19 +504,23 @@ body:not(.light-mode) .astro-code span {
   justify-content: center;
 }
 
-#site-footer .footer-buttons a { 
+#site-footer .footer-buttons button { 
   cursor: pointer; 
   color: white; 
   user-select: none; 
   text-decoration: none;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
 }
 
-#site-footer .footer-buttons a:hover, 
-#site-footer .footer-buttons a:focus { color: var(--clover-pink); }
-#site-footer .footer-buttons a:active { color: black; }
+#site-footer .footer-buttons button:hover, 
+#site-footer .footer-buttons button:focus { color: var(--clover-pink); }
+#site-footer .footer-buttons button:active { color: black; }
 
-#site-footer .footer-buttons a + a { position: relative; margin-left: 1em; }
-#site-footer .footer-buttons a + a:before {
+#site-footer .footer-buttons button + button { position: relative; margin-left: 1em; }
+#site-footer .footer-buttons button + button:before {
   display: inline;
   content: "•";
   color: white;
@@ -524,7 +529,7 @@ body:not(.light-mode) .astro-code span {
 }
 
 
-#site-footer .footer-buttons a:after {
+#site-footer .footer-buttons button:after {
   display: inline;
   content: attr(data-aftercontent);
 }
@@ -721,5 +726,5 @@ body {
 
 body.reduced-motion { 
     background-image: url("/assets/background.png"); 
-    background-position: center;
+    background-position: top center;
   }

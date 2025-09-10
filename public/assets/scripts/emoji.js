@@ -111,7 +111,6 @@ function getRealEmoji(alt) {
                         E.setAttributeNS(null, "data-emoji", getEmojiAltText(g));
                         E.setAttributeNS(null, "title", getEmojiAltText(g));
                         E.setAttributeNS(null, "aria-label", getEmojiAltText(g));
-                        E.setAttributeNS(null, "width", 0);
                         E.setAttributeNS(null, "hidden", "");
                         E.setAttributeNS(null, "tabindex", "-1");
                         E.appendChild(document.createTextNode(" "));
@@ -153,7 +152,7 @@ function getRealEmoji(alt) {
 });
 
 // Actually running the script
-addEventListener("DOMContentLoaded", () => {
+document.addEventListener("astro:page-load", () => {
     imagemoji.parse(document.body, (icon) => `/assets/mutantstandard/emoji/${icon}.svg`);
 
     const targetNode = document.body;
