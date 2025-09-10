@@ -1,13 +1,12 @@
 ---
 import { Image } from 'astro:assets';
 const { activePage = "home" } = Astro.props;
-import { ClientRouter } from "astro:transitions";
 ---
 
 <body>
   <header id="site-header">
     <div>
-      <a href="/" tabindex="0" id="site-logo" transition:persist>
+      <a href="/" tabindex="0" id="site-logo">
         <Image width="512" height="187" alt="goatgirlclover!" src="/assets/img/logo.png">
       </a>
       <div><nav class="header-links"> 
@@ -21,7 +20,7 @@ import { ClientRouter } from "astro:transitions";
 
   <main><slot></slot></main>
 
-  <footer id="site-footer" transition:persist>
+  <footer id="site-footer">
     <nav class="social-icons">
       <a title="Bluesky" class="social-media bsky" target="_blank" rel="noopener"
         href="https://bsky.app/profile/goatgirlclover.bsky.social" tabindex="0">
@@ -47,5 +46,3 @@ import { ClientRouter } from "astro:transitions";
     </div>
   </footer>
 </body>
-
-<ClientRouter />
