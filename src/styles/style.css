@@ -153,10 +153,11 @@ a { cursor: url("/assets/cursor_hover.png") 10 1, pointer; } */
   overflow: visible !important; 
   text-wrap: nowrap; 
   white-space: nowrap; 
-  width: 1em; 
   padding-left: 0.075em; 
   padding-right: 0.075em; 
 }
+
+.emoji-spacer.error { padding: 0 !important; }
 
 .emoji { 
   display: inline-block; 
