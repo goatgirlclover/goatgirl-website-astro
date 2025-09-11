@@ -40,9 +40,10 @@ const { activePage = "home" } = Astro.props;
       </a>
     </nav>
     <div class="username">@goatgirlclover</div>
-    <div class="footer-buttons">
+    <div class="footer-buttons" style="display: none;">
       <button class="dark-mode" tabindex="0" onclick="toggleDarkMode()" data-aftercontent=": on">dark mode</a>
       <button class="reduced-motion" tabindex="0" onclick="toggleReducedMotion()" data-aftercontent=": off">reduced motion</a>
     </div>
+    <script is:inline>document.querySelector("#site-footer .footer-buttons").removeAttribute("style");</script> <!-- only show w/ Javascript -->
   </footer>
 </body>
