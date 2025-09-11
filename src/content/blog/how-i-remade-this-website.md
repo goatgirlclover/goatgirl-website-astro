@@ -1,7 +1,7 @@
 ---
 title: 'how i (re)made this website'
 description: 'a less-outdated explanation of how i revamped my site and migrated to Astro!'
-pubDate: 'Sep 12 2025'
+pubDate: 'Sep 11 2025'
 ---
 
 # damn, it's really been a year?
@@ -50,7 +50,7 @@ Publii in general was a struggle to work with for my site. writing posts themsel
 
 come August 11, after a week away from the site, i decided to look into whether a static site generator would be the answer to my problems. layout templates were very attractive as a concept, as were the prospects of simplifying the gallery generation and potentially replacing Publii for something better suited for my needs. *but* my small-brained self also needed something that wasn't very complicated at all. something that i wouldn't need to learn much new syntax for, something i had a great amount of control over, and something that kept the generated HTML simple and clean. 
 
-there's probably quite a few solutions that would have met my needs. i have seen 11ty and zonelets come up enough times to assume they're pretty popular! but i had been lurking in the Nekoweb Discord server for a bit by then, and [Astro](https://astro.build/) had come up a couple times. there's apparently some sort of plugin that functions similarly to deploy2nekoweb, so that would transfer pretty well. there's a *bit* of terminal work but i'm pretty comfortable with that, and it doesn't seem super involved... oh, [this jbcarreon123 guy](https://jbc.lol/) made a tutorial tailored to beginners using Nekoweb? sweet! maybe this is really worth looking into... oh?? i can drive the whole blog with pure markdown files??? 
+there's probably quite a few solutions that would have met my needs. i have seen 11ty and zonelets come up enough times to assume they're pretty popular! but i had been lurking in the Nekoweb Discord server for a bit by then, and [Astro](https://astro.build/) had come up a couple times. there's apparently [some sort of plugin](https://github.com/indiefellas/astro-adapter-nekoweb) that functions similarly to deploy2nekoweb, so that would transfer pretty well. there's a *bit* of terminal work but i'm pretty comfortable with that, and it doesn't seem super involved... oh, [this jbcarreon123 guy](https://jbc.lol/) made a tutorial tailored to beginners using Nekoweb? sweet! maybe this is really worth looking into... oh?? i can drive the whole blog with pure markdown files??? 
 
 ![friendship ended with publii. now astro is my best friend](/blog/img/friendship_astro.png)
 ***
@@ -106,7 +106,7 @@ i very much enjoy working with Astro! while writing this blog post, i've discove
 
 [^5]: the dream is having this site perfectly functional on both my 3DS and my Vita. being able to improve support for these two while only having to write modern CSS is pretty great!
 
-if somehow this post has convinced YOU 🫵 to consider Astro for your website(s), the aforementioned and extremely useful jb tutorial is a good start, but i also have some suggestions:
+if somehow this post has convinced YOU 🫵 to consider Astro for your website(s), [the twice-aforementioned and extremely useful jb tutorial](https://jbc.lol/tutorials/astro/) is a good start, but i also have some suggestions:
 - consider other options too!!! i picked Astro because it's easy and its structure (usually) makes sense to me, but there may be something out there that you click with better. i've got no recommendations for alternatives though, Astro is all i've ever tried LOL
 - if you want a simple example to look over, [check out my site's repo over on Github!](https://github.com/goatgirlclover/goatgirl-website-astro) feel free to snatch whatever snippets you like :)
 	- some code is modified from others' code, licensed and thereby released through MIT - more info in the repo's license and on [my links page](/links)
@@ -137,4 +137,5 @@ here are some topics that are safe to expect from this blog:
 check out [this blog's RSS feed](/blog/feed.xml) if you wanna keep up with all this! as for the rest of the site, i'm not totally sure. i still want to improve the gallery, but in terms of Content, all i could think of for now is a better about me page, more links to cool things, and showing off my growing plush collection LOL. i'd also like a page explaining my OCs and worlds once i've got all that tied down. i've still got school to worry about, but junk like that will be trinkling in whenever i make the time. i don't think this thing will ever be "done," though - i personally prefer the perpetual state of incompleteness we've had so far! 
 
 that's all i've got to say for now though! take care, dearest reader 👋
+
 \- clover
