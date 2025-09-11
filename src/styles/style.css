@@ -145,6 +145,7 @@ a { cursor: url("/assets/cursor_hover.png") 10 1, pointer; } */
   height: auto;
   user-select: text; 
   -webkit-user-select: text; 
+  text-decoration: none; 
 }
 
 .emoji-spacer { 

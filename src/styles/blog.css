@@ -19,11 +19,18 @@
 }
 
 .blog-info + hr, .blog-content + hr, .blog-toc + hr {
-  border:none; border-bottom: 1.5px dashed var(--text-color) !important; 
+  border:none; border-bottom: 3px dashed var(--text-color) !important; 
 }
 
 .blog-content {
   margin-top: 1.25em;
+}
+
+.blog-content p > img {
+  max-height: 360px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .blog-content hr {
@@ -35,6 +42,10 @@
 .blog-content #footnote-label { visibility: hidden; height: 0; }
 .blog-content .footnotes {
   border-top: 3px dashed var(--drop-shadow); 
+}
+
+.blog-content .footnotes .data-footnote-backref {
+  text-decoration: none;
 }
 
 .blog-footer nav { display: flex; flex-wrap: wrap; }
