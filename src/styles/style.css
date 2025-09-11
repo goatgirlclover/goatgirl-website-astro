@@ -200,6 +200,15 @@ main { /* actual page content */
 
   outline: 4px solid var(--content-border); 
   position: relative;
+
+  transition: margin 0.2s, border-radius 0.2s;
+}
+
+@media (max-width: 480px) {
+  main { 
+    margin: 0 !important;
+    border-radius: 0 !important;
+  }
 }
 
 main > :first-child, main > center > :first-child, 
