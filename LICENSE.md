@@ -11,7 +11,7 @@ the following content is copyrighted to goatgirlclover (me), all rights reserved
 - all files within the gallery/ folder and its subfolders
 - the favicon
 
-all scripts are licensed under MIT unless otherwise specified
+all scripts are licensed+published under MIT unless otherwise specified
 
 ## misc
 - site-gallery.bat and site-gallery-focus.bat are published under MIT (though i'm not sure why you'd want to use them?)
