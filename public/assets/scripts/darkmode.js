@@ -32,10 +32,8 @@ function unfreezeGifs() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  if (localStorage.getItem('lightMode') === 'true') { toggleDarkMode(); }
+if (localStorage.getItem('lightMode') === 'true') { toggleDarkMode(); }
 
-  const prefersReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
-  if (localStorage.getItem('reducedMotion') === null && prefersReduced) { localStorage.setItem('reducedMotion', true);}
-  if (localStorage.getItem('reducedMotion') === 'true') { toggleReducedMotion(); }
-}); 
+const prefersReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
+if (localStorage.getItem('reducedMotion') === null && prefersReduced) { localStorage.setItem('reducedMotion', true);}
+if (localStorage.getItem('reducedMotion') === 'true') { toggleReducedMotion(); }
