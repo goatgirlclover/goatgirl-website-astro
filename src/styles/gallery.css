@@ -52,6 +52,12 @@
   }
 }
 
+@media (prefers-reduced-motion) {
+  :root:not(.full-motion) .gallery-img:hover:not(:focus-visible) {
+    animation: none !important;
+  }
+}
+
 
 /* GALLERY ALIGNMENT */
 

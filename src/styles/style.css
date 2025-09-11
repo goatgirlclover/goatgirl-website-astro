@@ -30,6 +30,13 @@
 :root.reduced-motion #status-goat, :root.reduced-motion #lastfm-refresh { animation: none !important; }
 :root.reduced-motion #site-logo img, :root.reduced-motion .gallery-img { transition: none !important; transform: none !important; }
 
+@media (prefers-reduced-motion) {
+  :root:not(.full-motion) {
+    #status-goat, #lastfm-refresh { animation: none !important; }
+    #site-logo img, gallery-img { transition: none !important; transform: none !important; }
+  }
+}
+
 /* VARIABLES */
 :root {
   --clover-green: #4cb07e;
@@ -754,4 +761,11 @@ body {
 :root.reduced-motion body { 
   background-image: url("/assets/background.png"); 
   background-position: top center;
+}
+
+@media (prefers-reduced-motion) {
+  :root:not(.full-motion) body { 
+    background-image: url("/assets/background.png"); 
+    background-position: top center;
+  }
 }

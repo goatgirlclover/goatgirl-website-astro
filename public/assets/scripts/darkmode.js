@@ -8,7 +8,8 @@ function toggleDarkMode() {
 }
 
 function toggleReducedMotion() {
-  root.classList.toggle("reduced-motion"); // dark mode is default
+  root.classList.toggle("reduced-motion");
+  root.classList.toggle("full-motion"); 
   const usingRM = root.classList.contains("reduced-motion");
   localStorage.setItem('reducedMotion', usingRM);
   document.querySelector("button.reduced-motion").setAttribute("data-aftercontent", usingRM ? ": on" : ": off"); 
@@ -36,6 +37,7 @@ function unfreezeGifs() {
 
 if (localStorage.getItem('lightMode') === 'true') { toggleDarkMode(); }
 
+root.classList.toggle("full-motion");
 const prefersReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
 if (localStorage.getItem('reducedMotion') === null && prefersReduced) { localStorage.setItem('reducedMotion', true);}
 if (localStorage.getItem('reducedMotion') === 'true') { toggleReducedMotion(); }

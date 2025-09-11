@@ -44,6 +44,14 @@
   }
 }
 
+@media (prefers-reduced-motion) {
+  :root:not(.full-motion) {
+    button-holder > img:hover, .button-holder > a:hover, .site-button:hover {
+      animation: none !important;
+    }
+  }
+}
+
 .cool-sites > h1 { margin-bottom: 4px; }
 
 /* LINKS - WEBRING */
