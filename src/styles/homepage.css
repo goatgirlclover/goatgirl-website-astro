@@ -48,7 +48,7 @@
 #status-goat > img {
   width: 100%;
   height: auto;
-  filter: drop-shadow(3px 3px var(--drop-shadow));
+  /*filter: drop-shadow(3px 3px var(--drop-shadow));*/
 }
 
 #status-goat::before {

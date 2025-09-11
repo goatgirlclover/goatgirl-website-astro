@@ -50,7 +50,7 @@ body {
   --content-border-size: 5px;
   --content-margin: 8px;
 
-  --speech-bubble-color: var(--light-content-bg);
+  --speech-bubble-color: color-mix(in hsl, var(--light-content-bg), lightgrey 25%);
 
   --darker-bg-25: color-mix(in hsl, var(--content-background), var(--drop-shadow) 25%);
   --darker-bg-50: color-mix(in hsl, var(--content-background), var(--drop-shadow) 50%);
@@ -325,7 +325,6 @@ body:not(.light-mode) .astro-code span {
   overflow-y: scroll;
   word-break: break-all;
   height: 110px;
-  width: 100%;
   min-height: fit-content;
   min-width: 210px;
 }
@@ -618,30 +617,31 @@ body:not(.light-mode) .astro-code span {
   background-color: var(--speech-bubble-color); 
   border-radius: 20px;
   outline: 3px solid var(--drop-shadow);
-  filter: drop-shadow(3px 3px var(--drop-shadow));
+  margin: 3px;
+  /*filter: drop-shadow(3px 3px var(--drop-shadow)); */
 }
 
 .speech-bubble > p:first-child { margin-top: 0px; }
 .speech-bubble > p:last-child { margin-bottom: 0px; }
 
 .speech-bubble { 
-  margin-bottom: 15px !important; 
+  margin-bottom: 18px !important; 
 }
 
 .speech-bubble.top { 
-  margin-top: 30px !important; 
-  margin-bottom: 0 !important; 
+  margin-top: 33px !important; 
+  margin-bottom: 3px !important; 
 }
 
 .speech-bubble.left { 
-  margin-left: 30px; 
-  margin-bottom: 0 !important; 
+  margin-left: 33px; 
+  margin-bottom: 3px !important; 
   min-height: 25px;
 }
 
 .speech-bubble.right { 
-  margin-right: 30px; 
-  margin-bottom: 0 !important; 
+  margin-right: 33px; 
+  margin-bottom: 3px !important; 
   min-height: 25px;
 }
 
@@ -654,14 +654,14 @@ body:not(.light-mode) .astro-code span {
   border-color: var(--speech-bubble-color) transparent;
 
   top: auto;
-  bottom: -20px;
+  bottom: -19px;
   right: 40px; 
   left: auto;
   border-width: 20px 20px 0;
 }
 
 .speech-bubble.top::after {
-  top: -20px; 
+  top: -19px; 
   bottom: auto;
   right: 40px; /* controls horizontal position */
   left: auto;
@@ -671,7 +671,7 @@ body:not(.light-mode) .astro-code span {
 .speech-bubble.left::after {
   top: 50%; /* controls vertical position */
   transform: translateY(-50%);
-  left: -29px; 
+  left: -28px; 
   right: auto;
   bottom: auto;
   border-width: 15px 30px 15px 0;
@@ -681,7 +681,7 @@ body:not(.light-mode) .astro-code span {
 .speech-bubble.right::after {
   top: 50%; /* controls vertical position */
   transform: translateY(-50%);
-  right: -29px; 
+  right: -28px; 
   left: auto;
   bottom: auto;
   border-width: 15px 0 15px 30px;

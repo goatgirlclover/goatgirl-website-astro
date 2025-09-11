@@ -6,6 +6,8 @@ const song = document.getElementById('lastfm-song');
 const image = document.querySelector('#lastfm-section .lastfm-cover');
 const refresh = document.getElementById('lastfm-refresh');
 
+const fallbackCover = "https://lastfm.freetls.fastly.net/i/u/300x300/c6f59c1e5e7240a4c0d427abd71f3dbb.jpg";
+
 fetchLastFM();
 refresh.style.animation = "none";
 
@@ -20,9 +22,13 @@ function fetchLastFM() {
   refresh.style.animation = "none";
   refresh.offsetHeight;
   refresh.style.animation = "spin 1s ease 1";
+  
   music_status.textContent = "loading...";
   song.textContent = "";
-  image.src = "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png";
+  
+  image.src = fallbackCover;
+  image.setAttribute("title", "album cover: not loaded!");
+  image.setAttribute("alt", "album cover: not loaded!");
 
   fetch('https://lastfm-last-played.biancarosa.com.br/scoop9/latest-song')
     .then(response => {
@@ -51,9 +57,14 @@ function fetchLastFM() {
         song.href = track.url;
         song.target = "_blank";
 
-        image.src = track.image[3]['#text'] || 'https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png';
-        image.setAttribute("title", song.textContent);
-        image.setAttribute("alt", song.textContent);
+        image.src = track.image[3]['#text'] || fallbackCover;
+        
+        const album = track.album['#text'];
+        const alt = album && album.length > 0 
+                    ? (image.src === fallbackCover ? "" : "album art for ") + album + " by " + track.artist['#text']
+                    : "cover for " + song.textContent;
+        image.setAttribute("title", alt);
+        image.setAttribute("alt", alt);
       }
     });
 }

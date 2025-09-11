@@ -5,20 +5,19 @@ pubDate: 'Sep 18 2024'
 updatedDate: 'Aug 1 2025'
 ---
 
-**note:** this blog post is pretty old!!! i wrote it when this site was still on neocities and had next to no javascript!!! i plan to rewrite it soon with updated info and a more tutorial-like direction. whenever i get around to that, it'll be linked here!
+**note:** this blog post is pretty old!!! i first wrote it when this site was still on neocities and had next to no javascript!!! [check out this more recent post about my site here!](/blog/post/how-i-remade-this-website/)
 
 * * *
 
-hello! i am clover of goatgirlclover on goatgirl dot neocities nekoweb dot com!! sometimes i draw furries, sometimes i play/mod/make think about making video games, and sometimes i dedicate absurd amounts of time to random projects such as this website right here! 
+hello! i am clover of goatgirlclover on goatgirl dot neocities dot com!! sometimes i draw furries, sometimes i play/mod/make think about making video games, and sometimes i dedicate absurd amounts of time to random projects such as this website right here! 
 
 this site has a blog with zero (real) posts as of writing! i wanted to get a post in there, and i wanted to talk about all the junk i did to get this working, so i'm going to do both! maybe someone out there would find all this interesting but really i just want an excuse to talk about the cursed batch scripts i wrote for this thing :3 
 
 * * *
 
-for starters, this website is hosted for free by Neocities Nekoweb (if you couldn't tell by the URL)! i also used these tools/resources - i talk about some of them a bit more further on:
+for starters, this website is hosted for free by Neocities (if you couldn't tell by the URL)! i also used these tools/resources - i talk about some of them a bit more further on:
 
 *   [the Neocities CLI](https://neocities.org/cli) for easy upload from local files straight to the site
-    *   edit 7/31/2025: nowadays i use [deploy2nekoweb](https://deploy.nekoweb.org/)!
 *   [Publii](https://getpublii.com) for the blog section
 *   [ImageMagick](https://imagemagick.org/index.php) on Windows for local image/thumbnail handling
 *   [32bit.cafe](https://32bit.cafe), mostly as inspiration to finally make this thing
