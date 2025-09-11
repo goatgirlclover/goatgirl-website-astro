@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.12",
-    "astro": "^5.12.9",
+    "astro": "^5.13.7",
     "astro-generic-build-filenames": "^0.4.0",
     "markdown-it": "^14.1.0",
     "postcss-calc": "^10.1.1",
