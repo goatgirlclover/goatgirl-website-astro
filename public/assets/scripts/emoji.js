@@ -96,7 +96,7 @@ function getRealEmoji(alt) {
                     var g = s[0],
                         m = b(g),
                         v = f(m);
-                    if (p = h + g.length, m && v) {
+                    if (p = h + g.length, m && v && !i.parentNode.classList.contains("error")) {
                         var C = document.createElement("object");
 
                         C.setAttributeNS(null, "class", "emoji");
@@ -131,9 +131,7 @@ function getRealEmoji(alt) {
                             this.setAttributeNS(null, "style", "transform: scale(4);")
                         }
 
-                        C.onerror = function() {
-                            this.parentNode && this.parentNode.replaceChild(e(this.parentNode.getAttributeNS(null, "data-emoji"), !1), this)
-                        }, r = !0, o.appendChild(E)
+                        C.onerror = function() { this.parentNode.classList.toggle("error"); this.parentNode.innerHTML = this.parentNode.getAttribute("data-emoji"); }, r = !0, o.appendChild(E)
                     } else o.appendChild(e(g, !1))
                 }
                 r && (p < l.length && o.appendChild(e(l.slice(p), !0)), null == (n = i.parentNode) || n.replaceChild(o, i))
