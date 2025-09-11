@@ -46,7 +46,7 @@
     }
 }
 
-body.reduced-motion {
+:root.reduced-motion {
   .gallery-img:hover:not(:focus-visible) {
     animation: none !important;
   }

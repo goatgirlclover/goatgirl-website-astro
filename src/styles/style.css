@@ -27,11 +27,11 @@
   100% { transform:rotate(360deg); } 
 }
 
-body.reduced-motion #status-goat, body.reduced-motion #lastfm-refresh { animation: none !important; }
-body.reduced-motion #site-logo img, body.reduced-motion .gallery-img { transition: none !important; transform: none !important; }
+:root.reduced-motion #status-goat, :root.reduced-motion #lastfm-refresh { animation: none !important; }
+:root.reduced-motion #site-logo img, :root.reduced-motion .gallery-img { transition: none !important; transform: none !important; }
 
 /* VARIABLES */
-body {
+:root {
   --clover-green: #4cb07e;
   --clover-pink: #e5347d; /* old, softer color: #ed93c7; */
 
@@ -65,7 +65,7 @@ body {
   --darker-pink-75: color-mix(in hsl, var(--clover-pink), #460d0d 30%);
 }
 
-body { /* dark mode values (default) */
+:root { /* dark mode values (default) */
   --background: var(--dark-bg);
   --content-background: var(--dark-content-bg);
   --text-color: var(--dark-text);
@@ -77,7 +77,7 @@ body { /* dark mode values (default) */
   --scrollbar-color: lightgrey;
 }
 
-body.light-mode { /* light mode values */
+:root.light-mode { /* light mode values */
   --content-background: var(--light-content-bg);
   --text-color: var(--light-text);
   
@@ -88,7 +88,7 @@ body.light-mode { /* light mode values */
   --scrollbar-color: grey; 
 }
 
-body {
+:root {
   --link-color: #20b2aa; 
   --link-hover-color: #00ced1;
   --link-active-color: white;
@@ -96,7 +96,7 @@ body {
   --link-visited-hover: hotpink; 
 }
 
-body.light-mode, .speech-bubble {
+:root.light-mode, .speech-bubble {
   --link-color: #005875; 
   --link-hover-color: #002d88;
   --link-active-color: black;
@@ -118,7 +118,7 @@ a:hover, a:focus { color: var(--link-hover-color); }
 a:visited:hover, a:visited:focus { color: var(--link-visited-hover); }
 a:active { color: var(--link-active-color); }  
 
-@supports (mask-image: url()) and selector(:has(a,b)) {
+@supports (mask-image: url()) and (selector(:has(a,b))) {
   main a[target="_blank"]:not(:has(img,div))::after {
     display: inline;
     content: '';
@@ -295,8 +295,8 @@ textarea {
   background-color: var(--darker-bg-50) !important;
 }
 
-body:not(.light-mode) .astro-code, 
-body:not(.light-mode) .astro-code span {
+:root:not(.light-mode) .astro-code, 
+:root:not(.light-mode) .astro-code span {
   color: var(--shiki-dark) !important;
 }
 
@@ -749,7 +749,7 @@ body {
   background-position: 0 0;
 }
 
-body.reduced-motion { 
+:root.reduced-motion body { 
   background-image: url("/assets/background.png"); 
   background-position: top center;
 }

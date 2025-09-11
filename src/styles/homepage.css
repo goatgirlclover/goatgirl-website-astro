@@ -147,7 +147,7 @@
   -webkit-user-select: none;
 }
 
-body:not(:has(.darkModeCheckbox:checked)) #lastfm-refresh { 
+:root:not(:has(.darkModeCheckbox:checked)) #lastfm-refresh { 
   filter: invert(1); 
 }
 
@@ -171,6 +171,6 @@ body:not(:has(.darkModeCheckbox:checked)) #lastfm-refresh {
   }
 }
 
-/* body.light-mode .countdown.unbeatable {
+/* :root.light-mode .countdown.unbeatable {
   background-image: url(/assets/unbeatableBannerLight.png); 
 } */

@@ -1,13 +1,15 @@
+const root = document.querySelector(':root');
+
 function toggleDarkMode() {
-  document.body.classList.toggle("light-mode"); // dark mode is default
-  const usingLightMode = document.body.classList.contains("light-mode");
+  root.classList.toggle("light-mode"); // dark mode is default
+  const usingLightMode = root.classList.contains("light-mode");
   localStorage.setItem('lightMode', usingLightMode);
   document.querySelector("button.dark-mode").setAttribute("data-aftercontent", usingLightMode ? ": off" : ": on"); 
 }
 
 function toggleReducedMotion() {
-  document.body.classList.toggle("reduced-motion"); // dark mode is default
-  const usingRM = document.body.classList.contains("reduced-motion");
+  root.classList.toggle("reduced-motion"); // dark mode is default
+  const usingRM = root.classList.contains("reduced-motion");
   localStorage.setItem('reducedMotion', usingRM);
   document.querySelector("button.reduced-motion").setAttribute("data-aftercontent", usingRM ? ": on" : ": off"); 
   

@@ -38,7 +38,7 @@
     }
 }
 
-body.reduced-motion {
+:root.reduced-motion {
   .button-holder > img:hover, .button-holder > a:hover, .site-button:hover {
     animation: none !important;
   }
