@@ -28,14 +28,75 @@
 }
 
 :root.reduced-motion #status-goat, :root.reduced-motion #lastfm-refresh { animation: none !important; }
-:root.reduced-motion #site-logo img, :root.reduced-motion .gallery-img { transition: none !important; transform: none !important; }
+:root.reduced-motion #site-logo img, :root.reduced-motion .gallery-img, :root.reduced-motion .data-entry .data-icon img { transition: none !important; transform: none !important; }
+:root.reduced-motion .data-entry .data-icon::after { display: none !important; }
 
 @media (prefers-reduced-motion) {
   :root:not(.full-motion) {
     #status-goat, #lastfm-refresh { animation: none !important; }
-    #site-logo img, gallery-img { transition: none !important; transform: none !important; }
+    #site-logo img, gallery-img, .data-entry .data-icon img { transition: none !important; transform: none !important; }
+    .data-entry .data-icon::after { display: none !important; }
   }
 }
+
+/* ANIMATIONS - MARCHING SQUARES */
+.marching-squares, 
+.gallery-img:hover:not(:focus-visible),
+.data-entry .data-icon img {
+  background: linear-gradient(90deg, white 50%, transparent 50%), 
+              linear-gradient(90deg, white 50%, transparent 50%), 
+              linear-gradient(0deg, white 50%, transparent 50%), 
+              linear-gradient(0deg, white 50%, transparent 50%);
+  background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+  background-size: 8px 2px, 8px 2px, 2px 8px, 2px 8px;
+  background-position: 0 0, 0 100%, 0 0, 100% 0;
+  animation: dash-marching 0.5s linear infinite;
+
+}
+
+.marching-squares.thin,
+.button-holder > img:hover, .button-holder > a:hover, .site-button:hover {
+  background: linear-gradient(90deg, white 50%, transparent 50%), 
+              linear-gradient(90deg, white 50%, transparent 50%), 
+              linear-gradient(0deg, white 50%, transparent 50%), 
+              linear-gradient(0deg, white 50%, transparent 50%);
+  background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+  background-size: 4px 1px, 4px 1px, 1px 4px, 1px 4px;
+  background-position: 0 0, 0 100%, 0 0, 100% 0;
+  
+  animation: dash-marching-small 0.5s linear infinite;
+}
+
+@keyframes dash-marching {
+    100% {
+        background-position: 8px 0, -8px 100%, 0 -8px, 100% 8px;
+    }
+}
+
+@keyframes dash-marching-small {
+    100% {
+        background-position: 4px 0, -4px 100%, 0 -4px, 100% 4px;
+    }
+}
+
+:root.reduced-motion {
+  .gallery-img:hover:not(:focus-visible),
+  .button-holder > img:hover, .button-holder > a:hover, .site-button:hover,
+  .data-entry .data-icon img {
+    animation: none !important;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  :root:not(.full-motion) {
+    .gallery-img:hover:not(:focus-visible),
+    button-holder > img:hover, .button-holder > a:hover, .site-button:hover,
+    .data-entry .data-icon img {
+      animation: none !important;
+    }
+  }
+}
+
 
 /* VARIABLES */
 :root {

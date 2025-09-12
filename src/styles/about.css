@@ -1,0 +1,98 @@
+.data-entry {
+  --data-entry-bg-1: rgb(30, 29, 97);
+  --data-entry-bg-2: rgb(14, 14, 77);
+  background: repeating-linear-gradient(
+    var( --data-entry-bg-1), var( --data-entry-bg-1) 10px,
+    var( --data-entry-bg-2) 10px, var( --data-entry-bg-2) 20px
+  );
+  animation: scrollbg 30s linear infinite;
+  padding: 20px;
+  position: relative;
+  border: 3px solid var(--drop-shadow);
+  background-size: 200% 200%;
+  overflow: visible;
+}
+
+@keyframes scrollbg {
+  0% {background-position: 0 0;}
+  100% { background-position: 0 100%; }
+}
+
+:root.reduced-motion .data-entry { animation: none !important; }
+@media (prefers-reduced-motion) {
+  :root:not(.full-motion) {
+    :root.reduced-motion .data-entry { animation: none !important; }
+  }
+}
+
+:root.light-mode .data-entry {
+  --data-entry-bg-1: rgb(203, 201, 250);
+  --data-entry-bg-2: rgb(189, 189, 242);
+}
+
+:root:not(.light-mode) .data-entry {
+  text-shadow: 1px 1px black;
+}
+
+.data-entry .flex-sections { overflow: visible; }
+
+.data-entry::after {
+  content: "// DATA-ENTRY";
+  position: absolute;
+  right: 12px;
+  top: 4px;
+  font-size: 1.1em;
+  color: var(--inverse-text-color);
+  opacity: 0.5;
+  text-shadow: none;
+}
+
+.data-entry .data-icon { 
+  overflow: visible; 
+  position: relative; 
+  width: 196px; 
+  height: 196px; 
+  flex: 0 1 0;
+}
+
+.data-entry .data-icon img {
+  position: relative;
+  transition: transform 0.8s ease-in-out, z-index 0.8s ease-in-out;
+  transform: scaleX(1);
+  z-index: 100;
+  padding: 2px;
+  filter: drop-shadow(0 0 5px black);
+  /* marching-squares set elsewhere */
+}
+
+.data-entry .data-icon::after {
+  content: '';
+  background-image: url("/assets/img/aboutme2.png");
+  background-size: 100%;
+  display: block;
+  width: 192px;
+  height: 192px;
+  position: absolute; 
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+
+  transition: transform 0.8s ease-in-out, z-index 0.8s ease-in-out;
+  transform: scaleX(-1); 
+  z-index: 0;
+  margin-left: 2px; margin-top: 2px;
+}
+
+.data-entry .data-icon:hover img {
+  transform: scaleX(-1); 
+  z-index: 0;
+}
+
+.data-entry .data-icon:hover::after {
+  transform: scaleX(1); 
+  z-index: 100;
+}
+
+
+.data-entry .intro-text { flex-basis: 30em; }
+.data-entry .intro-text img { width: 1.15em; position: relative; top: -0.45em; overflow: visible; margin: -0.5em 0; }
+.data-entry .intro-text img + img { left: -0.5em; top: -0.15em; }
