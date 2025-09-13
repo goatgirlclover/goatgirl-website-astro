@@ -66,8 +66,9 @@
 }
 
 #gallery-focus .art img { 
-  height: unset;
-  width: unset;
+  height: auto;
+  width: auto;
+  max-height: 100%;
   max-height: calc(100vh - 50px);
   max-width: 100%; 
   object-fit: cover; 

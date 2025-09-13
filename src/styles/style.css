@@ -266,7 +266,7 @@ main { /* actual page content */
   margin: 0 var(--content-margin); 
   background-color: var(--content-background);
   border-radius: 20px;
-  overflow: clip;
+  overflow: visible;
 
   outline: 4px solid var(--content-border); 
   position: relative;
@@ -459,7 +459,7 @@ textarea {
 }
 
 #site-header > div > div {
-  overflow: clip;
+  overflow: hidden;
   border-radius: 25px; 
   margin: 4px auto 12px; 
   max-width: 800px;
