@@ -8,4 +8,8 @@ const { title = "goatgirlclover", activePage = "home", description = undefined, 
 <Head title={title} description={description} ogType={ogType} pubDate={pubDate} updatedDate={updatedDate}></Head>
 <Body activePage={activePage}><slot></slot></Body>
 <script is:inline type="text/javascript" src="/assets/scripts/darkmode.js"></script>
+<script is:inline type="text/javascript">
+    const prefersReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
+    if (localStorage.getItem('reducedMotion') === null && prefersReduced) { localStorage.setItem('reducedMotion', true); toggleReducedMotion(); }
+</script>
 </html>

@@ -242,6 +242,28 @@ a { cursor: url("/assets/cursor_hover.png") 10 1, pointer; } */
   background: transparent; /* hide oversized selection highlight, but enable copy */
 }
 
+/* PAGE SECTIONS */ 
+.flex-sections {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  width: 100%;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.flex-sections:first-child { margin-top: 0 !important; }
+.flex-sections:last-child { margin-bottom: 0 !important; }
+
+/* default - force half and half */
+.flex-sections > section {
+  flex: 1 1 0;
+}
+
+.flex-sections:has(.links), .flex-sections:has(> .shareable) {
+  overflow: visible;
+}
+
 /* CONTAINER FORMATTING */
 body {
   color: var(--text-color);
@@ -274,10 +296,15 @@ main { /* actual page content */
   transition: margin 0.2s, border-radius 0.2s;
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
   main { 
     margin: 0 !important;
     border-radius: 0 !important;
+  }
+  
+  .flex-sections > * + * { margin-top: 20px; }
+  @supports (flex-wrap: wrap) and (gap: 20px) {
+    .flex-sections > * + * { margin-top: unset; }
   }
 }
 
@@ -378,7 +405,7 @@ textarea {
   border: 3px solid var(--drop-shadow);
   border-radius: 10px;
   
-  min-width: 15em;
+  flex: 1 0 15em !important;
   max-height: 20em;
   background-color: var(--darker-bg-25);
 }
@@ -425,28 +452,6 @@ textarea {
     scrollbar-color: var(--scrollbar-color) var(--drop-shadow);
   } 
 } */
-
-/* PAGE SECTIONS */ 
-.flex-sections {
-  display: flex;
-  flex-wrap: wrap;
-  overflow-x: auto;
-  width: 100%;
-  gap: 20px;
-  margin: 20px 0;
-}
-
-.flex-sections:first-child { margin-top: 0 !important; }
-.flex-sections:last-child { margin-bottom: 0 !important; }
-
-/* default - force half and half */
-.flex-sections > section {
-  flex: 1 1 0;
-}
-
-.flex-sections:has(.links), .flex-sections:has(> .shareable) {
-  overflow: visible;
-}
 
 /* HEADER */
 #site-header { 
@@ -512,6 +517,7 @@ textarea {
 }
 
 #site-header nav a { 
+  display: block;
   color: var(--text-color) !important;
   padding: 3px 4px;
   flex: 1 0 100px;
@@ -530,7 +536,7 @@ textarea {
 }
 
 #site-header nav .emoji { margin-top: 3px; }
-#site-header nav img { width: 1.15em; position: relative; top: -0.3em; overflow: visible; margin: -0.5em 0; }
+#site-header nav img { width: 1.15em; height: 1.15em; position: relative; top: -0.3em; overflow: visible; margin: -0.5em 0; }
 
 /*#site-header > div a:hover { color: var(--inverse-text-color); } */
 
@@ -579,10 +585,12 @@ textarea {
 
 #site-footer .social-icons {
   display: flex; 
+  min-height: 48px;
   flex-wrap: wrap;
   justify-content: center;
+  text-align: center;
   gap: 12px;
-  width: fit-content;
+  width: auto;
   margin: 0 auto;
 }
 

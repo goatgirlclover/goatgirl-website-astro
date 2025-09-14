@@ -1,18 +1,25 @@
-const root = document.querySelector(':root');
+function toggleClass(element, className) { // better support for old old browsers
+    var currentClasses = ' ' + element.className + ' ';
+    if (currentClasses.indexOf(' ' + className + ' ') > -1) {
+        element.className = currentClasses.replace(' ' + className + ' ', ' ').trim();
+    } else {
+        element.className += (element.className ? ' ' : '') + className;
+    }
+}
 
 function toggleDarkMode() {
-  root.classList.toggle("light-mode"); // dark mode is default
-  const usingLightMode = root.classList.contains("light-mode");
-  localStorage.setItem('lightMode', usingLightMode);
+  toggleClass(document.documentElement, "light-mode"); // dark mode is default
+  const usingLightMode = document.documentElement.className.indexOf("light-mode") > -1;
   document.querySelector("button.dark-mode").setAttribute("data-aftercontent", usingLightMode ? ": off" : ": on"); 
+  localStorage.setItem('lightMode', usingLightMode);
 }
 
 function toggleReducedMotion() {
-  root.classList.toggle("reduced-motion");
-  root.classList.toggle("full-motion"); 
-  const usingRM = root.classList.contains("reduced-motion");
-  localStorage.setItem('reducedMotion', usingRM);
+  toggleClass(document.documentElement, "reduced-motion");
+  toggleClass(document.documentElement, "full-motion"); 
+  const usingRM = document.documentElement.className.indexOf("reduced-motion") > -1;
   document.querySelector("button.reduced-motion").setAttribute("data-aftercontent", usingRM ? ": on" : ": off"); 
+  localStorage.setItem('reducedMotion', usingRM);
   
   if (usingRM) { freezeGifs(); } else { unfreezeGifs(); }
 }
@@ -36,8 +43,7 @@ function unfreezeGifs() {
 }
 
 if (localStorage.getItem('lightMode') === 'true') { toggleDarkMode(); }
-
-root.classList.toggle("full-motion");
-const prefersReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
-if (localStorage.getItem('reducedMotion') === null && prefersReduced) { localStorage.setItem('reducedMotion', true);}
+toggleClass(document.documentElement, "full-motion");
 if (localStorage.getItem('reducedMotion') === 'true') { toggleReducedMotion(); }
+
+if (navigator.userAgent.indexOf("Nintendo 3DS") !== -1 && (localStorage.getItem('reducedMotion') === null)) { toggleReducedMotion(); } 

@@ -12,6 +12,7 @@ module.exports = {
         'flexbox': 'no-2009',
       }
     }),
-    require('postcss-calc')
+    require('postcss-calc'),
+    require('@csstools/postcss-color-mix-function')
   ],
 }
