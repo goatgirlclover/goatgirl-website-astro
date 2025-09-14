@@ -5,7 +5,7 @@
     var( --data-entry-bg-1), var( --data-entry-bg-1) 10px,
     var( --data-entry-bg-2) 10px, var( --data-entry-bg-2) 20px
   );
-  animation: scrollbg 30s linear infinite;
+  animation: scrolldatabg 1.5s linear infinite;
   padding: 20px;
   position: relative;
   border: 3px solid var(--drop-shadow);
@@ -13,9 +13,9 @@
   overflow: visible;
 }
 
-@keyframes scrollbg {
+@keyframes scrolldatabg {
   0% {background-position: 0 0;}
-  100% { background-position: 0 100%; }
+  100% { background-position: 0 -20px; }
 }
 
 :root.reduced-motion .data-entry { animation: none !important; }
