@@ -47,7 +47,7 @@
   text-shadow: none;
 }
 
-.data-entry .data-icon { 
+.data-entry .data-icon, .data-entry .data-icon-wrapper { 
   overflow: visible; 
   position: relative; 
   width: 196px; 
@@ -55,14 +55,16 @@
   flex: 0 1 0;
 }
 
+.data-entry .data-icon-wrapper {
+  filter: drop-shadow(0 0 5px black);
+}
+
 .data-entry .data-icon img {
   position: relative;
-  transition: transform 0.8s ease-in-out, z-index 0.8s ease-in-out;
+  transition: z-index 0.8s ease-in-out;
   transform: scaleX(1);
   z-index: 100;
   padding: 2px;
-  filter: drop-shadow(0 0 5px black);
-  /* marching-squares set elsewhere */
 }
 
 .data-entry .data-icon::after {
@@ -76,22 +78,49 @@
   top: 0; left: 0; right: 0; bottom: 0;
   pointer-events: none;
 
-  transition: transform 0.8s ease-in-out, z-index 0.8s ease-in-out;
+  transition: z-index 0.8s ease-in-out;
   transform: scaleX(-1); 
   z-index: 0;
   margin-left: 2px; margin-top: 2px;
 }
 
-.data-entry .data-icon:hover img {
-  transform: scaleX(-1); 
-  z-index: 0;
-}
+.data-entry .data-icon { transition: transform 0.8s ease-in-out; }
+.data-entry .data-icon-wrapper:hover .data-icon { transform: scaleX(-1); }
+.data-entry .data-icon-wrapper:hover .data-icon img { z-index: 0; }
+.data-entry .data-icon-wrapper:hover .data-icon::after { z-index: 100; }
 
-.data-entry .data-icon:hover::after {
-  transform: scaleX(1); 
-  z-index: 100;
-}
+@supports (transform: rotateY(180deg)) {
+  .data-entry .data-icon img { transform: rotateY(0deg) translateZ(2.5px); }
+  .data-entry .data-icon::after { transform: rotateY(-180deg) translateZ(2.5px); }
+  .data-entry .data-icon img, .data-entry .data-icon::after {
+    transition: none !important;
+    z-index: auto !important;
+  }
 
+  .data-entry .data-icon::before {
+    content: '';
+    display: block;
+    position: absolute; 
+    top: 2px; left: 0; right: 0; bottom: 2px;
+    pointer-events: none;
+
+    width: 5px;
+    background-color: white;
+    transform-origin: left;
+    backface-visibility: hidden;
+    
+    transition: transform 0.8s linear;
+    transform: translateZ(-2.5px) translateX(2px) rotateY(-90deg);
+  }
+  
+  .data-entry .data-icon { 
+    transform-style: preserve-3d; 
+    transition: transform 0.8s linear;
+  }
+  
+  .data-entry .data-icon-wrapper { perspective: 1000px; }
+  .data-entry .data-icon-wrapper:hover .data-icon { transform: rotateY(180deg); }
+} 
 
 .data-entry .intro-text { flex-basis: 30em; }
 .data-entry .intro-text img { width: 1.15em; position: relative; top: -0.45em; overflow: visible; margin: -0.5em 0; }
