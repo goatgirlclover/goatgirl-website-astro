@@ -4,6 +4,7 @@ dist/
 # generated types
 .astro/
 .build-temp/
+build.zip
 
 # dependencies
 node_modules/
