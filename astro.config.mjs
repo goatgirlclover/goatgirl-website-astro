@@ -3,6 +3,7 @@ import { defineConfig, passthroughImageService } from "astro/config";
 
 import genericBuildFilenames from "astro-generic-build-filenames";
 import { rehypeExternalLinks } from './src/plugins/rehype-external-links.ts';
+import rehypeAstroRelativeMarkdownLinks from 'astro-rehype-relative-markdown-links';
 
 import { loadEnv } from "vite";
 import nekoweb from '@indiefellas/astro-adapter-nekoweb';
@@ -18,7 +19,7 @@ export default defineConfig({
   integrations: [genericBuildFilenames()],
 
   markdown: {
-    rehypePlugins: [rehypeExternalLinks],
+    rehypePlugins: [rehypeExternalLinks, rehypeAstroRelativeMarkdownLinks],
     
     shikiConfig: {
       themes: {
