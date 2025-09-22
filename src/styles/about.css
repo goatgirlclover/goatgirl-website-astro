@@ -53,6 +53,7 @@
   width: 196px; 
   height: 196px; 
   flex: 0 1 0;
+  flex-basis: 216px;
 }
 
 .data-entry .data-icon-wrapper {

@@ -1,3 +1,4 @@
+- 2025-9-22 - improved PS Vita browser compatibility!
 - 2025-9-21 - added RSS feed that copies over the site changelog! links don't work since it's plaintext though :/
 - 2025-9-13 - improved (New) 3DS browser compatibility! :D
 - 2025-9-12 - finally added a proper introduction in [my about-me page!](/about/)
@@ -8,6 +9,6 @@
 - 2025-8-11 - finally added full alt text for [the gallery!!](/gallery/)
 - 2025-8-10 - [EVEN MORE BUTTONS](/links/) - added links to some of them. also improved the Mutant Standard emoji replacement script!
 - 2025-8-2 - added [chao garden webring](https://knoxstation.neocities.org/chaogarden) in links!
-- 2025-8-1 - new site button - added a buncha buttons in [the links page!!](/links/)
-- 2025-7-31 - major site update!!! 2025 gallery - about page - WAY BETTER homepage - migrated to nekoweb! :DD
+- 2025-8-1 - new site button + added a buncha buttons in [the links page!!](/links/)
+- 2025-7-31 - major site update!!! 2025 gallery + about page + WAY BETTER homepage + migrated to nekoweb! :DD
 - 2024-9-15 - the first version of this site was uploaded to neocities... beyond the gallery, there wasn't much to see! [here's a pic of the old homepage](/assets/img/sitev1.png)

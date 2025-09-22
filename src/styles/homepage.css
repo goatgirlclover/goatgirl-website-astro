@@ -1,7 +1,7 @@
 /* HOMEPAGE */
 .flex-sections .homepage-main {
   flex-basis: 30em !important;
-  flex-grow: 4 !important;
+  flex-grow: 99 !important;
 }
 
 /* HOMEPAGE - STATUS.CAFE */

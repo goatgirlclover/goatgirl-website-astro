@@ -13,13 +13,23 @@
   max-width: 256px;
   min-width: 96px;
   box-sizing: content-box;
-  overflow: clip;
+  overflow: hidden;
 }
 
-.gallery-img img {
-  height: 100%;
-  width: 100%;
+.gallery-img img { 
+  width: auto;
+  height: auto;
+  max-height: 100%;
 }
+
+@supports (object-fit: cover) {
+  .gallery-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; 
+  }
+}
+
   
 /* GALLERY ANIMATIONS */
 .gallery-img { transition: transform 0.2s ease, box-shadow 0.2s ease; }
