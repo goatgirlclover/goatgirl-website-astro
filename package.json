@@ -11,7 +11,7 @@
   "dependencies": {
     "@astrojs/rss": "^4.0.12",
     "@indiefellas/astro-adapter-nekoweb": "^3.7.1",
-    "astro": "^5.13.7",
+    "astro": "^5.14.4",
     "astro-generic-build-filenames": "^0.4.0",
     "astro-rehype-relative-markdown-links": "^0.18.1",
     "markdown-it": "^14.1.0",
