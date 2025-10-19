@@ -14,8 +14,12 @@
        url('../fonts/pangolin-v12-latin_latin-ext-regular.svg#Pangolin') format('svg'); /* Legacy iOS */
 }
 
-
 /* ANIMATIONS */
+@keyframes highlight-pulse {
+  0%, 20% { background-color: rgba(255, 240, 0, 0.5); }
+  100% { background-color: transparent; }
+}
+
 @keyframes bounce {
     0% { transform:translateY(0%); }
     30% { transform:translateY(-1.5%); }
@@ -97,6 +101,10 @@
   }
 }
 
+/* ANIMATION - HIGHLIGHT */
+.highlight-animation {
+  animation: highlight-pulse 1s ease 1;
+}
 
 /* VARIABLES */
 :root {
@@ -186,6 +194,8 @@ a:hover, a:focus { color: var(--link-hover-color); }
 a:visited:hover, a:visited:focus { color: var(--link-visited-hover); }
 a:active { color: var(--link-active-color); }  
 
+img { max-width: 100%; max-height: 100%; }
+
 @supports (mask-image: url()) and (selector(:has(a,b))) {
   main a[target="_blank"]:not(:has(img,div))::after {
     display: inline;
@@ -200,7 +210,6 @@ a:active { color: var(--link-active-color); }
     mask-size: 1em 1em;
   }
 }
-
 
 main hr { border: none; border-bottom: 3px dashed var(--drop-shadow); }
 
@@ -287,7 +296,7 @@ main { /* actual page content */
   padding-top: calc(var(--content-padding) - 2px);
   margin: 0 var(--content-margin); 
   background-color: var(--content-background);
-  border-radius: 20px;
+  border-radius: 32px;
   overflow: visible;
 
   border: 4px solid var(--content-border); 
@@ -377,6 +386,12 @@ details:open > div > :first-child {
 details > summary > h1, details > summary > h2 { display: list-item; }
 details > summary > * { margin: auto 0; }
 details > summary > *:not(:last-child) { margin-right: 0.25em; }
+
+details > summary:has(> img) {
+  padding: 0;
+  background: transparent;
+  overflow: hidden;
+}
 
 textarea {
   color: var(--text-color);
@@ -469,7 +484,7 @@ textarea {
   overflow: hidden;
   border-radius: 25px; 
   margin: 4px auto 12px; 
-  max-width: 800px;
+  max-width: 900px;
   border: 1px solid var(--content-border);
   background-color: var(--content-background);
 }

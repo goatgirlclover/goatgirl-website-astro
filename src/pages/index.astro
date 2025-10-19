@@ -200,12 +200,13 @@ const changelog = await sanitizeHtml(parser.render(await readFile('./src/content
         />
       </p>
 
-      <script type="text/javascript" src="/assets/scripts/lastfm.js" defer></script>
+      <script is:inline type="text/javascript" src="/assets/scripts/lastfm.js" defer></script>
     </section>
 
     <section id="site-changelog" class="scrollable" set:html={changelog}>
       <h2>changelog</h2>
     </section>
+    <script is:inline type="text/javascript" src="/assets/scripts/scrolltochangelog.js"></script>
   </div>
 
   <!-- <script is:inline>
