@@ -46,7 +46,8 @@
 /* ANIMATIONS - MARCHING SQUARES */
 .marching-squares, 
 .gallery-img:hover:not(:focus-visible),
-.data-entry .data-icon {
+.data-entry .data-icon,
+.music-grid .favsong:hover {
   background: linear-gradient(90deg, white 50%, transparent 50%), 
               linear-gradient(90deg, white 50%, transparent 50%), 
               linear-gradient(0deg, white 50%, transparent 50%), 
@@ -86,7 +87,8 @@
 :root.reduced-motion {
   .gallery-img:hover:not(:focus-visible),
   .button-holder > img:hover, .button-holder > a:hover, .site-button:hover,
-  .data-entry .data-icon {
+  .data-entry .data-icon,
+  .music-grid .favsong:hover {
     animation: none !important;
   }
 }
@@ -95,7 +97,8 @@
   :root:not(.full-motion) {
     .gallery-img:hover:not(:focus-visible),
     button-holder > img:hover, .button-holder > a:hover, .site-button:hover,
-    .data-entry .data-icon {
+    .data-entry .data-icon,
+    .music-grid .favsong:hover {
       animation: none !important;
     }
   }
@@ -197,7 +200,8 @@ a:active { color: var(--link-active-color); }
 img { max-width: 100%; max-height: 100%; }
 
 @supports (mask-image: url()) and (selector(:has(a,b))) {
-  main a[target="_blank"]:not(:has(img,div))::after {
+  main a[target="_blank"]:not(:has(img,div))::after,
+  .music-grid > a > .favsong p::after {
     display: inline;
     content: '';
     padding-right: 1em;
@@ -373,10 +377,10 @@ details:open > summary {
 }
 
 details:open > div {
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
   border: 3px solid var(--drop-shadow);
   border-top: none;
+  padding: 10px; 
+  overflow: hidden;
 }
 
 details:open > div > :first-child {

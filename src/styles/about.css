@@ -126,3 +126,37 @@
 .data-entry .intro-text { flex-basis: 30em; }
 .data-entry .intro-text img { width: 1.15em; position: relative; top: -0.45em; overflow: visible; margin: -0.5em 0; }
 .data-entry .intro-text img + img { left: -0.5em; top: -0.15em; }
+
+.data-entry > p:last-child { margin-bottom: 0; }
+
+/* FAV MUSIC */
+details > div:has(.music-grid) {
+  padding: 0; 
+}
+
+.music-grid {
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(312px, 1fr));
+  padding: 8px;
+  /* height: 192px;
+  overflow: scroll; */
+}
+
+.music-grid .favsong {
+  display: flex;
+  overflow: hidden;
+  gap: 10px;
+  height: 82px;
+  flex: 0 0 312px;
+  z-index: 1;
+  padding: 2px;
+}
+
+.music-grid .favsong p {
+  min-width: calc(312px - 82px - 10px);
+  margin: auto 0;
+}
+
+.song-player {
+  padding: 10px;
+}
