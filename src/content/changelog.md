@@ -1,3 +1,4 @@
+- 2025-10-19 - updated [my about-me page](/about/) to include my favorite music!
 - 2025-9-22 - improved PS Vita browser compatibility!
 - 2025-9-21 - added RSS feed that copies over the site changelog! links don't work since it's plaintext though :/
 - 2025-9-13 - improved (New) 3DS browser compatibility! :D
