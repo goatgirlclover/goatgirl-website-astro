@@ -484,7 +484,7 @@ textarea {
   overflow: hidden;
   border-radius: 25px; 
   margin: 4px auto 12px; 
-  max-width: 900px;
+  max-width: 800px;
   border: 1px solid var(--content-border);
   background-color: var(--content-background);
 }
