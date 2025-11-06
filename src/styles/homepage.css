@@ -13,7 +13,7 @@
 #statuscafe-username .emoji-spacer { margin-left: 0.15em; margin-right: 0.15em; }
 
 #statuscafe-content {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 500;
   overflow: visible;
 }
@@ -94,6 +94,7 @@
 }
 
 .lastfm-cover {
+  display: block;
   height: auto;
   width: 256px;
   margin: 0 auto;
@@ -119,6 +120,7 @@
 .lastfm-widget small, .lastfm-widget small > a {
   font-size: x-small;
   font-weight: 400; 
+  line-height: 1px;
 }
 
 .lastfm-widget small {
@@ -174,3 +176,21 @@
 /* :root.light-mode .countdown.unbeatable {
   background-image: url(/assets/unbeatableBannerLight.png); 
 } */
+ 
+.page-split {
+  gap: 12px;
+}
+
+.page-split > section:first-child {
+  flex: 99 0 640px;
+}
+
+.page-split > section:last-child {
+  flex: 1 1 312px;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-split > section:last-child > section + section {
+  margin-top: 12px;
+}
