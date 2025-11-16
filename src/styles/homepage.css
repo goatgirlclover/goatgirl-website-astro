@@ -178,11 +178,13 @@
 } */
  
 .page-split {
-  gap: 12px;
+  gap: 10px;
 }
 
 .page-split > section:first-child {
   flex: 99 0 640px;
+  border-right: 3px solid black;
+  padding-right: 13px;
 }
 
 .page-split > section:last-child {
