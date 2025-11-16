@@ -5,12 +5,15 @@
     var( --data-entry-bg-1), var( --data-entry-bg-1) 10px,
     var( --data-entry-bg-2) 10px, var( --data-entry-bg-2) 20px
   );
+
   animation: scrolldatabg 1.5s linear infinite;
   padding: 20px;
   position: relative;
   border: 3px solid var(--drop-shadow);
   background-size: 200% 200%;
   overflow: visible;
+
+  box-shadow: 0 0 150px rgba(0,0,0,0.4) inset;
 }
 
 @keyframes scrolldatabg {
@@ -42,7 +45,7 @@
   right: 12px;
   top: 4px;
   font-size: 1.1em;
-  color: var(--inverse-text-color);
+  color: white;
   opacity: 0.5;
   text-shadow: none;
 }
