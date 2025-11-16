@@ -1,0 +1,32 @@
+:root.theme-old {
+  --dark-bg: black;
+  --dark-content-bg: #141010;
+  --dark-text: white;
+  --dark-drop-shadow: black;
+  
+  --light-bg: black;
+  --light-content-bg: #f5f1f1;
+  --light-text: black;
+  --light-drop-shadow: lightgrey;
+
+  --content-padding: 20px;
+  --content-border: var(--drop-shadow);
+  --content-border-size: 5px;
+  --content-margin: 8px;
+
+  --speech-bubble-color: color-mix(in hsl, var(--light-content-bg), lightgrey 25%);
+
+  --darker-bg-25: color-mix(in hsl, var(--content-background), var(--drop-shadow) 25%);
+  --darker-bg-50: color-mix(in hsl, var(--content-background), var(--drop-shadow) 50%);
+  --darker-bg-75: color-mix(in hsl, var(--content-background), var(--drop-shadow) 75%);
+
+  --darker-green-25: #00937B; /* match site logo */
+  --darker-green-50: color-mix(in hsl, var(--clover-green), #002f52 20%);
+  --darker-green-75: color-mix(in hsl, var(--clover-green), #002f52 30%);
+
+  --darker-pink-25: color-mix(in hsl, var(--clover-pink), #460d0d 10%);
+  --darker-pink-50: color-mix(in hsl, var(--clover-pink), #460d0d 20%);
+  --darker-pink-75: color-mix(in hsl, var(--clover-pink), #460d0d 30%);
+
+  --accent-color: var(--clover-green);
+}

@@ -114,7 +114,7 @@
   --clover-pink: #e5347d; /* old, softer color: #ed93c7; */
 
   --dark-bg: black;
-  --dark-content-bg: #241817;
+  --dark-content-bg: #241717;
   --dark-text: white;
   --dark-drop-shadow: black;
   
@@ -145,6 +145,8 @@
   --darker-pink-25: #BB2351 /* match site logo */;
   --darker-pink-50: color-mix(in hsl, var(--clover-pink), #431010 40%);
   --darker-pink-75: color-mix(in hsl, var(--clover-pink), #430f0f 60%);
+
+  --accent-color: var(--clover-pink);
 }
 
 :root { /* dark mode values (default) */
@@ -309,6 +311,18 @@ main { /* actual page content */
   position: relative;
 
   transition: margin 0.2s, border-radius 0.2s;
+}
+
+main::after {
+  content:'';
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border: 2px dashed black;
+  border-radius: 12px;
 }
 
 @media screen and (max-width: 480px) {
@@ -578,7 +592,7 @@ textarea {
 }
 
 .active-page { 
-  background-color: var(--clover-pink);
+  background-color: var(--accent-color);
   font-weight: bold;
 }
 
