@@ -312,7 +312,7 @@ main { /* actual page content */
 
   transition: margin 0.2s, border-radius 0.2s;
 
-  outline: 2px dashed black;
+  outline: 2px dashed var(--content-border);
   outline-offset: -6px;
 }
 
@@ -515,7 +515,7 @@ textarea {
   right: 0;
   top: 0;
   bottom: 0;
-  outline: 2px dashed black;
+  outline: 2px dashed var(--content-border);
   outline-offset: -4px;
   border-radius: 25px;
   z-index: 99;
