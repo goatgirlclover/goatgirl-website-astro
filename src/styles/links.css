@@ -38,6 +38,6 @@
 	flex: 0 1 0;
 }
 
-.main-socials p {
+.main-socials > p {
   margin-bottom: 0;
 }
