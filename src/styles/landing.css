@@ -1,0 +1,39 @@
+#landing-body {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+#landing-body main {
+  flex-basis: 1300px;
+  padding: 24px;
+}
+
+#landing-text > h1 {
+  margin-top: 0;
+}
+
+#enter-button {
+  width: fit-content;
+  font-size: 1.1em;
+  background-color: var(--clover-pink);
+  display: block;
+  padding: 0.5em 1em;
+  border: 2px solid var(--drop-shadow);
+  border-radius: 12px;
+}
+
+#enter-button:hover {
+  border-color: var(--text-color);
+}
+
+#enter-button > a > h1 {
+  margin: 0; padding: 0;
+}
+
+#enter-button > a {
+  text-decoration: none;
+  color: white;
+}
