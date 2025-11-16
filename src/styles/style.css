@@ -323,6 +323,7 @@ main::after {
   bottom: 2px;
   border: 2px dashed black;
   border-radius: 12px;
+  pointer-events: none;
 }
 
 @media screen and (max-width: 480px) {
