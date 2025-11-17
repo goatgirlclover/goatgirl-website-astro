@@ -197,50 +197,52 @@ const changelog = await sanitizeHtml(parser.render(await readFile('./src/content
         })
       </script> -->
     </section>
-    <section>
-      <section id="lastfm-section">
-          <p class="lastfm-widget striped">
-            <strong id="lastfm-status"></strong>
+    <aside>
+      <div class="flex-sections">
+        <section id="lastfm-section">
+            <p class="lastfm-widget striped">
+              <strong id="lastfm-status"></strong>
+              <img
+                id="lastfm-refresh"
+                alt="Refresh Last.FM widget"
+                onclick="fetchLastFM()"
+                src="/assets/icons/refresh.svg"
+              />
+              <a id="lastfm-song"></a>
+              <small>powered by
+                <a
+                  href="https://github.com/biancarosa/lastfm-last-played"
+                  target="_blank">@biancarosa/lastfm-last-played</a
+                >
+              </small>
+              <img
+                class="lastfm-cover"
+                src="https://lastfm.freetls.fastly.net/i/u/300x300/c6f59c1e5e7240a4c0d427abd71f3dbb.jpg"
+                alt="album cover: not loaded!"
+                title="album cover: not loaded!"
+              />
+            </p>
+
+            <script is:inline type="text/javascript" src="/assets/scripts/lastfm.js" defer></script>
+          </section>
+
+        <section class="shareable">
+            <label for="site-button-code">site button!</label>
             <img
-              id="lastfm-refresh"
-              alt="Refresh Last.FM widget"
-              onclick="fetchLastFM()"
-              src="/assets/icons/refresh.svg"
+              class="site-button freezable"
+              height="31"
+              width="88"
+              src="/assets/buttons/88x31/goatgirlclover.gif"
+              alt="goatgirlclover"
             />
-            <a id="lastfm-song"></a>
-            <small>powered by
-              <a
-                href="https://github.com/biancarosa/lastfm-last-played"
-                target="_blank">@biancarosa/lastfm-last-played</a
-              >
-            </small>
-            <img
-              class="lastfm-cover"
-              src="https://lastfm.freetls.fastly.net/i/u/300x300/c6f59c1e5e7240a4c0d427abd71f3dbb.jpg"
-              alt="album cover: not loaded!"
-              title="album cover: not loaded!"
-            />
-          </p>
 
-          <script is:inline type="text/javascript" src="/assets/scripts/lastfm.js" defer></script>
-        </section>
-
-      <section class="shareable">
-          <label for="site-button-code">site button!</label>
-          <img
-            class="site-button freezable"
-            height="31"
-            width="88"
-            src="/assets/buttons/88x31/goatgirlclover.gif"
-            alt="goatgirlclover"
-          />
-
-          <textarea disabled id="site-button-code">&lt;a target="_blank" href="{import.meta.env.SITE}"&gt;&lt;img height="31" width="88" src="{import.meta.env.SITE}/assets/buttons/88x31/goatgirlclover.gif" alt="goatgirlclover"/&gt;&lt;/a&gt;</textarea>
-        </section>
+            <textarea disabled id="site-button-code">&lt;a target="_blank" href="{import.meta.env.SITE}"&gt;&lt;img height="31" width="88" src="{import.meta.env.SITE}/assets/buttons/88x31/goatgirlclover.gif" alt="goatgirlclover"/&gt;&lt;/a&gt;</textarea>
+          </section>
+      </div>
       <section id="site-changelog" class="scrollable flush-list" set:html={changelog}>
         <h2>changelog</h2>
       </section>
       <script is:inline type="text/javascript" src="/assets/scripts/scrolltochangelog.js"></script>
-    </section>
+    </aside>
   </div>
 </Base>

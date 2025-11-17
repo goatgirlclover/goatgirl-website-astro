@@ -47,10 +47,10 @@
 .gallery-img:hover:not(:focus-visible),
 .data-entry .data-icon,
 .music-grid .favsong:hover {
-  background: linear-gradient(90deg, white 50%, transparent 50%), 
-              linear-gradient(90deg, white 50%, transparent 50%), 
-              linear-gradient(0deg, white 50%, transparent 50%), 
-              linear-gradient(0deg, white 50%, transparent 50%);
+  background: linear-gradient(90deg, var(--text-color) 50%, transparent 50%), 
+              linear-gradient(90deg, var(--text-color) 50%, transparent 50%), 
+              linear-gradient(0deg, var(--text-color) 50%, transparent 50%), 
+              linear-gradient(0deg, var(--text-color) 50%, transparent 50%);
   background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
   background-size: 8px 2px, 8px 2px, 2px 8px, 2px 8px;
   background-position: 0 0, 0 100%, 0 0, 100% 0;
@@ -60,10 +60,10 @@
 
 .marching-squares.thin,
 .button-holder > img:hover, .button-holder > a:hover, .site-button:hover {
-  background: linear-gradient(90deg, white 50%, transparent 50%), 
-              linear-gradient(90deg, white 50%, transparent 50%), 
-              linear-gradient(0deg, white 50%, transparent 50%), 
-              linear-gradient(0deg, white 50%, transparent 50%);
+  background: linear-gradient(90deg, var(--text-color) 50%, transparent 50%), 
+              linear-gradient(90deg, var(--text-color) 50%, transparent 50%), 
+              linear-gradient(0deg, var(--text-color) 50%, transparent 50%), 
+              linear-gradient(0deg, var(--text-color) 50%, transparent 50%);
   background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
   background-size: 4px 1px, 4px 1px, 1px 4px, 1px 4px;
   background-position: 0 0, 0 100%, 0 0, 100% 0;
@@ -273,7 +273,7 @@ a { cursor: url("/assets/cursor_hover.png") 10 1, pointer; } */
 .flex-sections:last-child { margin-bottom: 0 !important; }
 
 /* default - force half and half */
-.flex-sections > section {
+.flex-sections > :is(section, aside) {
   flex: 1 1 0;
 }
 
@@ -442,6 +442,16 @@ textarea {
   margin-bottom: 0.5em;
 }
 
+aside {
+  display: flex;
+  flex-direction: column;
+}
+
+aside #site-changelog {
+  flex-grow: 999 !important;
+  max-height: 100%;
+}
+
 .flush-list > ul {
   margin: 0; padding: 0;
 }
@@ -450,11 +460,11 @@ textarea {
   justify-content: center;
 }
 
-.flex-sections .shareable {
+.shareable {
   display: flex;
   flex-direction: column;
   align-items: end;
-  flex: 1 1 218px;
+  flex: 1 1 0;
 }
 
 .shareable textarea {

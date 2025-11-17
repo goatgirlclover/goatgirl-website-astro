@@ -169,13 +169,13 @@
   p {
     position: relative; 
     bottom: 3px;
-    text-shadow: 1px 1px 0px black;
+    text-shadow: 1px 1px 0px var(--drop-shadow);
   }
 }
 
-/* :root.light-mode .countdown.unbeatable {
-  background-image: url(/assets/unbeatableBannerLight.png); 
-} */
+:root.light-mode .countdown.unbeatable {
+  background-image: url(/assets/unbeatableBannerLight.png);
+} 
  
 .page-split {
   gap: 10px;
@@ -187,12 +187,12 @@
   padding-right: 13px;
 }
 
-.page-split > section:last-child {
+.page-split > :is(section, aside):last-child {
   flex: 1 1 312px;
   justify-content: center;
   align-items: center;
 }
 
-.page-split > section:last-child > section + section {
+.page-split > :is(section, aside):last-child > section + section {
   margin-top: 12px;
 }
