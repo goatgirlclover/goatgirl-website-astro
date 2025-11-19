@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import LinkButtons from '../../components/linkbuttons.astro';
 const { activePage = "home" } = Astro.props;
 ---
 
@@ -22,31 +23,7 @@ const { activePage = "home" } = Astro.props;
 
   <footer id="site-footer">
     <nav class="social-icons">
-      <a title="Bluesky" class="social-media bsky" target="_blank" rel="noopener"
-        href="https://bsky.app/profile/goatgirlclover.bsky.social" tabindex="0">
-        <img width="32px" height="32px" alt="Bluesky" src="/assets/icons/social/bluesky.svg">
-      </a>
-      <a title="Itaku" class="social-media itaku" target="_blank" rel="noopener"
-        href="https://itaku.ee/profile/goatgirlclover" tabindex="0">
-        <img width="48px" height="32px" alt="Itaku" src="/assets/icons/social/itaku.svg">
-      </a>
-      <a title="Tumblr" class="social-media tumblr" target="_blank" rel="noopener" href="https://goatgirlclover.tumblr.com"
-        tabindex="0">
-        <img width="32px" height="32px" alt="Tumblr" src="/assets/icons/social/tumblr.svg">
-      </a>
-      <a class="social-media furaffinity" target="_blank" rel="noopener"
-        href="https://www.furaffinity.net/user/goatgirlclover" tabindex="0">
-        <img width="32px" height="32px" src="/assets/icons/social/furaffinity.svg">
-      </a>
-      <a class="social-media newgrounds" target="_blank" rel="noopener"
-        href="https://goatgirlclover.newgrounds.com/" tabindex="0">
-        <img width="32px" height="32px" src="/assets/icons/social/newgrounds.svg">
-      </a>
-      <a title="Github" class="social-media github" target="_blank" rel="noopener" href="https://github.com/goatgirlclover"
-        tabindex="0">
-        <img width="32px" height="32px" alt="Github" src="/assets/icons/social/github.svg">
-      </a>
-      
+      <LinkButtons displayLabel={false}/>
     </nav>
     <div class="username">@goatgirlclover</div>
     <div class="footer-buttons" style="display: none;">

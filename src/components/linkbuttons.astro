@@ -1,0 +1,26 @@
+---
+interface Props { displayLabel?: boolean };
+const { displayLabel = true } = Astro.props;
+
+const links = {
+    Bluesky: "https://bsky.app/profile/goatgirlclover.bsky.social",
+    Tumblr: "https://goatgirlclover.tumblr.com",
+    Itaku: "https://itaku.ee/profile/goatgirlclover",
+    FurAffinity: "https://www.furaffinity.net/user/goatgirlclover",
+    Newgrounds: "https://goatgirlclover.newgrounds.com/",
+    Github: "https://github.com/goatgirlclover"
+}
+
+---
+
+{
+    Object.entries(links).map(([key, value]) => (
+        <a title={displayLabel ? key : undefined} class={"social-media " + key.toLowerCase()} 
+        target="_blank" rel="noopener" href={value} tabindex="0">
+            <img width="32px" height="32px" 
+                src={"/assets/icons/social/" + key.toLowerCase() + ".svg"} 
+                alt={displayLabel ? key : undefined} />
+            {displayLabel && <p>{key}</p>}
+        </a>
+    ))
+}

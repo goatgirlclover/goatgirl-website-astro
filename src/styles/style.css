@@ -760,15 +760,13 @@ aside #site-changelog {
 .itaku { background-color: rgb(255, 235, 59); }
 .tumblr { background-color: #36465D; }
 .twitter { background-color: #1DA1F2; }
-.bsky { background-color: #0085ff; }
+.bluesky { background-color: #0085ff; }
 .github { background-color: #232121; }
 .newgrounds { background-color: #fda238; }
 .furaffinity { background: #1b1b1d; }
 
-@supports (filter: invert(1)) {
-  .tumblr img, .twitter img, .bsky img, .github img, .furaffinity img { filter: invert(1); }
-  .tumblr p, .twitter p, .bsky p, .github p, .furaffinity p { color: white; }
-}
+.tumblr img, .twitter img, .bluesky img, .github img, .furaffinity img { filter: invert(1); }
+.tumblr p, .twitter p, .bluesky p, .github p, .furaffinity p { color: white; }
 
 /* chat bubbles */
 .speech-bubble {
