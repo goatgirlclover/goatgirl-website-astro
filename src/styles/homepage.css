@@ -178,13 +178,19 @@
 } 
  
 .page-split {
-  gap: 10px;
+  gap: 20px;
+  background-color: var(--drop-shadow);
 }
 
-.page-split > section:first-child {
+.page-split > :is(section, aside) {
+  background-color: var(--content-background);
+  outline: 9px solid var(--content-background);
+}
+
+.page-split > section {
   flex: 99 0 640px;
-  border-right: 3px solid black;
-  padding-right: 13px;
+  /* border-right: 3px solid black;
+  padding-right: 13px; */
 }
 
 .page-split > :is(section, aside):last-child {
