@@ -10,7 +10,7 @@
 
 .button-holder > img, .button-holder > a, .site-button {
   outline: 1px dashed rgb(100, 100, 100);
-  image-rendering: auto;
+  image-rendering: auto; /* crisp-edges and such make wigglies on my high DPI monitor :( */
   width: 88px;
   height: 31px;
   margin: 0;
