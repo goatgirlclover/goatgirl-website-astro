@@ -735,12 +735,15 @@ aside #site-changelog {
 }
 
 #site-footer .social-media {
-  filter: drop-shadow(3px 3px var(--dark-drop-shadow));
   min-width: 0px;
 }
 
+.social-media:not(:focus-visible) {
+  outline: 2px solid black;
+}
+
 .social-media:hover:not(:focus-visible), .social-media:active {
-  outline: 2px solid var(--text-color);
+  outline: 2px solid white;
 }
 
 #site-footer .social-media:hover:not(:focus-visible), 
