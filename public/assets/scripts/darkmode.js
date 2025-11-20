@@ -25,18 +25,33 @@ function toggleReducedMotion() {
 }
 
 function freezeGifs() {
-  var x = document.querySelectorAll("img.freezable[src^='/assets'], .freezable img[src^='/assets']");
+  var x = document.querySelectorAll("img.freezable");
   for (var i = 0; i < x.length; i++) {
-    if (x[i].src.endsWith(".gif")) { x[i].src = x[i].src.slice(0, -4) + '-static.png'; }
-    x[i].onmouseover = function() { if (this.src.endsWith("-static.png")) { this.src = this.src.slice(0, -11) + '.gif'; } };
-    x[i].onmouseleave = function() { if (this.src.endsWith(".gif")) { this.src = this.src.slice(0, -4) + '-static.png'; } };
+    if (x[i].src.endsWith(".gif") || x[i].src.includes(".gif?")) { 
+      x[i].src = x[i].src.replace(".gif", "-static.png");
+    }
+
+    x[i].onmouseover = function() { 
+      if (x[i].src.endsWith("-static.png") || x[i].src.includes("-static.png?")) { 
+        this.src = this.src.replace("-static.png", ".gif");
+      } 
+    };
+
+    x[i].onmouseleave = function() { 
+      if (x[i].src.endsWith(".gif") || x[i].src.includes(".gif?")) { 
+        this.src = this.src.replace(".gif", "-static.png");
+      } 
+    };
   }
 }
 
 function unfreezeGifs() {
-  var x = document.querySelectorAll("img.freezable, .freezable img");
+  var x = document.querySelectorAll("img.freezable");
   for (var i = 0; i < x.length; i++) {
-    if (x[i].src.endsWith("-static.png")) { x[i].src = x[i].src.slice(0, -11) + '.gif'; }
+    if (x[i].src.endsWith("-static.png") || x[i].src.includes("-static.png?")) { 
+      x[i].src = x[i].src.replace("-static.png", ".gif");
+    }
+    
     x[i].onmouseover = function(){};
     x[i].onmouseleave = function(){};
   }
