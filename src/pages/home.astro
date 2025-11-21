@@ -1,0 +1,248 @@
+---
+import Base from "../layouts/base.astro";
+import '../styles/homepage.css';
+import '../styles/links.css';
+
+import sanitizeHtml from 'sanitize-html';
+import MarkdownIt from 'markdown-it';
+import { readFile } from 'node:fs/promises';
+const parser = new MarkdownIt();
+const changelog = await sanitizeHtml(parser.render(await readFile('./src/content/changelog.md', 'utf-8')));
+---
+
+<Base title="home - goatgirlclover" activePage="home">
+  <section class="countdown unbeatable" data-countdownto="2025-12-09T18:00:00+00:00" data-endtext="UNBEATABLE HAS RELEASED!!! NO MORE WAITING!!!">
+          <p>
+            <a target="_blank" href="https://unbeatablegamewishlist.now">
+              <b>xxx days</b> 
+              until UNBEATABLE releases...
+            </a>
+          </p>
+      </section>
+  <div class="flex-sections page-split">
+    <section>
+      <script>
+        const countdown = document.querySelector(".countdown");
+        const daysText = document.querySelector(".countdown b");
+        const remainingText = daysText?.parentNode?.lastChild;
+      
+        if (countdown && daysText) {
+          const countdownDate = countdown.getAttribute("data-countdownto");
+          const countdownSinceDate = countdown.getAttribute("data-countdownsince");
+          if (countdownDate) {
+            const endText = countdown.getAttribute("data-endtext");
+
+            var today = new Date();
+            var date_to_reply = new Date(String(countdownDate));
+
+            var timeinmilisec = date_to_reply.getTime() - today.getTime();
+            var daysUntilCountdownDate = Math.ceil(timeinmilisec / (1000 * 60 * 60 * 24));
+
+            if (endText && daysUntilCountdownDate < 1) {
+              daysText.textContent = endText;
+              if (remainingText) { remainingText.textContent = ""; }
+            } else {
+              var newDaysText = daysUntilCountdownDate == 1 ? " day" : " days";
+              newDaysText = String(daysUntilCountdownDate) + newDaysText;
+              daysText.textContent = newDaysText;
+            }
+          } else if (countdownSinceDate) {
+            var today = new Date();
+            var date_to_reply = new Date(String(countdownSinceDate));
+
+            var timeinmilisec = today.getTime() - date_to_reply.getTime();
+            var daysUntilCountdownDate = Math.ceil(timeinmilisec / (1000 * 60 * 60 * 24));
+
+            var newDaysText = daysUntilCountdownDate == 1 ? " day" : " days";
+            newDaysText = String(daysUntilCountdownDate) + newDaysText;
+            daysText.textContent = newDaysText;
+          }
+        }
+      </script>
+
+      <section class="homepage-main">
+        <h1>welcome to my website! &#1054359</h1>
+        <p>
+          i'm clover! i'm a (mostly) furry artist/animator that loves designing
+          little critters. this is my little corner of the internet! it mainly
+          exists to hold all my art, but i plan to fill the rest of the site with
+          whatever other stuff i find neat! feel free to poke around and see what
+          all i'm up to!
+        </p>
+        <noscript><center><p>
+          (best viewed with Javascript!)
+        </p></center></noscript>
+      </section>
+
+      <div class="flex-sections">
+        <section class="scrollable">
+          <h2>cool things i do</h2>
+          <ul>
+            <li>
+              draw a buncha furries! i mostly post them on
+              <a
+                target="_blank"
+                href="https://bsky.app/profile/goatgirlclover.bsky.social">Bluesky</a
+              >, but i'm on a couple other sites too!
+            </li>
+            <li>
+              bomb rush cyberfunk modding! i made
+              <a
+                target="_blank"
+                href="https://thunderstore.io/c/bomb-rush-cyberfunk/p/FunkyUncles/NetRadio"
+                >NetRadio</a
+              >,
+              <a
+                target="_blank"
+                href="https://thunderstore.io/c/bomb-rush-cyberfunk/p/goatgirl/Rebound"
+                >Rebound</a
+              >,
+              <a
+                target="_blank"
+                href="https://thunderstore.io/c/bomb-rush-cyberfunk/p/goatgirl/MusicCurator"
+                >MusicCurator</a
+              >, and a handful of other mods for the game. i also designed the
+              branding for <a target="_blank" href="https://funkyunclefm.net"
+                >FunkyUncleFM</a
+              >, an online radio station managed by the BRC community!
+            </li>
+          </ul>
+        </section>
+
+        <section class="scrollable">
+          <h2>sitemap</h2>
+          <ul>
+            <li>
+              <b>homepage</b> (you are here!) - status.cafe and last.fm widgets, site changelog
+            </li>
+            <li>
+              <b>art gallery</b> - <s>all</s> most of the art i've done since 2021!
+            </li>
+            <li>
+              <b>blog</b> (infrequently-updated) - posts about whatever i feel like writing about for an extended period!
+            </li>
+            <li>
+              <b>about</b> - some of the things i enjoy, and (eventually) a more detailed introduction
+            </li>
+            <li>
+              <b>links</b> - links to my socials, webrings, some fun graphics, and credits for parts of this site all go here!
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <hr />
+
+      <div class="flex-sections">
+        <section id="status-section">
+          <h2>status</h2>
+          <div class="status-holder">
+            <div id="status-bubble" class="speech-bubble right">
+              <div id="statuscafe">
+                <div id="statuscafe-content"></div>
+                <div id="statuscafe-username"></div>
+              </div>
+              <script type="text/javascript" src="https://status.cafe/current-status.js?name=goatgirl" defer></script>
+            </div>
+            <div id="status-goat">
+              <img
+                alt="goatgirl"
+                draggable="false"
+                title="click me!"
+                onclick="toggleStatus()"
+                src="/assets/img/goatsit.png"
+                width="256"
+              />
+            </div>
+          </div>
+
+          <script type="text/javascript" src="/assets/scripts/statusgoat.js"></script>
+        </section>
+      </div>
+
+        
+
+      <!-- <script is:inline>
+        function isPointOverText(x, y) {
+          const element = document.elementFromPoint(x, y);
+          if (element == null) return false;
+          const nodes = element.childNodes;
+          for (let i = 0, node; (node = nodes[i++]); ) {
+              if (node.nodeType === 3) {
+                  const range = document.createRange();
+                  range.selectNode(node);
+                  const rects = range.getClientRects();
+                  for (let j = 0, rect; (rect = rects[j++]); ) {
+                      if (
+                          x > rect.left &&
+                          x < rect.right &&
+                          y > rect.top &&
+                          y < rect.bottom
+                      ) {
+                          if (node.nodeType === Node.TEXT_NODE) return true;
+                      }
+                  }
+              }
+          }
+          return false;
+        }
+
+        window.addEventListener("mousemove", (e) => {
+          if (isPointOverText(e.clientX, e.clientY)) { 
+            document.querySelector("body").className = "hovering-over-text";
+          }
+          else { 
+            document.querySelector("body").className = "not-doing-that";
+          }
+        })
+      </script> -->
+    </section>
+    <aside>
+      <div class="flex-sections">
+        <section id="lastfm-section">
+            <p class="lastfm-widget striped">
+              <strong id="lastfm-status"></strong>
+              <img
+                id="lastfm-refresh"
+                alt="Refresh Last.FM widget"
+                onclick="fetchLastFM()"
+                src="/assets/icons/refresh.svg"
+              />
+              <a id="lastfm-song"></a>
+              <small>powered by
+                <a
+                  href="https://github.com/biancarosa/lastfm-last-played"
+                  target="_blank">@biancarosa/lastfm-last-played</a
+                >
+              </small>
+              <img
+                class="lastfm-cover"
+                src="https://lastfm.freetls.fastly.net/i/u/300x300/c6f59c1e5e7240a4c0d427abd71f3dbb.jpg"
+                alt="album cover: not loaded!"
+                title="album cover: not loaded!"
+              />
+            </p>
+
+            <script is:inline type="text/javascript" src="/assets/scripts/lastfm.js" defer></script>
+          </section>
+
+        <section class="shareable">
+            <label for="site-button-code">site button!</label>
+            <img
+              class="site-button freezable"
+              height="31"
+              width="88"
+              src="/assets/buttons/88x31/goatgirlclover.gif?v=2"
+              alt="goatgirlclover"
+            />
+
+            <textarea disabled id="site-button-code">&lt;a target="_blank" href="{import.meta.env.SITE}"&gt;&lt;img height="31" width="88" src="{import.meta.env.SITE}/assets/buttons/88x31/goatgirlclover.gif" alt="goatgirlclover"/&gt;&lt;/a&gt;</textarea>
+          </section>
+      </div>
+      <section id="site-changelog" class="scrollable flush-list" set:html={changelog}>
+        <h2>changelog</h2>
+      </section>
+      <script is:inline type="text/javascript" src="/assets/scripts/scrolltochangelog.js"></script>
+    </aside>
+  </div>
+</Base>
