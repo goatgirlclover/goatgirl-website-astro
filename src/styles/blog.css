@@ -41,7 +41,7 @@
 
 .blog-content #footnote-label { visibility: hidden; height: 0; }
 .blog-content .footnotes {
-  border-top: 3px dashed var(--drop-shadow); 
+  border-top: 3px dashed var(--contrast-color); 
 }
 
 .blog-content .footnotes .data-footnote-backref {
@@ -74,7 +74,7 @@
 
 .blog-posts .post:not(:last-child) {
   margin-bottom: 1em; padding-bottom: 1em;
-  border-bottom: 3px dashed var(--drop-shadow);
+  border-bottom: 3px dashed var(--contrast-color);
 }
 
 .blog-posts .post div {

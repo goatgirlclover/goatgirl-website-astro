@@ -37,8 +37,17 @@ function toggleTheme(theme) {
   toggleClass(document.documentElement, "theme-" + theme); 
   localStorage.setItem('theme', theme);
 
+  // Set button afterContent
   var themeDisplayName = document.querySelector("#" + theme).innerText;
   document.querySelector(".theme-switcher").setAttribute("data-aftercontent", ": " + themeDisplayName); 
+
+  // Set site logo
+  var siteLogo = document.querySelector("#site-logo img");
+  if (theme == "mintchoco") {
+    siteLogo.src = "/assets/img/logoGreen.png";
+  } else {
+    siteLogo.src = "/assets/img/logoPink.png";
+  }
 }
 
 function freezeGifs() {

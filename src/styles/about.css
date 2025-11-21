@@ -9,7 +9,7 @@
   animation: scrolldatabg 1.5s linear infinite;
   padding: 20px;
   position: relative;
-  border: 3px solid var(--drop-shadow);
+  border: 3px solid var(--contrast-color);
   background-size: 200% 200%;
   overflow: visible;
 

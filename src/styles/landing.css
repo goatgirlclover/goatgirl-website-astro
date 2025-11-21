@@ -21,7 +21,7 @@
   background-color: var(--clover-pink);
   display: block;
   padding: 0.5em 1em;
-  border: 2px solid var(--drop-shadow);
+  border: 2px solid var(--contrast-color);
   border-radius: 12px;
 }
 

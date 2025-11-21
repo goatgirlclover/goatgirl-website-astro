@@ -1,4 +1,6 @@
 :root.theme-mintchoco {
+  --clover-pink: #ed93c7;
+
   --dark-bg: black;
   --dark-content-bg: #141010;
   --dark-text: white;
@@ -29,4 +31,9 @@
   --darker-pink-75: color-mix(in hsl, var(--clover-pink), #460d0d 30%);
 
   --accent-color: var(--clover-green);
+
+  --page-background-color1: #322632;
+  --page-background-color2: #281E28;
+  --footer-text-color: var(--dark-text);
+  --footer-drop-shadow: var(--dark-drop-shadow);
 }
