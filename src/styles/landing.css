@@ -23,6 +23,7 @@
   padding: 0.5em 1em;
   border: 2px solid var(--contrast-color);
   border-radius: 12px;
+  margin-bottom: 12px;
 }
 
 #enter-button:hover {
