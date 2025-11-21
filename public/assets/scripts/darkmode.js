@@ -12,6 +12,7 @@ function toggleDarkMode() {
   const usingLightMode = document.documentElement.className.indexOf("light-mode") > -1;
   document.querySelector("button.dark-mode").setAttribute("data-aftercontent", usingLightMode ? ": off" : ": on"); 
   localStorage.setItem('lightMode', usingLightMode);
+  updateSiteLogo();
 }
 
 function toggleReducedMotion() {
@@ -42,9 +43,22 @@ function toggleTheme(theme) {
   document.querySelector(".theme-switcher").setAttribute("data-aftercontent", ": " + themeDisplayName); 
 
   // Set site logo
+  updateSiteLogo();
+}
+
+function updateSiteLogo() {
+  var currentClasses = ' ' + document.documentElement.className + ' ';
   var siteLogo = document.querySelector("#site-logo img");
-  if (theme == "mintchoco") {
-    siteLogo.src = "/assets/img/logoGreen.png";
+  
+  if (currentClasses.indexOf(' theme-') > 1) {
+    var themeIndexString = currentClasses.substring(currentClasses.indexOf(' theme-') + 1);
+    var theme = themeIndexString.substring(0, themeIndexString.indexOf(' ')).replace('theme-', '');
+    
+    if (theme == "mintchoco" || (theme == "unbeatable" && currentClasses.indexOf(' light-mode') < 0)) {
+      siteLogo.src = "/assets/img/logoGreen.png";
+    } else {
+      siteLogo.src = "/assets/img/logoPink.png";
+    }
   } else {
     siteLogo.src = "/assets/img/logoPink.png";
   }

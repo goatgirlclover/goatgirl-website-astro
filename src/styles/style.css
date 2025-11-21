@@ -133,6 +133,9 @@
   --light-link-active-color: black;
   --light-link-visited-color: var(--clover-pink); 
   --light-link-visited-hover: rgb(166, 25, 96); 
+
+  --light-accent-color: var(--clover-pink);
+  --dark-accent-color: var(--clover-pink);
 }
 
 :root { /* dark mode values (default) */
@@ -150,6 +153,8 @@
   --link-active-color: var(--dark-link-active-color);
   --link-visited-color: var(--dark-link-visited-color);
   --link-visited-hover: var(--dark-link-visited-hover);
+
+  --accent-color: var(--dark-accent-color);
 }
 
 :root.light-mode { /* light mode values */
@@ -167,10 +172,11 @@
   --link-active-color: var(--light-link-active-color);
   --link-visited-color: var(--light-link-visited-color);
   --link-visited-hover: var(--light-link-visited-hover);
+
+  --accent-color: var(--light-accent-color);
 }
 
 :root { /* theme-specific - universal */
-  --accent-color: var(--clover-pink);
   --contrast-color: var(--drop-shadow);
   --high-contrast-color: var(--inverse-text-color);
   --page-background-color1: var(--darker-bg-25);
