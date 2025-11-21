@@ -24,6 +24,23 @@ function toggleReducedMotion() {
   if (usingRM) { freezeGifs(); } else { unfreezeGifs(); }
 }
 
+function toggleTheme(theme) {
+  // Remove current theme
+  var currentClasses = ' ' + document.documentElement.className + ' ';
+  if (currentClasses.indexOf(' theme-') > -1) {
+    var themeIndexString = currentClasses.substring(currentClasses.indexOf(' theme-') + 1);
+    var themeString = themeIndexString.substring(0, themeIndexString.indexOf(' '));
+    document.documentElement.className = currentClasses.replace(' ' + themeString + ' ', ' ').trim();
+  }
+
+  // Add new theme
+  toggleClass(document.documentElement, "theme-" + theme); 
+  localStorage.setItem('theme', theme);
+
+  var themeDisplayName = document.querySelector("#" + theme).innerText;
+  document.querySelector(".theme-switcher").setAttribute("data-aftercontent", ": " + themeDisplayName); 
+}
+
 function freezeGifs() {
   var x = document.querySelectorAll("img.freezable");
   for (var i = 0; i < x.length; i++) {
@@ -62,3 +79,5 @@ toggleClass(document.documentElement, "full-motion");
 if (localStorage.getItem('reducedMotion') === 'true') { toggleReducedMotion(); }
 
 if (navigator.userAgent.indexOf("Nintendo 3DS") !== -1 && (localStorage.getItem('reducedMotion') === null)) { toggleReducedMotion(); } 
+
+if (localStorage.getItem('theme') !== null) { toggleTheme(localStorage.getItem('theme')); }

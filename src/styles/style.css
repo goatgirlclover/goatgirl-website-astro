@@ -1,4 +1,5 @@
 @import "normalize.css";
+@import "themes.css";
 
 /* pangolin-regular - latin_latin-ext */
 @font-face {
@@ -224,6 +225,62 @@ main hr { border: none; border-bottom: 3px dashed var(--drop-shadow); }
 /* body:not(.hovering-over-text) { cursor: url("/assets/cursor.png") 4 1, auto; }
 .hovering-over-text { cursor: url("/assets/cursor_text.png") 14 11, text; }
 a { cursor: url("/assets/cursor_hover.png") 10 1, pointer; } */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.theme-switcher {
+  padding: 2px !important;
+  margin: -2px !important;
+}
+
+.theme-switcher .dropdown-content { margin: -2px !important; margin-bottom: 0 !important; }
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  background-color: var(--darker-bg-75);
+  z-index: 1;
+  outline: 2px solid var(--drop-shadow);
+}
+
+/* Links inside the dropdown */
+.dropdown .dropdown-content > * {
+  z-index: 2;
+  padding: 4px !important;
+  text-decoration: none !important;
+  display: block !important;
+  width: 100%;
+}
+
+.dropdown .dropdown-content > *:nth-child(odd) {
+  background-color: var(--drop-shadow) !important;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown .dropdown-content > *:hover { outline: 1px solid var(--text-color) !important; }
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover {
+  background: var(--darker-bg-75) !important;
+  outline: 2px solid var(--drop-shadow);
+} 
+
+.dropdown.reverse .dropdown-content {
+  bottom: 100%;
+  top: auto;
+}
 
 /* EMOJI (Mutant Standard */
 .emoji, .emoji-spacer { 
@@ -695,8 +752,8 @@ aside #site-changelog {
 #site-footer .footer-buttons button:focus { color: var(--clover-pink); }
 #site-footer .footer-buttons button:active { color: black; } */
 
-#site-footer .footer-buttons button + button { position: relative; margin-left: 1em; }
-#site-footer .footer-buttons button + button:before {
+#site-footer .footer-buttons > :is(button, div) + :is(button, div) { position: relative; margin-left: 1em; }
+#site-footer .footer-buttons > :is(button, div) + :is(button, div):before {
   display: inline;
   content: "•";
   /* color: white; */
@@ -704,7 +761,7 @@ aside #site-changelog {
   left: -0.75em;
 }
 
-#site-footer .footer-buttons button:after {
+#site-footer .footer-buttons > :is(button, div):after {
   display: inline;
   content: attr(data-aftercontent);
 }

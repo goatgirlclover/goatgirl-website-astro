@@ -27,8 +27,13 @@ const { activePage = "home" } = Astro.props;
     </nav>
     <div class="username">@goatgirlclover</div>
     <div class="footer-buttons" style="display: none;">
-      <button class="dark-mode" tabindex="0" onclick="toggleDarkMode()" data-aftercontent=": on">dark mode</a>
-      <button class="reduced-motion" tabindex="0" onclick="toggleReducedMotion()" data-aftercontent=": off">reduced motion</a>
+      <div class="theme-switcher dropdown reverse" tabindex="0" data-aftercontent=": neapolitan">
+        <div class="dropdown-content">
+          <button id="neapolitan" tabindex="0" onclick="toggleTheme(this.id)">neapolitan</button>
+          <button id="mintchoco" tabindex="0" onclick="toggleTheme(this.id)">mint choco</button>
+        </div>theme</div>
+      <button class="dark-mode" tabindex="0" onclick="toggleDarkMode()" data-aftercontent=": on">dark mode</button>
+      <button class="reduced-motion" tabindex="0" onclick="toggleReducedMotion()" data-aftercontent=": off">reduced motion</button>
     </div>
     <script is:inline>document.querySelector("#site-footer .footer-buttons").removeAttribute("style");</script> <!-- only show w/ Javascript -->
   </footer>
