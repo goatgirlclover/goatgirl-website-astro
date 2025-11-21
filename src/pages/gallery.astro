@@ -2,64 +2,24 @@
 import Base from "../layouts/base.astro";
 import '../styles/gallery.css';
 
-import fs from "fs";
-
-interface GalleryPageInfo {
-  title: string;
-  filename: string;
-}
-
-var GalleryPageInfoByYear: { year: number; infos: GalleryPageInfo[]; }[] = [];
-
-function readGalleryFiles() {
-  var currentYear = 0;
-  var infosForCurrentYear: GalleryPageInfo[] = [];
-
-  fs.readdirSync("./public/gallery/view/").forEach(async (file: string) => {
-    if (file.endsWith(".txt")) {
-      var year = Number(file.substring(0, 4));
-      if (year !== currentYear && currentYear !== 0) {
-        GalleryPageInfoByYear.push({
-          year: currentYear,
-          infos: infosForCurrentYear.reverse()
-        });
-        infosForCurrentYear = [];
-      } 
-      currentYear = year;
-      
-      var fullFilePath = "./public/gallery/view/" + file;
-      var fullTitle = fs.readFileSync(fullFilePath, 'utf-8').split(/\r?\n/)[0];
-
-      infosForCurrentYear.push({
-        title: fullTitle,
-        filename: file.slice(0, -4),
-      });
-    }
-  })  
-  
-  GalleryPageInfoByYear.push({
-    year: currentYear,
-    infos: infosForCurrentYear.reverse()
-  });
-  GalleryPageInfoByYear = GalleryPageInfoByYear.reverse();
-}
-
-readGalleryFiles();
-
+import { getCollection } from 'astro:content';
+export const galleryEntries = await getCollection('gallery');
+const galleryEntriesByYear = Array.from(Map.groupBy(galleryEntries, entry => entry.data.year));
 ---
 
 <Base title="gallery - goatgirlclover" activePage="gallery">
     <h1>art gallery</h1>
     {
-      GalleryPageInfoByYear.map((entry, i) => (
-        <h2 class="gallery-year">{entry.year}</h2>
-        <section class="gallery-grid" data-year={entry.year}>
+      galleryEntriesByYear.reverse().map(([year, entries]) => (
+      <h2 class="gallery-year">{year}</h2>
+        <section class="gallery-grid" data-year={year}>
           {
-            entry.infos.map((infoEntry) => (
-              <a tabindex="0" href={"/gallery/view/" + infoEntry.filename + "/"} class="gallery-img">
-                <img alt={infoEntry.title} title={infoEntry.title} class="thumb" src={"/gallery/thumb/" + infoEntry.filename + ".jpg"} width="192px" height="192px" style="object-fit: cover;" loading="lazy" />
+            entries.reverse().map((entry) => { return (
+              <a tabindex="0" href={entry.data.path} class="gallery-img" id={entry.id}>
+                <img alt={entry.data.title} title={entry.data.title} class="thumb" src={entry.data.thumbnailPath} 
+                    width="192px" height="192px" style="object-fit: cover;" loading="lazy" />
               </a>
-            ))
+            )})
           }
         </section>
       ))
