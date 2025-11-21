@@ -285,7 +285,7 @@ a { cursor: url("/assets/cursor_hover.png") 10 1, pointer; } */
 }
 
 /* Change color of dropdown links on hover */
-.dropdown .dropdown-content > *:hover { outline: 1px solid var(--text-color) !important; }
+.dropdown .dropdown-content > *:hover { outline: 1px solid var(--text-color) !important; z-index: 3; }
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
