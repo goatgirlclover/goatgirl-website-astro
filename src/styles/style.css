@@ -594,7 +594,7 @@ aside #site-changelog {
 } */
 
 #site-header nav .emoji { margin-top: 3px; }
-#site-header nav img { width: 1.15em; height: 1.15em; position: relative; top: -0.3em; overflow: visible; margin: -0.5em 0; }
+#site-header nav img { width: 1.15em; height: 1.15em; position: relative; top: -0.25em; overflow: visible; margin: -0.5em 0; }
 
 /*#site-header > div a:hover { color: var(--inverse-text-color); } */
 

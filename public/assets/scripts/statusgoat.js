@@ -12,7 +12,7 @@ function toggleStatus() {
     x.style.visibility = "visible";
     y.style.visibility = "visible";
     z.setAttribute("data-before", "")
-    z.style.animation = "bounce 0.15s ease 1";
+    z.style.animation = "bounce 0.2s ease 1";
     /*z.children[0].src = "/assets/img/goatsit_talk.png";
     setTimeout(
       function () {
