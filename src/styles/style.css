@@ -970,6 +970,15 @@ aside #site-changelog {
   border-color: transparent var(--contrast-color);
 }
 
+@keyframes checkerboard-scroll {
+  0% {
+    background-position: 0 0, 32px 0, 32px -32px, 0px 32px;
+  }
+  100% {
+    background-position: -32px 32px, 0 32px, 0 0, -32px 64px;
+  }
+}
+
 /* page background */
 html {
   background-color: var(--page-background-color2);
@@ -980,17 +989,16 @@ html {
     linear-gradient(135deg, transparent 75%, var(--page-background-color1) 75%);
 
   background-size: 64px 64px;
-  background-position:0 0, 32px 0, 32px -32px, 0px 32px;
+  background-position: 0 0, 32px 0, 32px -32px, 0px 32px;
+  animation: checkerboard-scroll 2s linear infinite;
 }
 
-/* :root.reduced-motion body, #landing-body { 
-  background-image: url("/assets/background.png"); 
-  background-position: top center;
+html.reduced-motion, #landing-page { 
+  animation: none !important;
 }
 
 @media (prefers-reduced-motion) {
-  :root:not(.full-motion) body { 
-    background-image: url("/assets/background.png"); 
-    background-position: top center;
+  html:not(.full-motion) { 
+    animation: none !important;
   }
-} */
+} 
