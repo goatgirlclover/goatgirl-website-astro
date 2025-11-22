@@ -188,7 +188,7 @@
 }
 
 .page-split > section {
-  flex: 99 0 640px;
+  flex: 99 1 640px;
   /* border-right: 3px solid black;
   padding-right: 13px; */
 }
@@ -201,4 +201,32 @@
 
 .page-split > :is(section, aside):last-child > section + section {
   margin-top: 12px;
+}
+
+#latest-gallery { flex: 99 1 256px; text-align: center; }
+#latest-blog { flex: 1 1 20em; text-align: right; }
+
+#latest-gallery .gallery-img {
+  width: fit-content;
+  height: auto;
+  max-width: none;
+  min-width: auto;
+  min-height: auto;
+  max-height: none;
+  margin: auto;
+  padding: 2px;
+}
+
+#latest-gallery a {display: block; }
+#latest-gallery h1 { margin-bottom: 0; }
+
+#latest-gallery .gallery-img img {
+  width: auto;
+  height: auto;
+  max-height: 256px;
+  display: block;
+}
+
+#latest > section {
+  padding: 12px;
 }

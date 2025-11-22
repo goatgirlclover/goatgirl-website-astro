@@ -8,6 +8,13 @@ import MarkdownIt from 'markdown-it';
 import { readFile } from 'node:fs/promises';
 const parser = new MarkdownIt();
 const changelog = await sanitizeHtml(parser.render(await readFile('./src/content/changelog.md', 'utf-8')));
+
+import { posts } from "./blog.astro";
+const latestBlogPost = posts[0];
+import { galleryEntries } from "./gallery.astro";
+const latestGalleryEntry = galleryEntries[galleryEntries.length - 1];
+
+import FormattedDate from '../components/FormattedDate.astro';
 ---
 
 <Base title="home - goatgirlclover" activePage="home">
@@ -75,6 +82,57 @@ const changelog = await sanitizeHtml(parser.render(await readFile('./src/content
       </section>
 
       <div class="flex-sections">
+        <section id="status-section">
+          <h2>status</h2>
+          <div class="status-holder">
+            <div id="status-bubble" class="speech-bubble right">
+              <div id="statuscafe">
+                <div id="statuscafe-content"></div>
+                <div id="statuscafe-username"></div>
+              </div>
+              <script type="text/javascript" src="https://status.cafe/current-status.js?name=goatgirl" defer></script>
+            </div>
+            <div id="status-goat">
+              <img
+                alt="goatgirl"
+                draggable="false"
+                title="click me!"
+                onclick="toggleStatus()"
+                src="/assets/img/goatsit.png"
+                width="256"
+              />
+            </div>
+          </div>
+
+          <script is:inline type="text/javascript" src="/assets/scripts/statusgoat.js"></script>
+        </section>
+      </div>
+
+      <div id="latest" class="flex-sections striped">
+        <section id="latest-gallery">
+          <h2>latest artwork:</h2>
+          <a href={latestGalleryEntry.data.path}>
+            <div class="marching-squares gallery-img">
+              <img
+                width="192px" height="192px" style="object-fit: cover;" loading="lazy" class="thumb" 
+                alt={latestGalleryEntry.data.title} title={latestGalleryEntry.data.title} src={latestGalleryEntry.data.thumbnailPath}
+              />
+            </div>
+          <h1>{latestGalleryEntry.data.title}</h1>
+          </a>
+        </section>
+
+        <section id="latest-blog">
+          <h2>latest blog post:</h2>
+          <a href={`/blog/post/${latestBlogPost.id}/`}><h2>{latestBlogPost.data.title}</h2></a>
+          <p><FormattedDate date={latestBlogPost.data.pubDate} /></p>
+          <p>{latestBlogPost.data.description}</p>
+
+        </section>
+      </div>
+      
+      <hr>
+      <div class="flex-sections">
         <section class="scrollable">
           <h2>cool things i do</h2>
           <ul>
@@ -132,36 +190,7 @@ const changelog = await sanitizeHtml(parser.render(await readFile('./src/content
       </div>
 
       <hr />
-
-      <div class="flex-sections">
-        <section id="status-section">
-          <h2>status</h2>
-          <div class="status-holder">
-            <div id="status-bubble" class="speech-bubble right">
-              <div id="statuscafe">
-                <div id="statuscafe-content"></div>
-                <div id="statuscafe-username"></div>
-              </div>
-              <script type="text/javascript" src="https://status.cafe/current-status.js?name=goatgirl" defer></script>
-            </div>
-            <div id="status-goat">
-              <img
-                alt="goatgirl"
-                draggable="false"
-                title="click me!"
-                onclick="toggleStatus()"
-                src="/assets/img/goatsit.png"
-                width="256"
-              />
-            </div>
-          </div>
-
-          <script type="text/javascript" src="/assets/scripts/statusgoat.js"></script>
-        </section>
-      </div>
-
         
-
       <!-- <script is:inline>
         function isPointOverText(x, y) {
           const element = document.elementFromPoint(x, y);
