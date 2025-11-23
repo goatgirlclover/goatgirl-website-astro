@@ -2,6 +2,7 @@
 .flex-sections .homepage-main {
   flex-basis: 30em !important;
   flex-grow: 99 !important;
+  flex-shrink: 1 !important;
 }
 
 /* HOMEPAGE - STATUS.CAFE */
@@ -13,7 +14,6 @@
 #statuscafe-username .emoji-spacer { margin-left: 0.15em; margin-right: 0.15em; }
 
 #statuscafe-content {
-  font-size: 1.1rem;
   font-weight: 500;
   overflow: visible;
 }
@@ -68,7 +68,7 @@
   max-width: 100%;
   width: min-content;
   min-width: 11em;
-  margin-right: 30px !important; /* no flicker when changing style */
+  margin-right: 0 !important; /* no flicker when changing style */
 }
 
 /* HOMEPAGE - LAST.FM */

@@ -342,7 +342,6 @@ a { cursor: url("/assets/cursor_hover.png") 10 1, pointer; } */
 .flex-sections {
   display: flex;
   flex-wrap: wrap;
-  overflow-x: auto;
   width: 100%;
   gap: 20px;
   margin: 20px 0;
@@ -406,7 +405,7 @@ main {
   overflow: visible;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 360px) {
   #site-body { 
     margin: 0 !important;
     border-radius: 0 !important;
@@ -602,7 +601,7 @@ aside #site-changelog {
   overflow: hidden;
   border-radius: 25px; 
   margin: 4px auto 12px; 
-  background-color: var(--content-background);
+  background-color: var(--content-border);
   max-width: 900px;
   border: 2px solid var(--content-border); 
   border-radius: 25px; 
@@ -630,6 +629,7 @@ aside #site-changelog {
   flex-wrap: wrap;
   justify-content: center; 
   text-align: center; 
+  gap: 3px;
 }
 
 #site-title { font-size: 3em; text-decoration: none; }
@@ -678,6 +678,7 @@ aside #site-changelog {
   text-wrap: nowrap; 
   padding-right: 12px;
   z-index: 1;
+  background-color: var(--content-background);
 }
 
 #site-header nav a:focus-visible {
@@ -693,12 +694,6 @@ aside #site-changelog {
 #site-header nav img { width: 1.15em; height: 1.15em; position: relative; top: -0.25em; overflow: visible; margin: -0.5em 0; }
 
 /*#site-header > div a:hover { color: var(--inverse-text-color); } */
-
-#site-header nav a + a {
-  /* margin-left: 15px; */
-  border-left: 3px solid var(--content-border);
-  margin-left: -3px;
-}
 
 #site-header nav a:hover, #site-header nav a:active, #site-header nav a:focus-visible {
   font-weight: bolder;
@@ -718,10 +713,6 @@ aside #site-changelog {
   bottom: 0;
   right: 0;
   z-index: -1;
-}
-
-#site-header nav:has(.active-page + a) .active-page::before {
-  right: 3px;
 }
 
 /* FOOTER */
@@ -1050,25 +1041,33 @@ aside #site-changelog {
 /* page background */
 html { 
   background-color: var(--page-background-color2);
+  position: relative;
 }
 
 html::before {  
   content: '';
   left: 0; right: 0; top: 0; bottom: 0;
-  width: 100%; height: 100%;
-  position: fixed;
+  /* width: 100%; height: 100%; */
+  min-width: 100vw; min-height: 100vh;
+  position: fixed; /* absolute; */
   
+  /* for older browsers */
   background-image:
     linear-gradient(45deg, var(--page-background-color1) 25%, transparent 25%), 
     linear-gradient(135deg, var(--page-background-color1) 25%, transparent 25%),
     linear-gradient(45deg, transparent 75%, var(--page-background-color1) 75%),
     linear-gradient(135deg, transparent 75%, var(--page-background-color1) 75%);
+  
+    /* for newest browsers */
+  background-image: repeating-conic-gradient(var(--page-background-color1) 0 25%, transparent 0 50%);
+  
   background-size: 64px 64px;
   background-position: 0 0, 32px 0, 32px -32px, 0px 32px;
   animation: checkerboard-scroll 2s linear infinite;
 }
 
-@supports (mask-image: url()) {
+/* for in-between browsers - get rid of ugly diagonal line in the linear-gradients */
+@supports (mask-image: url()) and (not (background: repeating-conic-gradient(from 0deg, red 0deg, red 0deg 1deg, red 2deg))) {
   html::before {  
     background-image: none;
     background-size: auto;

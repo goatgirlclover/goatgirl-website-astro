@@ -17,7 +17,9 @@ const links = {
     Object.entries(links).map(([key, value]) => (
         <a title={displayLabel ? key : undefined} class={"social-media " + key.toLowerCase()} 
         target="_blank" rel="noopener" href={value} tabindex="0">
-            <img width="32px" height="32px" 
+            <img 
+                width={key === "Itaku" && displayLabel ? "48px" : "32px"}
+                height="32px" 
                 src={"/assets/icons/social/" + key.toLowerCase() + ".svg"} 
                 alt={key + " logo"} 
                 loading="lazy" />
