@@ -21,6 +21,7 @@ i first starting coding this site sometime around September 2024, maybe a bit ea
 	- grabbed its matching `info.txt` file stuffed within the website files
 	- copy over the header and structure the rest of the site used
 	- generate some badly formatted HTML, filling in the blanks based on the above info
+	
 having three different forms of HTML generation meant any tweaks to the site's header and structure would have to be copied to each standalone HTML file, Publii's own custom HTML system, *and* my crummy batch scripts. this sucked to do!!! and i made changes Very Often so i had to do it a lot!!!!! but i just dealt with it up until i was happy enough to make it public on September 21. this ended up working well enough for me as changes were *very* sporadic after then - i only bothered to update the site to add more artwork, or swap out my Twitter link for Bluesky when i deleted my empty account LOL
 
 the last published update i had was December 19, at which point i stopped caring to maintain it for like 7 months... yeaaa obsessively working on my website was a phase that fizzled out long before i dropped it completely. like many things i start! back then i would start up new projects all the time only to drop them pretty quickly (note: i still do this but it is not as bad). this habit meant i burned myself out on pretty much anything i did for the longest time. the first version of this website was one of many casualties of this process, so it was left alone, public but perpetually incomplete, gathering digital dust.......
