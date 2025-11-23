@@ -51,13 +51,15 @@
   --light-accent-color: #FF4B7E;
   --light-drop-shadow: #E1DEBF;
 
-  --page-background-color1: color-mix(in hsl, var(--drop-shadow), var(--content-background) 70%);
-  --page-background-color2: color-mix(in hsl, #4B4C68, var(--content-background) 80%);
+  /* --page-background-color1: color-mix(in hsl, var(--drop-shadow), var(--content-background) 70%);
+  --page-background-color2: color-mix(in hsl, #4B4C68, var(--content-background) 80%); */
+  --page-background-color1: var(--content-background);
+  --page-background-color2: var(--content-background);
 }
-
+/* 
 :root.light-mode.theme-unbeatable {
   --page-background-color2: color-mix(in hsl, #B4B29B, var(--content-background) 70%);
-}
+} */
 
 :root.theme-unbeatable :is(h1, h2, h3, h4) { 
   color: var(--accent-color);
