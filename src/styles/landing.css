@@ -2,13 +2,12 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  width: 100vw;
-  height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
-#landing-body main {
+#landing-body #site-body {
   flex-basis: 1300px;
-  padding: 24px;
 }
 
 #landing-text > h1 {

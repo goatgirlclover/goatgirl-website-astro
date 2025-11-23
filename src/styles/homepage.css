@@ -101,6 +101,7 @@
   margin-top: -12px;
   box-shadow: 3px 3px var(--contrast-color);
   border-radius: 5px;
+  margin-bottom: 4px;
 }
 
 #lastfm-song {
@@ -203,6 +204,7 @@
   margin-top: 12px;
 }
 
+#latest { align-items: center; }
 #latest-gallery { flex: 99 1 256px; text-align: center; }
 #latest-blog { flex: 1 1 20em; text-align: right; }
 
@@ -229,4 +231,30 @@
 
 #latest > section {
   padding: 12px;
+}
+
+aside #latest > section {
+  padding: 6px;
+}
+
+aside #latest-gallery .gallery-img img {
+  max-height: 192px;
+}
+
+aside #latest { gap: 0; }
+
+aside #latest-blog p:last-child {
+  display: none;
+}
+
+aside #latest-blog :is(p, h2) {
+  margin: 4px;
+}
+
+aside > .flex-sections {
+  margin: 4px 0;
+}
+
+aside > #site-changelog {
+  margin-top: 4px;
 }

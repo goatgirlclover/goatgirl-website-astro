@@ -1,5 +1,6 @@
 ---
 import Head from "../layouts/fragment/head.astro";
+import SiteFooter from "../components/site-footer.astro";
 import "../styles/landing.css"
 ---
 <html id="landing-page" lang="en">
@@ -10,36 +11,39 @@ import "../styles/landing.css"
             window.location.replace("/home");
         }
     </script>
-    <main>
-        <div id="landing-text">
-            <h1>hello there!</h1>
-            <p>before you head in here, there's a couple things i wanna let you know:</p>
-            <ul>
-                <li>this site is very mobile friendly - or at least i try to make it so!</li>
-                <li>this site has a dark theme, a moving background, and other in-motion elements by default. if you're not into that, these elements can be toggled at the site's footer, or right here:</li>
+    <div id="site-body">
+        <main>
+            <div id="landing-text">
+                <h1>hello there!</h1>
+                <p>before you head in here, there's a couple things i wanna let you know:</p>
                 <ul>
-                    <input onclick="toggleDarkMode()" type="checkbox" id="darkmodeinput" name="darkmodeinput"/>
-                    <label for="darkmodeinput">enable light mode</label>
-                    <br>
-                    <input onclick="toggleReducedMotion()" type="checkbox" id="reducedmotioninput" name="reducedmotioninput"/>
-                    <label for="reducedmotioninput">enable reduced motion</label>
+                    <li>this site is very mobile friendly - or at least i try to make it so!</li>
+                    <li>this site has a dark theme, a moving background, and other in-motion elements by default. if you're not into that, these elements can be toggled at the site's footer, or right here:</li>
+                    <ul>
+                        <input onclick="toggleDarkMode()" type="checkbox" id="darkmodeinput" name="darkmodeinput"/>
+                        <label for="darkmodeinput">enable light mode</label>
+                        <br>
+                        <input onclick="toggleReducedMotion()" type="checkbox" id="reducedmotioninput" name="reducedmotioninput"/>
+                        <label for="reducedmotioninput">enable reduced motion</label>
+                    </ul>
+                    <li>while many parts of this site use JavaScript, all of my main content (art gallery, blog, etc.) is browsable without it!</li>
+                    <ul>
+                        <li>note that the light mode/reduced motion toggles require JavaScript to work! system preference on reduced motion is respected (though the site toggle can override it), but preference on dark mode isn't</li>
+                    </ul>
+                    <li>there's no NSFW content on this site, however i am an adult and can be a little crass</li>
+                    <ul>
+                        <li>also, some of my art could be considered ~suggestive~ (nothing crazy, but if i feel the need i'll add warnings). proceed with caution!</li>
+                    </ul>
                 </ul>
-                <li>while many parts of this site use JavaScript, all of my main content (art gallery, blog, etc.) is browsable without it!</li>
-                <ul>
-                    <li>note that the light mode/reduced motion toggles require JavaScript to work! system preference on reduced motion is respected (though the site toggle can override it), but preference on dark mode isn't</li>
-                </ul>
-                <li>there's no NSFW content on this site, however i am an adult and can be a little crass</li>
-                <ul>
-                    <li>also, some of my art could be considered ~suggestive~ (nothing crazy, but if i feel the need i'll add warnings). proceed with caution!</li>
-                </ul>
-            </ul>
-            <p>with that outta the way...</p>
-            <div id="enter-button"><a href="/home"><h1>lemme in already!!! ↪</h1></a></div>
+                <p>with that outta the way...</p>
+                <div id="enter-button"><a href="/home"><h1>lemme in already!!! ↪</h1></a></div>
 
-            <input onclick="rememberVisitedLanding()" type="checkbox" id="rememberlandinginput" name="rememberlandinginput"/>
-            <label for="rememberlandinginput">skip the landing page next time</label>
-        </div>
-    </main>
+                <input onclick="rememberVisitedLanding()" type="checkbox" id="rememberlandinginput" name="rememberlandinginput"/>
+                <label for="rememberlandinginput">skip the landing page next time</label>
+            </div>
+        </main>
+        <SiteFooter />
+    </div>
 </body>
 <script is:inline type="text/javascript">
     document.getElementById("darkmodeinput").checked = (localStorage.getItem('lightMode') === 'true');

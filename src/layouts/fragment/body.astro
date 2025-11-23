@@ -1,41 +1,13 @@
 ---
-import { Image } from 'astro:assets';
-import LinkButtons from '../../components/linkbuttons.astro';
+import SiteHeader from '../../components/site-header.astro';
+import SiteFooter from '../../components/site-footer.astro';
 const { activePage = "home" } = Astro.props;
 ---
 
 <body>
-  <header id="site-header">
-    <div>
-      <a href="/home" tabindex="0" id="site-logo">
-        <Image width="512" height="187" alt="goatgirlclover!" src="/assets/img/logoPink.png">
-      </a>
-      <div><nav class="header-links"> 
-        <a href="/gallery/" class={activePage == "gallery" ? "active-page" : undefined} tabindex="0"><img src="/assets/mutantstandard/emoji/1f3a8.svg" width="24"> art</a>
-        <a href="/blog/" class={activePage == "blog" ? "active-page" : undefined} tabindex="0"><img width="24" src="/assets/mutantstandard/emoji/1f4ac.svg"> blog</a>
-        <a href="/about/" class={activePage == "about" ? "active-page" : undefined} tabindex="0"><img width="24" src="/assets/mutantstandard/emoji/270c.svg"> about</a>
-        <a href="/links/" class={activePage == "links" ? "active-page" : undefined} tabindex="0"><img width="24" src="/assets/mutantstandard/emoji/1f310.svg"> links</a>
-      </nav> </div> 
-    </div>
-  </header>
-
-  <main><slot></slot></main>
-
-  <footer id="site-footer">
-    <nav class="social-icons">
-      <LinkButtons displayLabel={false}/>
-    </nav>
-    <div class="username">@goatgirlclover</div>
-    <div class="footer-buttons" style="display: none;">
-      <div class="theme-switcher dropdown reverse" tabindex="0" data-aftercontent=": neapolitan">
-        <div class="dropdown-content">
-          <button id="neapolitan" tabindex="0" onclick="toggleTheme(this.id)">neapolitan</button>
-          <button id="mintchoco" tabindex="0" onclick="toggleTheme(this.id)">mint choco</button>
-          <button id="unbeatable" tabindex="0" onclick="toggleTheme(this.id)">unbeatable</button>
-        </div>theme</div>
-      <button class="dark-mode" tabindex="0" onclick="toggleDarkMode()" data-aftercontent=": on">dark mode</button>
-      <button class="reduced-motion" tabindex="0" onclick="toggleReducedMotion()" data-aftercontent=": off">reduced motion</button>
-    </div>
-    <script is:inline>document.querySelector("#site-footer .footer-buttons").removeAttribute("style");</script> <!-- only show w/ Javascript -->
-  </footer>
+  <SiteHeader activePage={activePage} />
+  <div id="site-body">
+    <main><slot></slot></main>
+    <SiteFooter />
+  </div>
 </body>
