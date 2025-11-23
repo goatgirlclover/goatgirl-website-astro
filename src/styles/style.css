@@ -209,7 +209,7 @@
   --darker-pink-75: color-mix(in hsl, var(--clover-pink), #430f0f 60%);
 }
 
-main {
+#site-body {
   font-size: 1.1rem;
   font-weight: 500;
 }
@@ -1038,26 +1038,57 @@ aside #site-changelog {
   }
 }
 
+@keyframes checkerboard-scroll-mask {
+  0% {
+    mask-position: 0 0, 32px 0, 32px -32px, 0px 32px;
+  }
+  100% {
+    mask-position: -32px 32px, 0 32px, 0 0, -32px 64px;
+  }
+}
+
 /* page background */
-html {
+html { 
   background-color: var(--page-background-color2);
+}
+
+html::before {  
+  content: '';
+  left: 0; right: 0; top: 0; bottom: 0;
+  width: 100%; height: 100%;
+  position: fixed;
+  
   background-image:
     linear-gradient(45deg, var(--page-background-color1) 25%, transparent 25%), 
     linear-gradient(135deg, var(--page-background-color1) 25%, transparent 25%),
     linear-gradient(45deg, transparent 75%, var(--page-background-color1) 75%),
     linear-gradient(135deg, transparent 75%, var(--page-background-color1) 75%);
-
   background-size: 64px 64px;
   background-position: 0 0, 32px 0, 32px -32px, 0px 32px;
   animation: checkerboard-scroll 2s linear infinite;
 }
 
-html.reduced-motion, #landing-page { 
+@supports (mask-image: url()) {
+  html::before {  
+    background-image: none;
+    background-size: auto;
+    background-position: center;
+    
+    background-color: var(--page-background-color1);
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2 2'%3E%3Cpath fill-rule='evenodd' d='M0 0h1v1H0V0zm1 1h1v1H1V1z'/%3E%3C/svg%3E");
+    mask-size: 64px 64px;
+    mask-position: 0 0, 32px 0, 32px -32px, 0px 32px;
+    animation: checkerboard-scroll-mask 2s linear infinite;
+  }
+}
+
+
+html.reduced-motion::before, #landing-page { 
   animation: none !important;
 }
 
 @media (prefers-reduced-motion) {
-  html:not(.full-motion) { 
+  html:not(.full-motion)::before { 
     animation: none !important;
   }
 } 

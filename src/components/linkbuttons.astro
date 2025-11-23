@@ -19,7 +19,8 @@ const links = {
         target="_blank" rel="noopener" href={value} tabindex="0">
             <img width="32px" height="32px" 
                 src={"/assets/icons/social/" + key.toLowerCase() + ".svg"} 
-                alt={displayLabel ? key : undefined} />
+                alt={key + " logo"} 
+                loading="lazy" />
             {displayLabel && <p>{key}</p>}
         </a>
     ))
