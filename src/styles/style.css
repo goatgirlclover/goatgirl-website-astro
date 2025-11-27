@@ -746,6 +746,20 @@ aside #site-changelog {
   margin-left: 1px;
 }
 
+#site-footer .neko {
+  position: relative;
+}
+
+#site-footer .neko:has(.site-button:hover)::after {
+  content: attr(data-copyButtonText);
+  position: absolute;
+  display: block;
+  left: 100px;
+  top: 0;
+  background-color: var(--darker-bg-75);
+  padding: 2px 4px;
+}
+
 #site-footer .social-icons {
   display: flex; 
   min-height: 44px;
