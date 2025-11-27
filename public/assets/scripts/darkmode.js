@@ -11,6 +11,7 @@ function toggleDarkMode() {
   toggleClass(document.documentElement, "light-mode"); // dark mode is default
   const usingLightMode = document.documentElement.className.indexOf("light-mode") > -1;
   document.querySelector("button.dark-mode").setAttribute("data-aftercontent", usingLightMode ? ": off" : ": on"); 
+  document.getElementById("darkmodeinput").checked = usingLightMode;
   localStorage.setItem('lightMode', usingLightMode);
   updateSiteLogo();
 }
@@ -20,6 +21,7 @@ function toggleReducedMotion() {
   toggleClass(document.documentElement, "full-motion"); 
   const usingRM = document.documentElement.className.indexOf("reduced-motion") > -1;
   document.querySelector("button.reduced-motion").setAttribute("data-aftercontent", usingRM ? ": on" : ": off"); 
+  document.getElementById("reducedmotioninput").checked = usingRM;
   localStorage.setItem('reducedMotion', usingRM);
   
   if (usingRM) { freezeGifs(); } else { unfreezeGifs(); }
