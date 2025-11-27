@@ -493,7 +493,7 @@ details > summary:has(> img) {
   overflow: hidden;
 }
 
-textarea {
+textarea:not(.c-input) {
   font-size: 14px;
   color: var(--text-color);
   background-color: var(--inverse-text-color);
