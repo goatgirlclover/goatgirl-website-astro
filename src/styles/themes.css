@@ -61,6 +61,6 @@
   --page-background-color2: color-mix(in hsl, #B4B29B, var(--content-background) 70%);
 } */
 
-:root.theme-unbeatable :is(h1, h2, h3, h4) { 
+:root.theme-unbeatable :is(h1, h2, h3, h4, h5, h6) { 
   color: var(--accent-color);
 }
