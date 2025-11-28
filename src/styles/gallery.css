@@ -99,3 +99,13 @@
 
 .gallery-back > :first-child { margin-top: 0px; }
 #gallery-focus .info > :last-child { margin-bottom: 0px; }
+
+.focus-container + hr {
+  border: none; 
+  border-bottom: 3px dashed var(--text-color) !important; 
+}
+
+#gallery-focus .focus-footer nav { display: flex; flex-wrap: wrap; }
+#gallery-focus .focus-footer nav > p { flex: 1 0 10em; margin: 0; text-align: center; }
+#gallery-focus .focus-footer nav > p:first-child { text-align: left; }
+#gallery-focus .focus-footer nav > p:last-child { text-align: right; }
