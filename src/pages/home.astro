@@ -7,7 +7,7 @@ import sanitizeHtml from 'sanitize-html';
 import MarkdownIt from 'markdown-it';
 import { readFile } from 'node:fs/promises';
 const parser = new MarkdownIt();
-const changelog = await sanitizeHtml(parser.render(await readFile('./src/content/changelog.md', 'utf-8')));
+const changelog = sanitizeHtml(parser.render(await readFile('./src/content/changelog.md', 'utf-8')));
 
 import { posts } from "./blog.astro";
 const latestBlogPost = posts[0];
