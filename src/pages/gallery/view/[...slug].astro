@@ -1,10 +1,10 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
+import { type CollectionEntry } from 'astro:content';
 import GalleryFocus from "../../../layouts/gallery-focus.astro"; 
+import { galleryEntries } from '../../gallery.astro';
 
 export async function getStaticPaths() {
-	const entries = await getCollection('gallery');
-    return entries.map((entry) => ({
+    return galleryEntries.map((entry) => ({
 		params: { slug: entry.id },
 		props: { entry },
 	}));
