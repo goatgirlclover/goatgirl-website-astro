@@ -152,6 +152,7 @@ else {c_submitButton = document.createElement('button')}
 let v_pagePath = window.location.pathname;
 if (s_includeUrlParameters) {v_pagePath += window.location.search}
 if (s_fixRarebitIndexPage && v_pagePath == '/') {v_pagePath = '/?pg=1'}
+if (!v_pagePath.endsWith("/")) { v_pagePath += "/"; }
 const c_pageInput = document.createElement('input');
 c_pageInput.value = v_pagePath; c_pageInput.type = 'text'; c_pageInput.style.display = 'none';
 c_pageInput.id = 'entry.' + s_pageId; c_pageInput.name = c_pageInput.id; 

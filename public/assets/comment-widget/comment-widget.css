@@ -217,3 +217,9 @@
     color: var(--text-color);
     padding: 2px;
 }
+
+#c_widget_small {
+    text-align: right;
+    display: block;
+    margin-top: 8px;
+}
