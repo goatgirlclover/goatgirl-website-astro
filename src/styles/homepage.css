@@ -2,6 +2,7 @@
 .flex-sections .homepage-main {
   flex-basis: 30em !important;
   flex-grow: 99 !important;
+  flex-shrink: 1 !important;
 }
 
 /* HOMEPAGE - STATUS.CAFE */
@@ -13,7 +14,6 @@
 #statuscafe-username .emoji-spacer { margin-left: 0.15em; margin-right: 0.15em; }
 
 #statuscafe-content {
-  font-size: 1.2rem;
   font-weight: 500;
   overflow: visible;
 }
@@ -68,7 +68,7 @@
   max-width: 100%;
   width: min-content;
   min-width: 11em;
-  margin-right: 30px !important; /* no flicker when changing style */
+  margin-right: 0 !important; /* no flicker when changing style */
 }
 
 /* HOMEPAGE - LAST.FM */
@@ -87,19 +87,21 @@
 
 .lastfm-widget  {
   margin: 0 auto;
-  border: 3px solid var(--drop-shadow);
+  border: 3px solid var(--contrast-color);
   padding: 4px;
   border-radius: 10px;
   position: relative;
 }
 
 .lastfm-cover {
+  display: block;
   height: auto;
   width: 256px;
   margin: 0 auto;
   margin-top: -12px;
-  box-shadow: 3px 3px var(--drop-shadow);
+  box-shadow: 3px 3px var(--contrast-color);
   border-radius: 5px;
+  margin-bottom: 4px;
 }
 
 #lastfm-song {
@@ -119,6 +121,7 @@
 .lastfm-widget small, .lastfm-widget small > a {
   font-size: x-small;
   font-weight: 400; 
+  line-height: 1px;
 }
 
 .lastfm-widget small {
@@ -156,7 +159,7 @@
   padding: 0.5em; 
   margin: 0 auto; 
   border-radius: 100px; 
-  border: 3px solid var(--drop-shadow);
+  border: 3px solid var(--contrast-color);
 }
 
 .countdown.unbeatable {
@@ -171,6 +174,87 @@
   }
 }
 
-/* :root.light-mode .countdown.unbeatable {
-  background-image: url(/assets/unbeatableBannerLight.png); 
-} */
+:root.light-mode .countdown.unbeatable {
+  background-image: url(/assets/unbeatableBannerLight.png);
+} 
+ 
+.page-split {
+  gap: 20px;
+  background-color: var(--contrast-color);
+}
+
+.page-split > :is(section, aside) {
+  background-color: var(--content-background);
+  outline: 9px solid var(--content-background);
+}
+
+.page-split > section {
+  flex: 99 1 640px;
+  /* border-right: 3px solid black;
+  padding-right: 13px; */
+}
+
+.page-split > :is(section, aside):last-child {
+  flex: 1 1 312px;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-split > :is(section, aside):last-child > section + section {
+  margin-top: 12px;
+}
+
+#latest { align-items: center; }
+#latest-gallery { flex: 99 1 256px; text-align: center; }
+#latest-blog { flex: 1 1 20em; text-align: right; }
+
+#latest-gallery .gallery-img {
+  width: fit-content;
+  height: auto;
+  max-width: none;
+  min-width: auto;
+  min-height: auto;
+  max-height: none;
+  margin: auto;
+  padding: 2px;
+}
+
+#latest-gallery a {display: block; }
+#latest-gallery h1 { margin-bottom: 0; }
+
+#latest-gallery .gallery-img img {
+  width: auto;
+  height: auto;
+  max-height: 256px;
+  display: block;
+}
+
+#latest > section {
+  padding: 12px;
+}
+
+aside #latest > section {
+  padding: 6px;
+}
+
+aside #latest-gallery .gallery-img img {
+  max-height: 192px;
+}
+
+aside #latest { gap: 0; }
+
+aside #latest-blog p:last-child {
+  display: none;
+}
+
+aside #latest-blog :is(p, h2) {
+  margin: 4px;
+}
+
+aside > .flex-sections {
+  margin: 4px 0;
+}
+
+aside > #site-changelog {
+  margin-top: 4px;
+}

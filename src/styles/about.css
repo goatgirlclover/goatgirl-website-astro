@@ -5,12 +5,15 @@
     var( --data-entry-bg-1), var( --data-entry-bg-1) 10px,
     var( --data-entry-bg-2) 10px, var( --data-entry-bg-2) 20px
   );
+
   animation: scrolldatabg 1.5s linear infinite;
   padding: 20px;
   position: relative;
-  border: 3px solid var(--drop-shadow);
+  border: 3px solid var(--contrast-color);
   background-size: 200% 200%;
   overflow: visible;
+
+  box-shadow: 0 0 150px rgba(0,0,0,0.4) inset;
 }
 
 @keyframes scrolldatabg {
@@ -42,7 +45,7 @@
   right: 12px;
   top: 4px;
   font-size: 1.1em;
-  color: var(--inverse-text-color);
+  color: white;
   opacity: 0.5;
   text-shadow: none;
 }
@@ -58,6 +61,9 @@
 
 .data-entry .data-icon-wrapper {
   filter: drop-shadow(0 0 5px black);
+  float: left;
+  margin-right: 40px;
+  margin-bottom: 20px;
 }
 
 .data-entry .data-icon img {
@@ -70,7 +76,7 @@
 
 .data-entry .data-icon::after {
   content: '';
-  background-image: url("/assets/img/aboutme2.png");
+  background-image: url("/assets/img/aboutme2.png?v=2");
   background-size: 100%;
   display: block;
   width: 192px;
@@ -123,7 +129,7 @@
   .data-entry .data-icon-wrapper:hover .data-icon { transform: rotateY(180deg); }
 } 
 
-.data-entry .intro-text { flex-basis: 30em; }
+.data-entry .intro-text { flex-basis: 20em; }
 .data-entry .intro-text img { width: 1.15em; position: relative; top: -0.45em; overflow: visible; margin: -0.5em 0; }
 .data-entry .intro-text img + img { left: -0.5em; top: -0.15em; }
 
@@ -142,6 +148,9 @@ details > div:has(.music-grid) {
   overflow: scroll; */
 }
 
+.music-grid a { text-decoration: none; }
+.music-grid .favsong p > b { text-decoration: underline; }
+
 .music-grid .favsong {
   display: flex;
   overflow: hidden;
@@ -155,6 +164,10 @@ details > div:has(.music-grid) {
 .music-grid .favsong p {
   min-width: calc(312px - 82px - 10px);
   margin: auto 0;
+}
+
+.music-grid .favsong p > span {
+  color: var(--text-color);
 }
 
 .song-player {

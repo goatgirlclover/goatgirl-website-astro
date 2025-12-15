@@ -2,9 +2,7 @@
 setlocal enabledelayedexpansion
 
 set "workingdir=%UserProfile%\Documents\website\scripts\"
-set "uploaddir=%UserProfile%\Documents\website\astro\public\"
-set "pagedir=%UserProfile%\Documents\website\astro\src\pages\gallery\view\"
-set "gallerydir=!uploaddir!gallery\view\"
+set "gallerydir=%UserProfile%\Documents\website\astro\src\content\gallery\"
 
 cd %workingdir%  
 
@@ -115,27 +113,8 @@ echo !title!>>!gallerydir!!filename!.txt
 echo !desc!>>!gallerydir!!filename!.txt
 echo !postdate!>>!gallerydir!!filename!.txt
 echo !alttext!>>!gallerydir!!filename!.txt
+echo !W!x!H!>>!gallerydir!!filename!.txt
 
-del index.html
-copy NUL index.html
-
-setlocal disabledelayedexpansion
-echo --- >> index.html
-echo import GalleryFocus from "../../../layouts/gallery-focus.astro"; >> index.html
-echo --- >> index.html
-setlocal enabledelayedexpansion
-
-echo ^<GalleryFocus title=`!title! - goatgirlclover` description=`!desc!` image=`/gallery/img/!filename!.png` alt=`!alttext!` width=`!W!` height=`!H!`^>^</GalleryFocus^> >> index.html
-
-setlocal enabledelayedexpansion
-copy index.html "!pagedir!!filename!.astro"
-del index.html
 endlocal
 echo -----
 goto :eof
-
-:trim 
-SetLocal EnableDelayedExpansion
-set "Params=%*"
-for /f "tokens=1*" %%a in ("!Params!") do EndLocal & set "%1=%%b"
-exit /b

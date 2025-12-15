@@ -1,49 +1,13 @@
 ---
-import { Image } from 'astro:assets';
+import SiteHeader from '../../components/site-header.astro';
+import SiteFooter from '../../components/site-footer.astro';
 const { activePage = "home" } = Astro.props;
 ---
 
 <body>
-  <header id="site-header">
-    <div>
-      <a href="/" tabindex="0" id="site-logo">
-        <Image width="512" height="187" alt="goatgirlclover!" src="/assets/img/logo.png">
-      </a>
-      <div><nav class="header-links"> 
-        <a href="/gallery/" class={activePage == "gallery" ? "active-page" : undefined} tabindex="0"><img src="/assets/mutantstandard/emoji/1f3a8.svg" width="24"> art</a>
-        <a href="/blog/" class={activePage == "blog" ? "active-page" : undefined} tabindex="0"><img width="24" src="/assets/mutantstandard/emoji/1f4ac.svg"> blog</a>
-        <a href="/about/" class={activePage == "about" ? "active-page" : undefined} tabindex="0"><img width="24" src="/assets/mutantstandard/emoji/270c.svg"> about</a>
-        <a href="/links/" class={activePage == "links" ? "active-page" : undefined} tabindex="0"><img width="24" src="/assets/mutantstandard/emoji/1f310.svg"> links</a>
-      </nav> </div> 
-    </div>
-  </header>
-
-  <main><slot></slot></main>
-
-  <footer id="site-footer">
-    <nav class="social-icons">
-      <a title="Bluesky" class="social-media bsky" target="_blank" rel="noopener"
-        href="https://bsky.app/profile/goatgirlclover.bsky.social" tabindex="0">
-        <img width="32px" height="32px" alt="Bluesky" src="/assets/icons/social/bluesky.svg">
-      </a>
-      <a title="Itaku" class="social-media itaku" target="_blank" rel="noopener"
-        href="https://itaku.ee/profile/goatgirlclover" tabindex="0">
-        <img width="48px" height="32px" alt="Itaku" src="/assets/icons/social/itaku.svg">
-      </a>
-      <a title="Tumblr" class="social-media tumblr" target="_blank" rel="noopener" href="https://goatgirlclover.tumblr.com"
-        tabindex="0">
-        <img width="32px" height="32px" alt="Tumblr" src="/assets/icons/social/tumblr.svg">
-      </a>
-      <a title="Github" class="social-media github" target="_blank" rel="noopener" href="https://github.com/goatgirlclover"
-        tabindex="0">
-        <img width="32px" height="32px" alt="Github" src="/assets/icons/social/github.svg">
-      </a>
-    </nav>
-    <div class="username">@goatgirlclover</div>
-    <div class="footer-buttons" style="display: none;">
-      <button class="dark-mode" tabindex="0" onclick="toggleDarkMode()" data-aftercontent=": on">dark mode</a>
-      <button class="reduced-motion" tabindex="0" onclick="toggleReducedMotion()" data-aftercontent=": off">reduced motion</a>
-    </div>
-    <script is:inline>document.querySelector("#site-footer .footer-buttons").removeAttribute("style");</script> <!-- only show w/ Javascript -->
-  </footer>
+  <SiteHeader activePage={activePage} />
+  <div id="site-body">
+    <main><slot></slot></main>
+    <SiteFooter />
+  </div>
 </body>

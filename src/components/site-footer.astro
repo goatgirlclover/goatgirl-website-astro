@@ -1,0 +1,53 @@
+---
+import LinkButtons from './linkbuttons.astro';
+import '../styles/links.css';
+---
+
+<footer id="site-footer">
+    <div class="footer-content">
+    <div class="neko" data-copyButtonText="click to copy HTML!">
+        <img
+            class="site-button freezable"
+            height="31"
+            width="88"
+            src="/assets/buttons/88x31/goatgirlclover.gif?v=2"
+            alt="goatgirlclover"
+            loading="lazy" 
+            onclick="copySiteButton()"
+        />
+        {!import.meta.env.DEV && <iframe src="https://nekoweb.org/frame/follow" frameborder="0" width="170" height="28"></iframe>}
+        <script type="text/javascript" is:inline>
+            function copySiteButton() {
+                navigator.clipboard.writeText('<a target="_blank" href="https://goatgirl.nekoweb.org"><img height="31" width="88" src="https://goatgirl.nekoweb.org/assets/buttons/88x31/goatgirlclover.gif" alt="goatgirlclover"/></a>');
+                document.querySelector("#site-footer .neko")?.setAttribute('data-copyButtonText', "copied!");
+                setTimeout(() => {
+                    document.querySelector("#site-footer .neko")?.setAttribute('data-copyButtonText', "click to copy HTML!");
+                }, 1000);
+            }
+        </script>
+    </div>
+    <div id="stats" style="display: none;">
+        <p id="stats-created"></p>
+        <p id="stats-updated"></p>
+        <p id="stats-visitors"></p>
+        <p id="stats-followers"></p>
+    </div>
+    <div class="footer-buttons" style="display: none;">
+        <div class="theme-switcher dropdown reverse" tabindex="0" data-aftercontent=": neapolitan">
+        <div class="dropdown-content">
+            <button id="neapolitan" tabindex="0" onclick="toggleTheme(this.id)">neapolitan</button>
+            <button id="mintchoco" tabindex="0" onclick="toggleTheme(this.id)">mint choco</button>
+            <button id="unbeatable" tabindex="0" onclick="toggleTheme(this.id)">unbeatable</button>
+        </div>theme</div>
+        <button class="dark-mode" tabindex="0" onclick="toggleDarkMode()" data-aftercontent=": on">dark mode</button>
+        <button class="reduced-motion" tabindex="0" onclick="toggleReducedMotion()" data-aftercontent=": off">reduced motion</button>
+    </div>
+    </div>
+    <div class="footer-socials">
+    <nav class="social-icons">
+        <LinkButtons displayLabel={false}/>
+    </nav>
+    <div class="username">@goatgirlclover</div>
+    </div>
+    <script is:inline>document.querySelector("#site-footer .footer-buttons").removeAttribute("style");</script> <!-- only show w/ Javascript -->
+</footer>

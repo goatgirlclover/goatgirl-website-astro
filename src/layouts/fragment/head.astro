@@ -1,5 +1,6 @@
 ---
 import '../../styles/style.css';
+import Meta from './meta.astro';
 const { title = "goatgirlclover", description = undefined, ogType = "website", pubDate = undefined, updatedDate = undefined } = Astro.props;
 
 var publishedTime = pubDate?.toISOString(); 
@@ -7,30 +8,16 @@ var modifiedTime = updatedDate?.toISOString();
 publishedTime = publishedTime?.substring(0, publishedTime?.indexOf('T'));
 modifiedTime = modifiedTime?.substring(0, modifiedTime?.indexOf('T'));
 
-const ogImage = import.meta.env.SITE + "/assets/img/embed-icon.png";
+const ogImage = import.meta.env.SITE + "/assets/img/embed-banner.png";
 ---
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{title}</title>
-  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pangolin&display=swap"
-    rel="stylesheet"> -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <script is:inline type="text/javascript" src="/assets/scripts/emoji.js"></script>
-
-  <meta property="og:url" content={import.meta.env.SITE}>
+  <Meta title={title} />
+  <meta property="og:image" content={ogImage}>
   <meta property="og:type" content={ogType}>
-  <meta property="og:title" content={title}>
   { description && <meta property="og:description" content={description} /> }
   
   {(ogType == "article") && <meta property='article:author' content='goatgirlclover' />}
   {(ogType == "article" && pubDate) && <meta property='article:published_time' content={publishedTime} />}
   {(ogType == "article" && updatedDate) && <meta property='article:modified_time' content={modifiedTime} />}
-
-  <meta property="og:image" content={ogImage}>
-  <meta name="viewport" content="width=device-width" />
-  <meta name="generator" content={Astro.generator} />
 </head>

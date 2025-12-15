@@ -16,6 +16,10 @@
   margin: 0;
 }
 
+aside .site-button { 
+  transform-origin: 150%;
+}
+
 .button-holder > img:hover, .button-holder > a:hover, .site-button:hover {
   transform: scale(1.05);
   outline: none;
@@ -32,4 +36,8 @@
 
 .flex-sections .webring {
 	flex: 0 1 0;
+}
+
+.main-socials > p {
+  margin-bottom: 0;
 }

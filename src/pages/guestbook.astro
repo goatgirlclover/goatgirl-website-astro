@@ -1,0 +1,12 @@
+---
+import Base from "../layouts/base.astro";
+---
+
+<Base title="guestbook - goatgirlclover" activePage="guestbook">
+    <h1>guestbook</h1>
+    <div id="c_widget"></div>
+    <script is:inline src="/assets/comment-widget/purify.min.js"></script>
+    <script is:inline src="/assets/comment-widget/showdown.min.js"></script>
+    <script is:inline src="/assets/comment-widget/comment-widget.js"></script>
+    <small id="c_widget_small">powered by <a target="_blank" href="https://virtualobserver.moe/ayano/comment-widget">ayano's comment widget</a></small>
+</Base>

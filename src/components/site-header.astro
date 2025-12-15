@@ -1,0 +1,21 @@
+---
+import { Image } from 'astro:assets';
+const { activePage } = Astro.props;
+---
+
+<header id="site-header">
+<div>
+    <a href="/home/" tabindex="0" id="site-logo">
+    <img loading="eager" width="512" height="187" alt="goatgirlclover!" src="/assets/img/logoPink.png">
+    </a>
+    <div>
+        <nav class="header-links"> 
+            <a href="/gallery/" class={activePage == "gallery" ? "active-page" : undefined} tabindex="0"><img src="/assets/mutantstandard/emoji/1f3a8.svg" width="24"> art</a>
+            <a href="/blog/" class={activePage == "blog" ? "active-page" : undefined} tabindex="0"><img width="24" src="/assets/mutantstandard/emoji/1f4ac.svg"> blog</a>
+            <a href="/about/" class={activePage == "about" ? "active-page" : undefined} tabindex="0"><img width="24" src="/assets/mutantstandard/emoji/270c.svg"> about</a>
+            <a href="/links/" class={activePage == "links" ? "active-page" : undefined} tabindex="0"><img width="24" src="/assets/mutantstandard/emoji/1f310.svg"> links</a>
+            <a href="/guestbook/" class={activePage == "guestbook" ? "active-page" : undefined} tabindex="0"><img width="24" src="/assets/mutantstandard/emoji/1f5e8.svg"> guestbook</a>
+        </nav> 
+    </div> 
+</div>
+</header>

@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/base.astro";
+import LinkButtons from "../components/linkbuttons.astro";
 import '../styles/links.css';
 ---
 
@@ -8,35 +9,10 @@ import '../styles/links.css';
     <section class="links-socials">
       <h1>where to find me</h1>
       <div class="main-socials">
-        <h2>social media</h2>
         <div class="links">
-          <a class="social-media bsky" target="_blank" rel="noopener"
-            href="https://bsky.app/profile/goatgirlclover.bsky.social" tabindex="0">
-            <img width="32px" height="32px" src="/assets/icons/social/bluesky.svg">
-            <p>Bluesky</p>
-          </a>
-          <a class="social-media itaku" target="_blank" rel="noopener"
-            href="https://itaku.ee/profile/goatgirlclover" tabindex="0">
-            <img width="48px" height="32px" src="/assets/icons/social/itaku.svg">
-            <p>Itaku</p>
-          </a>
-          <a class="social-media tumblr" target="_blank" rel="noopener"
-            href="https://goatgirlclover.tumblr.com" tabindex="0">
-            <img width="32px" height="32px" src="/assets/icons/social/tumblr.svg">
-            <p>Tumblr</p>
-          </a>
+          <LinkButtons />
         </div>
-        <p>i mostly post on bluesky - itaku and tumblr are more gallery sites but i may forget to post there,,</p>
-      </div>
-      <div class="other-socials">
-        <h2>other sites</h2>
-        <div class="links">
-          <a class="social-media github" target="_blank" rel="noopener"
-            href="https://github.com/goatgirlclover" tabindex="0">
-            <img width="32px" height="32px" src="/assets/icons/social/github.svg">
-            <p>Github</p>
-          </a>
-        </div>
+        <p>i'm most active on bluesky! tumblr is the only other one i'm "social" in - itaku is more of an alternative art gallery, and the rest are here just to verify that they're mine.</p>
       </div>
     </section>
 
@@ -193,13 +169,14 @@ import '../styles/links.css';
     <p>inspiration and the like :) check em out!!!!!!!</p>
     <div class="button-holder">
         <a href="https://sillywah.cc" title="silly wah" target="_blank"><img src="https://sillywah.cc/img/button/sillywah.gif" alt="Silly Wah"></a>
-        <a class="freezable" href="https://kibzone.neocities.org" title="kibzone" target="_blank"><img src="/assets/buttons/88x31/site/kibzone.png"></a>
+        <a class="freezable" href="https://kibzone.neocities.org" title="kibzone" target="_blank"><img src="/assets/buttons/88x31/site/kibzone.png" alt="kibzone"></a>
         <a href="https://sunsetbaya.nekoweb.org/" target="_blank" title="sunsetbaya"><img src="https://sunsetbaya.nekoweb.org/pics/mybutton.gif" alt="sunsetbaya"></a>
-        <a href="https://toasty.place" title="toasty.place" target="_blank"><img src="https://toasty.place/images/buttons/sitebutton.gif"></a>
+        <a href="https://toasty.place" title="toasty.place" target="_blank"><img src="https://toasty.place/images/buttons/sitebutton.gif" alt="toasty!"></a>
         <a class="freezable" href="https://kaiakairos.net/" title="kaiakairos.net" target="_blank"><img src="/assets/buttons/88x31/site/kaiakairos.gif" alt="play waxweaver!"></a>
-        <a class="freezable" href="https://corvidae.digital" title="corvidae.digital" target="_blank"><img src="/assets/buttons/88x31/site/corvidae.gif"></a>
+        <a class="freezable" href="https://corvidae.digital" title="corvidae.digital" target="_blank"><img src="/assets/buttons/88x31/site/corvidae.gif" alt="corvidae digital"></a>
         <a class="freezable" href="https://mooeena.site/" title="mooeena.site" target="_blank"><img src="/assets/buttons/88x31/site/mooeena_xbleaxhx.gif" alt="moo like a goat!"></a>
         <a href="https://jbc.lol" target="_blank"><img src="https://jbc.lol/imgs/buttons/jbtn.gif" alt="jb's site"/></a>
+        <a href="https://marlee-go.at" target="_blank"><img src="https://marlee-go.at/buttons/marmar8831.gif" loading="lazy" alt="marlee_goat"></a>
   </section>
 
   <hr>

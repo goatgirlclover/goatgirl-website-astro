@@ -1,0 +1,48 @@
+---
+import type { MarkdownHeading } from 'astro';
+interface Props { headings: MarkdownHeading[]; }
+
+const { headings } = Astro.props;
+const filteredHeadings = headings.filter((heading) => heading.depth <= 2);
+
+const footnoteHeader = filteredHeadings.findLast((heading) => heading.text == "Footnotes");
+if (footnoteHeader) { footnoteHeader.text = "footnotes"; }
+
+type GroupedHeading = {
+  depth: number; slug: string; text: string;
+  children: MarkdownHeading[];
+};
+
+const groupedHeadings = filteredHeadings.reduce<GroupedHeading[]>((sortedGroup, heading) => {
+    if (heading.depth === 1 || heading.text == "footnotes") {
+        sortedGroup.push({...heading, children: []});
+    } else if (heading.depth === 2) {
+        const lastParentHeading = sortedGroup[sortedGroup.length - 1];
+        if (lastParentHeading) { lastParentHeading.children.push(heading); }
+    } return sortedGroup; }, []);
+
+---
+
+{filteredHeadings.length > 2 && 
+<div class="blog-toc scrollable">
+    <nav>
+    <h2>table of contents</h2>
+    <ul>
+    {groupedHeadings.map((heading) => (
+        <li>
+        <a href={`#${heading.slug}`}>{heading.text}</a>
+        {heading.children.length > 0 && (
+            <ul>
+            {heading.children.map((subHeading) => (
+                <li>
+                <a href={`#${subHeading.slug}`}>{subHeading.text}</a>
+                </li>
+            ))}
+            </ul>
+        )}
+        </li>
+    ))}
+    </ul>
+    </nav>
+</div>
+}

@@ -1,0 +1,66 @@
+:root.theme-mintchoco {
+  /* --clover-pink: #ed93c7; */
+  --clover-pink: #e858ac;
+
+  --dark-bg: black;
+  --dark-content-bg: #141010;
+  --dark-text: white;
+  --dark-drop-shadow: black;
+  
+  --light-bg: black;
+  --light-content-bg: #f5f1f1;
+  --light-text: black;
+  --light-drop-shadow: lightgrey;
+
+  --content-padding: 20px;
+  --content-border: var(--drop-shadow);
+  --content-border-size: 5px;
+  --content-margin: 8px;
+
+  --speech-bubble-color: color-mix(in hsl, var(--light-content-bg), lightgrey 25%);
+
+  --darker-bg-25: color-mix(in hsl, var(--content-background), var(--drop-shadow) 25%);
+  --darker-bg-50: color-mix(in hsl, var(--content-background), var(--drop-shadow) 50%);
+  --darker-bg-75: color-mix(in hsl, var(--content-background), var(--drop-shadow) 75%);
+
+  --darker-green-25: #00937B; /* match site logo */
+  --darker-green-50: color-mix(in hsl, var(--clover-green), #002f52 20%);
+  --darker-green-75: color-mix(in hsl, var(--clover-green), #002f52 30%);
+
+  --darker-pink-25: color-mix(in hsl, var(--clover-pink), #460d0d 10%);
+  --darker-pink-50: color-mix(in hsl, var(--clover-pink), #460d0d 20%);
+  --darker-pink-75: color-mix(in hsl, var(--clover-pink), #460d0d 30%);
+
+  --accent-color: var(--clover-green);
+
+  --page-background-color1: #322632;
+  --page-background-color2: #281E28;
+  --footer-text-color: var(--dark-text);
+  --footer-drop-shadow: var(--dark-drop-shadow);
+}
+
+:root.theme-unbeatable {
+  --dark-content-bg: #050829;
+  --dark-accent-color: #00B481;
+  --dark-drop-shadow: #1F2241;
+
+  --dark-link-visited-color: var(--dark-accent-color); 
+  --dark-link-visited-hover: var(--clover-green); 
+
+  --light-content-bg: #FAF7D4;
+  --light-accent-color: #FF4B7E;
+  --light-drop-shadow: #E1DEBF;
+
+  /* --page-background-color1: color-mix(in hsl, var(--drop-shadow), var(--content-background) 70%);
+  --page-background-color2: color-mix(in hsl, #4B4C68, var(--content-background) 80%); */
+  --page-background-color1: var(--content-background);
+  --page-background-color2: var(--content-background);
+}
+/* 
+:root.light-mode.theme-unbeatable {
+  --page-background-color2: color-mix(in hsl, #B4B29B, var(--content-background) 70%);
+} */
+
+:root.theme-unbeatable :is(h1, h2, h3, h4, h5, h6) { 
+  color: var(--accent-color);
+}

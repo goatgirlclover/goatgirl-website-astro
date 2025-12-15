@@ -31,7 +31,7 @@ echo -----
 echo Generating gallery subpages...
 echo -----
 
-for %%f in (..\gallery-imgs\*.png) do (
+for %%f in (..\gallery-imgs\2048\*.png) do (
 	echo %%f
 	call site-gallery-focus.bat "%%f" --auto
 	endlocal
