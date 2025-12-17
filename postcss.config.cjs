@@ -13,6 +13,7 @@ module.exports = {
       }
     }),
     require('postcss-calc'),
-    require('@csstools/postcss-color-mix-function')
+    require('@csstools/postcss-color-mix-function'),
+    require('@csstools/postcss-is-pseudo-class')
   ],
 }
