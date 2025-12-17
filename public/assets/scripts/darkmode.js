@@ -11,7 +11,7 @@ function toggleDarkMode() {
   toggleClass(document.documentElement, "light-mode"); // dark mode is default
   const usingLightMode = document.documentElement.className.indexOf("light-mode") > -1;
   document.querySelector("button.dark-mode").setAttribute("data-aftercontent", usingLightMode ? ": off" : ": on"); 
-  document.getElementById("darkmodeinput").checked = usingLightMode;
+  if (document.getElementById("darkmodeinput")) document.getElementById("darkmodeinput").checked = usingLightMode;
   localStorage.setItem('lightMode', usingLightMode);
   updateSiteLogo();
 }
@@ -21,7 +21,7 @@ function toggleReducedMotion() {
   toggleClass(document.documentElement, "full-motion"); 
   const usingRM = document.documentElement.className.indexOf("reduced-motion") > -1;
   document.querySelector("button.reduced-motion").setAttribute("data-aftercontent", usingRM ? ": on" : ": off"); 
-  document.getElementById("reducedmotioninput").checked = usingRM;
+  if (document.getElementById("reducedmotioninput")) document.getElementById("reducedmotioninput").checked = usingRM;
   localStorage.setItem('reducedMotion', usingRM);
   
   if (usingRM) { freezeGifs(); } else { unfreezeGifs(); }
@@ -74,13 +74,13 @@ function freezeGifs() {
     }
 
     x[i].onmouseover = function() { 
-      if (x[i].src.endsWith("-static.png") || x[i].src.includes("-static.png?")) { 
+      if (this.src.endsWith("-static.png") || this.src.includes("-static.png?")) { 
         this.src = this.src.replace("-static.png", ".gif");
       } 
     };
 
     x[i].onmouseleave = function() { 
-      if (x[i].src.endsWith(".gif") || x[i].src.includes(".gif?")) { 
+      if (this.src.endsWith(".gif") || this.src.includes(".gif?")) { 
         this.src = this.src.replace(".gif", "-static.png");
       } 
     };
