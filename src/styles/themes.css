@@ -64,3 +64,5 @@
 :root.theme-unbeatable :is(h1, h2, h3, h4, h5, h6) { 
   color: var(--accent-color);
 }
+
+html.theme-unbeatable::before { display: none !important; }
