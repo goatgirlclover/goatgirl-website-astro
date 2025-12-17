@@ -17,15 +17,18 @@
 #enter-button {
   width: fit-content;
   font-size: 1.1em;
-  background-color: var(--clover-pink);
+  background-color: #e5347d;
+  background-color: var(--accent-color);
   display: block;
   padding: 0.5em 1em;
+  border: 2px solid black;
   border: 2px solid var(--contrast-color);
   border-radius: 12px;
   margin-bottom: 12px;
 }
 
 #enter-button:hover {
+  border-color: white;
   border-color: var(--text-color);
 }
 

@@ -21,7 +21,7 @@ aside .site-button {
 }
 
 .button-holder > img:hover, .button-holder > a:hover, .site-button:hover {
-  transform: scale(1.05);
+  /*transform: scale(1.05);*/
   outline: none;
   padding: 1px; margin: -1px;
   /* marching-squares set elsewhere */
