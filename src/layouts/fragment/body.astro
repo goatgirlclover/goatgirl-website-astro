@@ -1,10 +1,10 @@
 ---
 import SiteHeader from '../../components/site-header.astro';
 import SiteFooter from '../../components/site-footer.astro';
-const { activePage = "home" } = Astro.props;
+const { activePage = "home", isBlogPost = false } = Astro.props;
 ---
 
-<body>
+<body class={isBlogPost ? "blog-body" : ""}>
   <SiteHeader activePage={activePage} />
   <div id="site-body">
     <main><slot></slot></main>

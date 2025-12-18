@@ -1,4 +1,8 @@
 /* BLOG POST */
+.blog-body { 
+  max-width: 920px;
+}
+
 .blog-info {
   margin-bottom: 12px; 
 }
