@@ -4,13 +4,12 @@ import Body from "../layouts/fragment/body.astro";
 
 import sanitizeHtml from 'sanitize-html';
 import { markdownToTxt } from 'markdown-to-txt';
-import MarkdownIt from 'markdown-it';
-const parser = new MarkdownIt();
+import { marked } from 'marked';
 
 const { title, description, image, alt, width, height } = Astro.props;
 const shortTitle = title.replace(/^"(.+(?="$))"$/, '$1').split("- goatgirlclover")[0].trim();
 
-const mdDescription = sanitizeHtml(parser.render(description));
+const mdDescription = sanitizeHtml(await marked.parse(description));
 const safeTitle = title.replace(/"/g, '&quot;');
 const safeDescription = markdownToTxt(description).replace(/"/g, '&quot;');
 const safeAlt = alt.replace(/"/g, '&quot;');

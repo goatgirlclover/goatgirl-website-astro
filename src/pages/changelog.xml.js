@@ -1,5 +1,4 @@
 import rss from '@astrojs/rss';
-import MarkdownIt from 'markdown-it';
 import { readFile } from 'node:fs/promises';
 import { markdownToTxt } from 'markdown-to-txt';
 

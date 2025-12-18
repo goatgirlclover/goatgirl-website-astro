@@ -4,10 +4,10 @@ import '../styles/homepage.css';
 import '../styles/links.css';
 
 import sanitizeHtml from 'sanitize-html';
-import MarkdownIt from 'markdown-it';
+import { marked } from 'marked';
+marked.use({ pedantic: true })
 import { readFile } from 'node:fs/promises';
-const parser = new MarkdownIt();
-const changelog = sanitizeHtml(parser.render(await readFile('./src/content/changelog.md', 'utf-8')));
+const changelog = sanitizeHtml(await marked.parse(await readFile('./src/content/changelog.md', 'utf-8')));
 
 import { posts } from "./blog.astro";
 const latestBlogPost = posts[0];
