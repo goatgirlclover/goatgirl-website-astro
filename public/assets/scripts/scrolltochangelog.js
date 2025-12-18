@@ -1,5 +1,5 @@
 function scrollToChangelogItem() {
-  const changelogDate = new URLSearchParams(window.location.search).get("changelog-item").replace("/", "");
+  const changelogDate = new URLSearchParams(window.location.search)?.get("changelog-item")?.replace("/", "");
   if (!changelogDate) return;
 
   const changelogItems = document.querySelectorAll("#site-changelog li");
