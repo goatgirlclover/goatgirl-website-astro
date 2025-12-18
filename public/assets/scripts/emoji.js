@@ -46,17 +46,12 @@ function parseEmoji(text) {
     var regexPartial = r`(\p{Emoji}|[\uE000-\uF8FF\u{F0000}-\u{FFFFD}\u{100000}-\u{10FFFD}])(?:\p{EMod}|[\u{E0020}-\u{E007E}]+\u{E007F}|\uFE0F?\u20E3?)`;
     var regex = RegExp(r`\p{RI}{2}|(?![#*\d](?!\uFE0F?\u20E3))${regexPartial}(?:\u200D${regexPartial})*`, 'gu');
 
-    return text.replaceAll("↩", "↩️").replaceAll(regex, function(baseAndVariant, base, variant) {
-        if (variant == "\ufe0e") {
-            return baseAndVariant;
-        } else {
-            var code = base.codePointAt(0).toString(16);
-            var classN = "emojiText";
-            var title = code in privateMSAlt ? ' aria-label="' + privateMSAlt[code] + '"' : '';
-
-            if (hoofEmojis.indexOf(code) !== -1) { classN += " hoof" }
-            return '<span class="' + classN + '"' + title + '>' + baseAndVariant + '</span>';
-        }
+    return text.replaceAll("↩", "↩️").replaceAll(regex, function(emoji) {
+        var code = emoji.codePointAt(0).toString(16);
+        var classN = "emojiText";
+        var title = code in privateMSAlt ? ' aria-label="' + privateMSAlt[code] + '"' : '';
+        if (hoofEmojis.indexOf(code) !== -1) { classN += " hoof" }
+        return '<span class="' + classN + '"' + title + '>' + emoji + '</span>';
     });
 }
 
