@@ -10,11 +10,11 @@ const { activePage } = Astro.props;
     </a>
     <div>
         <nav class="header-links"> 
-            <a href="/gallery/" class={activePage == "gallery" ? "active-page" : undefined} tabindex="0">🎨 art</a>
-            <a href="/blog/" class={activePage == "blog" ? "active-page" : undefined} tabindex="0">💬 blog</a>
-            <a href="/about/" class={activePage == "about" ? "active-page" : undefined} tabindex="0">✌️ about</a>
-            <a href="/links/" class={activePage == "links" ? "active-page" : undefined} tabindex="0">🌐 links</a>
-            <a href="/guestbook/" class={activePage == "guestbook" ? "active-page" : undefined} tabindex="0">✍️ guestbook</a>
+            <a href="/gallery/" class={activePage == "gallery" ? "active-page" : undefined} tabindex="0"><span class="emojiText">🎨</span> art</a>
+            <a href="/blog/" class={activePage == "blog" ? "active-page" : undefined} tabindex="0"><span class="emojiText">💬</span> blog</a>
+            <a href="/about/" class={activePage == "about" ? "active-page" : undefined} tabindex="0"><span class="emojiText hoof">✌️</span> about</a>
+            <a href="/links/" class={activePage == "links" ? "active-page" : undefined} tabindex="0"><span class="emojiText">🌐</span> links</a>
+            <a href="/guestbook/" class={activePage == "guestbook" ? "active-page" : undefined} tabindex="0"><span class="emojiText paw">✍️</span> guestbook</a>
         </nav> 
     </div> 
 </div>
