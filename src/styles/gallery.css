@@ -37,6 +37,14 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .gallery-img {
+    height: 128px;
+    min-width: 64px;
+    max-width: 192px;
+  }
+}
+
   
 /* GALLERY ANIMATIONS */
 .gallery-img { transition: transform 0.2s ease, box-shadow 0.2s ease; }
