@@ -181,7 +181,7 @@ function recursiveSearchForText(node, text = "") {
     return text;
 }
 
-addEventListener('copy', event => {
+/* addEventListener('copy', event => {
     let selection = document.getSelection(),
         range = selection.getRangeAt(0),
         contents = range.cloneContents(),
@@ -200,4 +200,4 @@ addEventListener('copy', event => {
     event.clipboardData.setData('text/plain', copiedText);
     event.preventDefault();
     console.log(`Text copied: '${copiedText}'`);
-});
+}); */
