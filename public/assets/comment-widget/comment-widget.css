@@ -223,3 +223,9 @@
     display: block;
     margin-top: 8px;
 }
+
+.c-comment:not([data-admin="true"]) .emojiText::after, 
+#c_inputArea .emojiText::after { 
+    content: ''; 
+    display: none; 
+}

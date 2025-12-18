@@ -416,6 +416,7 @@ function createComment(data) {
     }
     if(data.Admin == true) {
         name.insertAdjacentHTML('beforeend', " <span class='adminmark'>[admin]</span> ");
+        comment.dataset.admin = "true";
     } 
     if (data.Pinned == true) {
         name.insertAdjacentHTML('beforeend', '📌');
