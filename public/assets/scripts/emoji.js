@@ -39,7 +39,9 @@ const privateMSAlt = {
     "101699": "no barking emoji"
 }
 
-const hoofEmojis = ["1f4aa", "1f44a", "1f44b", "1f44c", "1f44d", "1f44e", "1f44f", "1f64c", "1f64f", "1f90c", "1f91b", "1f91c", "1f91d", "1f446", "1f447", "1f448", "1f449", "1f450", "1f485", "1f590", "1f595", "1f596", "1f918", "1f919", "1f91a", "1f91e", "1f932", "1f933", "261d", "270a", "270b", "270c", "270d"]
+const hoofEmojis = ["1f4aa", "1f44a", "1f44b", "1f44c", "1f44d", "1f44e", "1f44f", "1f64c", "1f64f", "1f90c", "1f91b", "1f91c", "1f91d", "1f446", "1f447", "1f448", "1f449", "1f450", "1f485", "1f590", "1f595", "1f596", "1f918", "1f919", "1f91a", "1f91e", "1f932", "1f933", "261d", "270a", "270b", "270c"]
+const pawEmojis = ["270d"];
+const modifiers = ["􁘀", "􁘁", "􁘂", "􁘃", "􁘄", "􁘅", "􁘆", "􁘇", "􁘈", "􁘉", "􁘊", "􁘋", "􁘌", "􁘍", "􁘎", "􁘏", "􁘐", "􁘑", "􁘒", "􁘓", "􁘔", "􁘕", "􁘖", "􁘗", "􁘘", "􁘙", "􁘚", "􁘛", "􁘜", "􁘝", "􁘞", "􁘟", "􁘠", "􁘡", "􁘢", "􁘣", "􁘤", "􁘥", "􁘦", "􁘧", "􁘨", "􁘩", "􁘪", "􁘫", "􁘬", "🏿", "🏾", "🏽", "🏼", "🏻", "􁙐", "􁙑", "􁙒"];
 
 function parseEmoji(text) {
     var r = String.raw;
@@ -51,6 +53,7 @@ function parseEmoji(text) {
         var classN = "emojiText";
         var title = code in privateMSAlt ? ' aria-label="' + privateMSAlt[code] + '"' : '';
         if (hoofEmojis.indexOf(code) !== -1) { classN += " hoof" }
+        if (pawEmojis.indexOf(code) !== -1) { classN += " paw" }
         return '<span class="' + classN + '"' + title + '>' + emoji + '</span>';
     });
 }

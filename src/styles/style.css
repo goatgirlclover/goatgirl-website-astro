@@ -324,6 +324,11 @@ a { cursor: url("/assets/cursor_hover.png") 10 1, pointer; } */
   display: inline;
 }
 
+.emojiText.paw::after {
+  display: inline;
+  content: '􁙐􁘈';
+}
+
 .emoji, .emoji-spacer { 
   height: auto;
   user-select: text; 
