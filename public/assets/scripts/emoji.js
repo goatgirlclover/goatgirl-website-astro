@@ -58,7 +58,15 @@ function parseEmoji(text) {
     });
 }
 
-function parseEmojiInDocument(ignoreNodes = []) {
+function parseEmojiInDocument() {
+    var ignoreNodes = []
+    document.body.querySelectorAll(".emojiText").forEach(node => { 
+        var iter = document.createTreeWalker(node, NodeFilter.SHOW_TEXT);
+        while (iter.nextNode()) {
+            ignoreNodes.push(iter.currentNode);
+        }
+    });
+    
     const children = [];
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
     while (walker.nextNode()) {
@@ -81,20 +89,30 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const callback = (mutationList, observer) => { 
         observer.disconnect(); 
-
-        var ignoreNodes = []
-        document.body.querySelectorAll(".emojiText").forEach(node => { 
-            var iter = document.createTreeWalker(node, NodeFilter.SHOW_TEXT);
-            while (iter.nextNode()) {
-                ignoreNodes.push(iter.currentNode);
-            }
-        });
-
-        parseEmojiInDocument(ignoreNodes);
+        parseEmojiInDocument();
         observer.observe(document.body, options);
     }
 
     const observer = new MutationObserver(callback);
     const options = { attributes: false, childList: true, subtree: true };
     observer.observe(document.body, options);
+});
+
+document.fonts.addEventListener("loadingdone", () => {
+    const modifierCSS = ".emojiText::after { display: inline; } .emojiText.hoof::after { content: '􁙒􁘨'; } .emojiText.paw::after { content: '􁙐􁘈'; }"
+    document.fonts.forEach(async font => {
+        if (font.family == '"MutantStandardEmoji"') {
+            if (font.status == "loaded") {
+                var head = document.head || document.getElementsByTagName('head')[0];
+                var style = document.createElement('style');
+                style.type = 'text/css';
+                if (style.styleSheet) {
+                    style.styleSheet.cssText = modifierCSS;
+                } else {
+                    style.appendChild(document.createTextNode(modifierCSS));
+                }
+                head.appendChild(style);
+            }
+        }
+    });
 });
