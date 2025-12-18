@@ -96,36 +96,36 @@ document.getElementsByTagName('head')[0].appendChild(c_cssLink);
 // HTML Form
 const v_mainHtml = `
     <div id="c_inputDiv">
-        <form id="c_form" onsubmit="c_submitButton.disabled = true; v_submitted = true; refreshForm();" method="post" target="c_hiddenIframe" action="https://docs.google.com/forms/d/e/${s_formId}/formResponse"></form>
+        <form class="c_form" onsubmit="c_replyInput.value = ''; c_submitButton.disabled = true; v_submitted = true; refreshForm();" method="post" target="c_hiddenIframe" action="https://docs.google.com/forms/d/e/${s_formId}/formResponse"></form>
     </div>
     <div id="c_container">${s_loadingText}</div>
 `;
 const v_formHtml = `
-    <h2 id="c_widgetTitle">${s_widgetTitle}</h2>
+    <h2 class="c_widgetTitle">${s_widgetTitle}</h2>
 
-    <div id="c_nameWrapper" class="c-inputWrapper">
+    <div class="c_nameWrapper c-inputWrapper">
         <label class="c-label c-nameLabel" for="entry.${s_nameId}">${s_nameFieldLabel}</label>
         <input class="c-input c-nameInput" name="entry.${s_nameId}" id="entry.${s_nameId}" type="text" maxlength="${s_maxLengthName}" required>
         <input name="entry.${s_moderatedId}" id="entry.${s_moderatedId}" type="hidden" readonly value="false">
     </div>
 
-    <div id="c_websiteWrapper" class="c-inputWrapper">
+    <div class="c_websiteWrapper c-inputWrapper">
         <label class="c-label c-websiteLabel" for="entry.${s_websiteId}">${s_websiteFieldLabel}</label>
         <input class="c-input c-websiteInput" name="entry.${s_websiteId}" id="entry.${s_websiteId}" type="url" pattern="https://.*">
     </div>
 
-    <div id="c_textWrapper" class="c-inputWrapper">
+    <div class="c_textWrapper c-inputWrapper">
         <label class="c-label c-textLabel" for="entry.${s_textId}">${s_textFieldLabel}</label>
         <textarea class="c-input c-textInput" name="entry.${s_textId}" id="entry.${s_textId}" rows="4" cols="50"  maxlength="${s_maxLength}" required></textarea>
         <input name="entry.${s_adminId}" id="entry.${s_adminId}" type="hidden" readonly value="false">
     </div>
 
-    <input id="c_submitButton" name="c_submitButton" type="submit" value="${s_submitButtonLabel}" disabled>
+    <input class="c_submitButton" name="c_submitButton" type="submit" value="${s_submitButtonLabel}" disabled>
 `;
 
 // Insert main HTML to page
 document.getElementById('c_widget').innerHTML = v_mainHtml;
-const c_form = document.getElementById('c_form');
+const c_form = document.getElementsByClassName('c_form')[0];
 if (s_commentsOpen) {c_form.innerHTML = v_formHtml} 
 else {c_form.innerHTML = s_closedCommentsText}
 
@@ -145,7 +145,7 @@ if (s_wordFilterOn) {
 
 // The fake button is just a dummy placeholder for when comments are closed
 let c_submitButton;
-if (s_commentsOpen) {c_submitButton = document.getElementById('c_submitButton')}
+if (s_commentsOpen) {c_submitButton = document.getElementsByClassName('c_submitButton')[0]; }
 else {c_submitButton = document.createElement('button')}
 
 // Add invisible page input to document
@@ -161,9 +161,9 @@ c_form.appendChild(c_pageInput);
 
 // Add the "Replying to..." text to document
 let c_replyingText = document.createElement('span');
-c_replyingText.style.display = 'none'; c_replyingText.id = 'c_replyingText';
+c_replyingText.style.display = 'none'; c_replyingText.className = 'c_replyingText';
 c_form.appendChild(c_replyingText);
-c_replyingText = document.getElementById('c_replyingText');
+c_replyingText = document.getElementsByClassName('c_replyingText')[0];
 
 // Add the invisible reply input to document
 let c_replyInput = document.createElement('input');
@@ -307,7 +307,7 @@ function displayComments(comments) {
         button.innerHTML = button.disabled == true ? `Locked` : s_replyButtonText;
         if (!button.disabled) {
             button.value = comment.id;
-            button.addEventListener('click', () => openReply(comment.id));
+            button.addEventListener('click', () => openReply(button, comment.id));
             button.className = 'c-replyButton';
         }
         
@@ -534,17 +534,39 @@ function getMonthNum(month) {
 // Handle making replies
 const link = document.createElement('a');
 link.href = '#c_inputDiv';
-function openReply(id) {
-    if (c_replyingText.style.display == 'none') {
+const replyLink = document.createElement('a');
+replyLink.href = '#c_replyInputDiv';
+var lastButton;
+function openReply(button, id) {
+    document.getElementById("c_replyInputDiv")?.remove();
+
+    c_replyingText.innerHTML = '';
+    c_replyInput.value = '';
+    c_replyingText.style.display = 'none'; 
+
+    if (lastButton !== button) {
         c_replyingText.innerHTML = s_replyingText + ` ${id.split('|--|')[0]}...`;
         c_replyInput.value = id;
         c_replyingText.style.display = 'block';
-    } else {
+
+        var clone = document.getElementById("c_inputDiv").cloneNode(true);
+        clone.querySelectorAll('input[id^="entry"]').forEach(element => element.id = "");
+        clone.querySelector('iframe').remove();
+
+        clone.id = "c_replyInputDiv";
+        clone.firstElementChild.setAttribute("onsubmit", clone.firstElementChild.getAttribute("onsubmit").replace("c_replyInput.value = ''; ", ""));
+        button.parentElement.insertBefore(clone, button.nextSibling);
+
         c_replyingText.innerHTML = '';
-        c_replyInput.value = '';
-        c_replyingText.style.display = 'none';
+        c_replyingText.style.display = 'none'; 
+        
+        replyLink.click();
+        lastButton = button;
+    } else {
+        link.click();
+        lastButton = null;
     }
-    link.click(); // Jump to the space to type
+    
 }
 
 // Handle expanding replies (should only be accessible with collapsed replies enabled)
