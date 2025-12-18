@@ -130,8 +130,8 @@
 } 
 
 .data-entry .intro-text { flex-basis: 20em; }
-.data-entry .intro-text img { width: 1.15em; position: relative; top: -0.45em; overflow: visible; margin: -0.5em 0; }
-.data-entry .intro-text img + img { left: -0.5em; top: -0.15em; }
+.data-entry .intro-text .emojiText { position: relative; top: -0.15em; overflow: visible; }
+.data-entry .intro-text .emojiText + .emojiText { left: -0.5em; top: 0.15em; }
 
 .data-entry > p:last-child { margin-bottom: 0; }
 
