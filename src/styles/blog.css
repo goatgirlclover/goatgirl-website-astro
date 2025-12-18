@@ -80,18 +80,11 @@
 .blog-posts .post div {
   display: flex;
   align-items: center;
-  gap: 1em;
+  gap: 0 1em;
+  flex-wrap: wrap;
 }
 
 .blog-posts .post div *,
-.blog-posts .post .desc {
-  margin: 0;
-}
-
-.blog-posts .post .title {
-  margin-bottom: 4px;
-}
-
-.blog-posts .post .date {
-  font-size: 1em;
-}
+.blog-posts .post .desc { margin: 0; }
+.blog-posts .post .title { margin-bottom: 4px; }
+.blog-posts .post .date { font-size: 1em; }
