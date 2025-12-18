@@ -899,7 +899,6 @@ aside #site-changelog {
   padding: 11px 5px 5px 11px;
 }
 
-.tumblr:active, .github:active { box-shadow: 4px 4px rgba(15,8,25,0.8) inset; }
 
 .social-media p { margin: auto; margin-right: 0; float: right; color: black; }
 
@@ -909,10 +908,13 @@ aside #site-changelog {
 .bluesky { background-color: #0085ff; }
 .github { background-color: #232121; }
 .newgrounds { background-color: #fda238; }
-.furaffinity { background: #1b1b1d; }
+.furaffinity { background-color: #1b1b1d; }
+.lastfm { background-color: #D60801; }
 
-.tumblr img, .twitter img, .bluesky img, .github img, .furaffinity img { filter: invert(1); }
-.tumblr p, .twitter p, .bluesky p, .github p, .furaffinity p { color: white; }
+.tumblr img, .twitter img, .bluesky img, .github img, .furaffinity img, .lastfm img { filter: invert(1); }
+.tumblr p, .twitter p, .bluesky p, .github p, .furaffinity p, .lastfm p { color: white; }
+
+.tumblr:active, .github:active { box-shadow: 4px 4px rgba(15,8,25,0.8) inset; }
 
 /* chat bubbles */
 .speech-bubble {
