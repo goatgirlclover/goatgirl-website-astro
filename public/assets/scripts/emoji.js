@@ -58,11 +58,13 @@ function parseEmoji(text) {
     });
 }
 
-function parseEmojiInDocument() {
+function parseEmojiInDocument(ignoreNodes = []) {
     const children = [];
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
     while (walker.nextNode()) {
-        children.push(walker.currentNode);
+        if (ignoreNodes.indexOf(walker.currentNode) === -1) { 
+            children.push(walker.currentNode); 
+        }
     };
 
     children.forEach(child => {
@@ -80,14 +82,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const callback = (mutationList, observer) => { 
         observer.disconnect(); 
 
-        var emojiTexts = document.body.querySelectorAll(".emojiText");
-        for (var i = 0; i < emojiTexts.length; i++) {
-            var emoji = document.createTextNode(emojiTexts[i].textContent);
-            emojiTexts[i].parentNode.insertBefore(emoji, emojiTexts[i]);
-            emojiTexts[i].remove();
-        }
+        var ignoreNodes = []
+        document.body.querySelectorAll(".emojiText").forEach(node => { 
+            var iter = document.createTreeWalker(node, NodeFilter.SHOW_TEXT);
+            while (iter.nextNode()) {
+                ignoreNodes.push(iter.currentNode);
+            }
+        });
 
-        parseEmojiInDocument();
+        parseEmojiInDocument(ignoreNodes);
         observer.observe(document.body, options);
     }
 
