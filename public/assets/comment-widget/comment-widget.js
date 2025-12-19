@@ -432,7 +432,7 @@ function createComment(data) {
     // Website URL, if one was provided
     if (data.Website) {
         let site = document.createElement('a');
-        site.innerText = s_websiteText;
+        site.innerText = data.Website.replace(/^https?\:\/\//i, "");
         site.href = data.Website;
         site.className = 'c-site';
         if(data.Moderated == false) {
