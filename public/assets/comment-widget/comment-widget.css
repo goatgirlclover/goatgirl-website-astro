@@ -132,7 +132,7 @@
 }
 
 .c_submitButton {
-    display: block;
+    display: inline-block;
     max-width: fit-content; 
 }
 
@@ -240,3 +240,5 @@
 .c-replyButton:has(+ #c_replyInputDiv)::before {
     content: 'cancel ';
 }
+
+#c-submitFeedback { display: inline; margin-left: 6px; }

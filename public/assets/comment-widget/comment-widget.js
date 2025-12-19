@@ -180,7 +180,17 @@ c_form.appendChild(c_hiddenIframe);
 c_hiddenIframe = document.getElementById('c_hiddenIframe');
 
 function refreshForm() {
-    setTimeout(getComments, 1500);
+    hideSubmitText();
+    setTimeout(showSubmitText, 1000);
+}
+
+function showSubmitText() {
+    c_submitButton?.insertAdjacentHTML("afterend", '<span id="c-submitFeedback">comment submitted!</span>')
+    setTimeout(hideSubmitText, 2000);
+}
+
+function hideSubmitText() {
+    document.getElementById("c-submitFeedback")?.remove();
 }
 
 // Fix the invisible iFrame so it doesn't keep trying to load stuff
@@ -308,7 +318,6 @@ function displayComments(comments) {
         if (!button.disabled) {
             button.value = comment.id;
             button.addEventListener('click', () => openReply(button, comment.id));
-            button.className = 'c-replyButton';
         }
         
         comment.appendChild(button);
@@ -394,7 +403,7 @@ function displayComments(comments) {
 // Create basic HTML comment, reply or not
 function createComment(data) {
     let comment = document.createElement('div');
-
+    
     // Get the right timestamps
     let timestamps = convertTimestamp(data.Timestamp);
     let timestamp;
