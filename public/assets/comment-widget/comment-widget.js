@@ -40,7 +40,7 @@ const s_commentsPerPage = 12; // The max amount of comments that can be displaye
 const s_maxLength = 1000; // The max character length of a comment
 const s_maxLengthName = 32; // The max character length of a name
 const s_commentsOpen = true; // Change to false if you'd like to close your comment section site-wide (Turn it off on Google Forms too!)
-const s_collapsedReplies = false; // True for collapsed replies with a button, false for replies to display automatically
+const s_collapsedReplies = true; // True for collapsed replies with a button, false for replies to display automatically
 const s_longTimestamp = true; // True for a date + time, false for just the date
 let s_includeUrlParameters = false; // Makes new comment sections on pages with URL parameters when set to true (If you don't know what this does, leave it disabled)
 const s_fixRarebitIndexPage = false; // If using Rarebit, change to true to make the index page and page 1 of your webcomic have the same comment section
@@ -313,8 +313,9 @@ function displayComments(comments) {
         // Reply button
         let button = document.createElement('button');
         
-        button.disabled = Boolean(comments[i].Locked);
-        button.innerHTML = button.disabled == true ? `Locked` : s_replyButtonText;
+        button.disabled = Boolean(comments[i].Locked || !comments[i].Moderated);
+        button.innerHTML = comments[i].Locked == true ? `Locked` : s_replyButtonText;
+        button.className = 'c-replyButton';
         if (!button.disabled) {
             button.value = comment.id;
             button.addEventListener('click', () => openReply(button, comment.id));
