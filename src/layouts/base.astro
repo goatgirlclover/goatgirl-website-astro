@@ -6,7 +6,7 @@ const { title = "goatgirlclover", activePage = "home", description = undefined, 
 
 <html lang="en">
 <Head title={title} description={description} ogType={ogType} pubDate={pubDate} updatedDate={updatedDate}></Head>
-<Body activePage={activePage} isBlogPost={ogType === "article"}><slot></slot></Body>
+<Body activePage={activePage}><slot></slot></Body>
 <script is:inline type="text/javascript" src="/assets/scripts/darkmode.js"></script>
 <script is:inline type="text/javascript">
     const prefersReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
