@@ -42,6 +42,7 @@ const privateMSAlt = {
 const hoofEmojis = ["1f4aa", "1f44a", "1f44b", "1f44c", "1f44d", "1f44e", "1f44f", "1f64c", "1f64f", "1f90c", "1f91b", "1f91c", "1f91d", "1f446", "1f447", "1f448", "1f449", "1f450", "1f485", "1f590", "1f595", "1f596", "1f918", "1f919", "1f91a", "1f91e", "1f932", "1f933", "261d", "270a", "270b", "270c"]
 const pawEmojis = ["270d"];
 const modifiers = ["􁘀", "􁘁", "􁘂", "􁘃", "􁘄", "􁘅", "􁘆", "􁘇", "􁘈", "􁘉", "􁘊", "􁘋", "􁘌", "􁘍", "􁘎", "􁘏", "􁘐", "􁘑", "􁘒", "􁘓", "􁘔", "􁘕", "􁘖", "􁘗", "􁘘", "􁘙", "􁘚", "􁘛", "􁘜", "􁘝", "􁘞", "􁘟", "􁘠", "􁘡", "􁘢", "􁘣", "􁘤", "􁘥", "􁘦", "􁘧", "􁘨", "􁘩", "􁘪", "􁘫", "􁘬", "🏿", "🏾", "🏽", "🏼", "🏻", "􁙐", "􁙑", "􁙒"];
+const modifierCSS = ".emojiText::after { display: inline; } .emojiText.hoof::after { content: '􁙒􁘨'; } .emojiText.paw::after { content: '􁙐􁘈'; }"
 
 function parseEmoji(text) {
     var r = String.raw;
@@ -98,21 +99,29 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(document.body, options);
 });
 
-document.fonts.addEventListener("loadingdone", () => {
-    const modifierCSS = ".emojiText::after { display: inline; } .emojiText.hoof::after { content: '􁙒􁘨'; } .emojiText.paw::after { content: '􁙐􁘈'; }"
-    document.fonts.forEach(async font => {
-        if (font.family == '"MutantStandardEmoji"') {
-            if (font.status == "loaded") {
-                var head = document.head || document.getElementsByTagName('head')[0];
-                var style = document.createElement('style');
-                style.type = 'text/css';
-                if (style.styleSheet) {
-                    style.styleSheet.cssText = modifierCSS;
-                } else {
-                    style.appendChild(document.createTextNode(modifierCSS));
+function addModifierCSS() {
+    var head = document.head || document.getElementsByTagName('head')[0];
+    var style = document.createElement('style');
+    if (style.styleSheet) {
+        style.styleSheet.cssText = modifierCSS;
+    } else {
+        style.appendChild(document.createTextNode(modifierCSS));
+    }
+    head.appendChild(style);
+}
+
+if (sessionStorage.getItem("loadedMSEmojiFont") === "true") {
+    addModifierCSS();
+} else {
+    document.fonts.addEventListener("loadingdone", () => {
+        document.fonts.forEach(async font => {
+            if (font.family.indexOf("MutantStandardEmoji") !== -1) {
+                if (font.status == "loaded") {
+                    addModifierCSS();
+                    sessionStorage.setItem("loadedMSEmojiFont", "true");
                 }
-                head.appendChild(style);
             }
-        }
+        });
     });
-});
+}
+

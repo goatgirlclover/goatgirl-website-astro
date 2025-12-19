@@ -764,15 +764,24 @@ aside #site-changelog {
 
 #site-footer .neko {
   position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+  gap: 8px;
+}
+
+#site-footer .neko-follow {
+  vertical-align: center;
 }
 
 #site-footer .neko:has(.site-button:hover)::after {
   content: attr(data-copyButtonText);
   position: absolute;
   display: block;
-  left: 100px;
+  left: 96px;
   top: 0;
   background-color: var(--darker-bg-75);
+  outline: 2px solid var(--contrast-color);
   padding: 2px 4px;
 }
 

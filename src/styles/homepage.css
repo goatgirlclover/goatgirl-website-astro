@@ -190,13 +190,13 @@
 }
 
 .page-split > section {
-  flex: 99 1 640px;
+  flex: 99 1 640px !important;
   /* border-right: 3px solid black;
   padding-right: 13px; */
 }
 
 .page-split > :is(section, aside):last-child {
-  flex: 1 1 312px;
+  flex: 1 1 312px !important;
   justify-content: center;
   align-items: center;
 }
