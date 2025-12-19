@@ -1,4 +1,4 @@
-- 2025-12-18 - BIG update!! mostly for styling + my new fursona's design, but i also reorganized the homepage, added a guestbook and landing page, and added a couple extra themes :3
+- 2025-12-19 - BIG update!! mostly for styling + my new fursona's design, but i also reorganized the homepage, added a guestbook and landing page, and added a couple extra themes :3
 - 2025-11-06 - updated UNBEATABLE countdown at homepage to reflect its delayed release :')
 - 2025-10-19 - updated [my about-me page](/about/) to include my favorite music!
 - 2025-9-22 - improved PS Vita browser compatibility!
