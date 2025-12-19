@@ -797,13 +797,12 @@ aside #site-changelog {
 
 #site-footer .footer-content {
   height: fit-content;
-  flex: 99 1 320px;
-  max-width: 620px;
+  flex: 1 0 320px;
 }
 
 #site-footer .footer-socials {
   height: fit-content;
-  flex: 1 1 256px;
+  flex: 1 0 256px;
 }
 
 #site-footer .footer-content { justify-content: left; }
