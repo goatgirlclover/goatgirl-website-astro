@@ -795,10 +795,15 @@ aside #site-changelog {
   height: 32px !important;
 }
 
-#site-footer .footer-content,
-#site-footer .footer-socials  {
+#site-footer .footer-content {
   height: fit-content;
-  flex: 1 1 320px;
+  flex: 99 1 320px;
+  max-width: 620px;
+}
+
+#site-footer .footer-socials {
+  height: fit-content;
+  flex: 1 1 256px;
 }
 
 #site-footer .footer-content { justify-content: left; }
