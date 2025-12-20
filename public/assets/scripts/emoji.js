@@ -100,6 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function addModifierCSS() {
+    if (!!window.chrome) { return; }
     var head = document.head || document.getElementsByTagName('head')[0];
     var style = document.createElement('style');
     if (style.styleSheet) {
