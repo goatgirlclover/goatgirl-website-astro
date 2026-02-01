@@ -15,10 +15,10 @@ import '../styles/links.css';
             loading="lazy" 
             onclick="copySiteButton()"
         />
-        <a target="_blank" href="https://nekoweb.org/follow/goatgirl.nekoweb.org" class="neko-follow">follow on Nekoweb</a>
+        <a target="_blank" href="https://nekoweb.org/follow/goatpup.party" class="neko-follow">follow on Nekoweb</a>
         <script type="text/javascript" is:inline>
             function copySiteButton() {
-                navigator.clipboard.writeText('<a target="_blank" href="https://goatgirl.nekoweb.org"><img height="31" width="88" src="https://goatgirl.nekoweb.org/assets/buttons/88x31/goatgirlclover.gif" alt="goatgirlclover"/></a>');
+                navigator.clipboard.writeText('<a target="_blank" href="https://goatpup.party"><img height="31" width="88" src="https://goatpup.party/assets/buttons/88x31/goatgirlclover.gif" alt="goatgirlclover"/></a>');
                 document.querySelector("#site-footer .neko")?.setAttribute('data-copyButtonText', "copied!");
                 setTimeout(() => {
                     document.querySelector("#site-footer .neko")?.setAttribute('data-copyButtonText', "click to copy HTML!");

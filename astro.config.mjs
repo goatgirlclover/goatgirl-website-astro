@@ -12,7 +12,7 @@ const { NEKOWEB_API_KEY, NEKOWEB_COOKIE } = loadEnv(process.env.NODE_ENV ?? 'pro
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://goatgirl.nekoweb.org',
+  site: 'https://goatpup.party',
 
   image: { service: passthroughImageService(), },
 
@@ -34,6 +34,6 @@ export default defineConfig({
     apiKey: NEKOWEB_API_KEY,
     cookie: NEKOWEB_COOKIE,
     siteName: 'goatgirl',
-    domain: 'goatgirl.nekoweb.org'
+    domain: 'goatpup.party'
   })
 });

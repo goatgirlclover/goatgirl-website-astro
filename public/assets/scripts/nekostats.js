@@ -1,6 +1,6 @@
 // this script is under the MIT license (https://max.nekoweb.org/resources/license.txt)
 
-let domain = "goatgirl.nekoweb.org";
+let domain = "goatpup.party";
 
 (async () => {
   try {
