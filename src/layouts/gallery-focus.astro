@@ -7,10 +7,11 @@ import { markdownToTxt } from 'markdown-to-txt';
 import { marked } from 'marked';
 
 const { title, description, image, alt, width, height } = Astro.props;
-const shortTitle = title.replace(/^"(.+(?="$))"$/, '$1').split("- goatgirlclover")[0].trim();
+const longTitle = title.concat(" - goatpupclover");
+const shortTitle = longTitle.replace(/^"(.+(?="$))"$/, '$1').split("- goatpupclover")[0].trim(); /* yes this is inefficient but i don't car. i forgot what exactly that code does and especially that regex */
 
 const mdDescription = sanitizeHtml(await marked.parse(description));
-const safeTitle = title.replace(/"/g, '&quot;');
+const safeTitle = longTitle.replace(/"/g, '&quot;');
 const safeDescription = markdownToTxt(description).replace(/"/g, '&quot;');
 const safeAlt = alt.replace(/"/g, '&quot;');
 

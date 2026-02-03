@@ -4,7 +4,7 @@ import rss from '@astrojs/rss';
 export async function GET(context) {
 	const entries = await getCollection('gallery');
 	return rss({
-		title: "goatgirlclover gallery",
+		title: "goatpupclover gallery",
 		description: "furry draws on the internet!",
 		site: context.site,
 		items: entries.map((entry) => ({

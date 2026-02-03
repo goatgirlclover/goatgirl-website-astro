@@ -7,7 +7,7 @@ import { marked } from 'marked';
 export async function GET(context) {
 	const posts = await getCollection('blog');
 	return rss({
-		title: "goatgirlclover blog",
+		title: "goatpupclover blog",
 		description: "furry yaps on the internet!",
 		site: context.site,
 		items: posts.map((post) => ({

@@ -3,10 +3,10 @@ this site's repo is public for reference and inspiration purposes! in essence, i
 ## src/ folder
 unless otherwise specified:
 - all website code concerning page structure, generation, and styling is published under the MIT license
-- all other site content (excluding external widgets/iframes) is copyrighted to goatgirlclover (me), all rights reserved
+- all other site content (excluding external widgets/iframes) is copyrighted to goatpupclover (me), all rights reserved
 
 ## public/ folder
-the following content is copyrighted to goatgirlclover (me), all rights reserved:
+the following content is copyrighted to goatpupclover (me), all rights reserved:
 - all files within the assets/img/ folder and its subfolders
 - all files within the gallery/ folder and its subfolders
 - the favicon
@@ -19,7 +19,7 @@ all scripts are licensed+published under MIT unless otherwise specified
 - my site button (assets/buttons/88x31/goatgirlclover.gif) is free to share around as long as it links back to my site :)
 
 # MIT License
-Copyright (c) 2025 goatgirlclover
+Copyright (c) 2025 goatpupclover
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
