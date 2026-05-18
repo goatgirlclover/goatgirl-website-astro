@@ -16,8 +16,6 @@ export default defineConfig({
 
   image: { service: passthroughImageService(), },
 
-  integrations: [genericBuildFilenames()],
-
   markdown: {
     rehypePlugins: [rehypeExternalLinks, rehypeAstroRelativeMarkdownLinks],
     
