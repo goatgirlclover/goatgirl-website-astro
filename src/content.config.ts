@@ -1,5 +1,7 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
+import { z } from 'astro/zod';
 import { glob } from 'astro/loaders';
+// @ts-ignore
 import fs from "fs";
 
 const blog = defineCollection({
@@ -63,6 +65,6 @@ const gallery = defineCollection({
 		return galleryEntries;
     },
 	schema: GallerySchema,
-}); 
+});
 
 export const collections = { blog, gallery };

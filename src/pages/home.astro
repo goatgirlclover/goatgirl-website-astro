@@ -6,6 +6,7 @@ import '../styles/links.css';
 import sanitizeHtml from 'sanitize-html';
 import { marked } from 'marked';
 marked.use({ pedantic: true })
+// @ts-ignore
 import { readFile } from 'node:fs/promises';
 const changelog = sanitizeHtml(await marked.parse(await readFile('./src/content/changelog.md', 'utf-8')));
 
@@ -21,7 +22,7 @@ import FormattedDate from '../components/FormattedDate.astro';
   <section class="countdown unbeatable" data-countdownto="2025-12-09T18:00:00+00:00" data-endtext="PLAY UNBEATABLE NOW!!!">
           <p>
             <a target="_blank" href="https://unbeatablegamewishlist.now">
-              <b>xxx days</b> 
+              <b>xxx days</b>
               until UNBEATABLE releases...
             </a>
           </p>
@@ -32,7 +33,7 @@ import FormattedDate from '../components/FormattedDate.astro';
         const countdown = document.querySelector(".countdown");
         const daysText = document.querySelector(".countdown b");
         const remainingText = daysText?.parentNode?.lastChild;
-      
+
         if (countdown && daysText) {
           const countdownDate = countdown.getAttribute("data-countdownto");
           const countdownSinceDate = countdown.getAttribute("data-countdownsince");
@@ -114,7 +115,7 @@ import FormattedDate from '../components/FormattedDate.astro';
           <a href={latestGalleryEntry.data.path}>
             <div class="marching-squares gallery-img">
               <img
-                width="192px" height="192px" style="object-fit: cover;" loading="lazy" class="thumb" 
+                width="192px" height="192px" style="object-fit: cover;" loading="lazy" class="thumb"
                 alt={latestGalleryEntry.data.title} title={latestGalleryEntry.data.title} src={latestGalleryEntry.data.thumbnailPath}
               />
             </div>
@@ -130,7 +131,7 @@ import FormattedDate from '../components/FormattedDate.astro';
 
         </section>
       </div>
-      
+
       <hr>
       <div class="flex-sections">
         <section class="scrollable">
@@ -190,7 +191,7 @@ import FormattedDate from '../components/FormattedDate.astro';
           </ul>
         </section>
       </div>
-        
+
       <!-- <script is:inline>
         function isPointOverText(x, y) {
           const element = document.elementFromPoint(x, y);
@@ -217,10 +218,10 @@ import FormattedDate from '../components/FormattedDate.astro';
         }
 
         window.addEventListener("mousemove", (e) => {
-          if (isPointOverText(e.clientX, e.clientY)) { 
+          if (isPointOverText(e.clientX, e.clientY)) {
             document.querySelector("body").className = "hovering-over-text";
           }
-          else { 
+          else {
             document.querySelector("body").className = "not-doing-that";
           }
         })
