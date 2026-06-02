@@ -6,9 +6,9 @@
 - 2025-9-13 - improved (New) 3DS browser compatibility! :D
 - 2025-9-12 - finally added a proper introduction in [my about-me page!](/about/)
 - 2025-9-11 - LOTS of changes!!! migrated to Astro, updated styling, a new animated background, a completely revamped blog, AND a way more fun font :D
-    - also, i've added an extra section for sites i like in [the links page](/links/) and added a countdown on the homepage to [UNBEATABLE's release on nov. 6...](https://unbeatablegamewishlist.now)
-    - [new blog post about all the changes I've made this year so far!](/blog/post/how-i-remade-this-website)
-    - you can turn off the animations via the reduced motion option at the bottom of the page!
+  - also, i've added an extra section for sites i like in [the links page](/links/) and added a countdown on the homepage to [UNBEATABLE's release on nov. 6...](https://unbeatablegamewishlist.now)
+  - [new blog post about all the changes I've made this year so far!](/blog/post/how-i-remade-this-website)
+  - you can turn off the animations via the reduced motion option at the bottom of the page!
 - 2025-8-11 - finally added full alt text for [the gallery!!](/gallery/)
 - 2025-8-10 - [EVEN MORE BUTTONS](/links/) - added links to some of them. also improved the Mutant Standard emoji replacement script!
 - 2025-8-2 - added [chao garden webring](https://knoxstation.neocities.org/chaogarden) in links!

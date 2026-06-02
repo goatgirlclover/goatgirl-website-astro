@@ -1,16 +1,16 @@
 ---
-import { type CollectionEntry, getCollection, render } from 'astro:content';
-import type { MarkdownHeading } from 'astro';
-import BlogPost from '../../../layouts/blog-post.astro';
+import { type CollectionEntry, getCollection, render } from "astro:content";
+import type { MarkdownHeading } from "astro";
+import BlogPost from "../../../layouts/blog-post.astro";
 
 export async function getStaticPaths() {
-	const posts = await getCollection('blog');
+	const posts = await getCollection("blog");
 
 	const headings = await Promise.all(
 		posts.map(async (post) => {
 			const data = await render(post);
 			return data.headings;
-		})
+		}),
 	);
 
 	return posts.map((post, index) => ({
@@ -20,9 +20,9 @@ export async function getStaticPaths() {
 }
 
 type Props = {
-	post: CollectionEntry<'blog'>;
+	post: CollectionEntry<"blog">;
 	headings: MarkdownHeading[];
-}
+};
 
 const { post, headings } = Astro.props;
 const { Content } = await render(post);

@@ -9,13 +9,14 @@ const { activePage } = Astro.props;
     <img loading="eager" width="512" height="187" alt="goatgirlclover!" src="/assets/img/logoPink.png">
     </a>
     <div>
-        <nav class="header-links"> 
-            <a href="/gallery/" class={activePage == "gallery" ? "active-page" : undefined} tabindex="0"><img src="/assets/mutantstandard/emoji/artist_palette.svg"> art</a>
-            <a href="/blog/" class={activePage == "blog" ? "active-page" : undefined} tabindex="0"><img src="/assets/mutantstandard/emoji/speech_bubble.svg"> blog</a>
-            <a href="/about/" class={activePage == "about" ? "active-page" : undefined} tabindex="0"><img src="/assets/mutantstandard/emoji/v_hoof_e2.svg"> about</a>
-            <a href="/links/" class={activePage == "links" ? "active-page" : undefined} tabindex="0"><img src="/assets/mutantstandard/emoji/globe.svg"> links</a>
-            <a href="/guestbook/" class={activePage == "guestbook" ? "active-page" : undefined} tabindex="0"><img src="/assets/mutantstandard/emoji/writing_hand_paw_o3.svg"> guestbook</a>
-        </nav> 
-    </div> 
+        <nav class="header-links">
+            <a href="/gallery/" class={activePage == "gallery" ? "active-page" : undefined} tabindex="0"><span>🎨 art</span></a>
+            <a href="/comms/" class={activePage == "comms" ? "active-page" : undefined} tabindex="0"><span>💸 commissions</span></a>
+            <a href="/blog/" class={activePage == "blog" ? "active-page" : undefined} tabindex="0"><span>💬 blog</span></a>
+            <a href="/about/" class={activePage == "about" ? "active-page" : undefined} tabindex="0"><span>🐕 about</span></a>
+            <a href="/links/" class={activePage == "links" ? "active-page" : undefined} tabindex="0"><span>🌐 links</span></a>
+            <a href="/guestbook/" class={activePage == "guestbook" ? "active-page" : undefined} tabindex="0"><span>📓 guestbook</span></a>
+        </nav>
+    </div>
 </div>
 </header>

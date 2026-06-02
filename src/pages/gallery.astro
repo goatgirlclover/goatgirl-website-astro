@@ -16,8 +16,8 @@ const galleryEntriesByYear = Array.from(Map.groupBy(galleryEntries, entry => ent
         <section class="gallery-grid" data-year={year}>
           {
             entries.reverse().map((entry) => { return (
-              <a tabindex="0" href={entry.data.path} class="gallery-img" id={entry.id}>
-                <img alt={entry.data.title} title={entry.data.title} class="thumb" src={entry.data.thumbnailPath} 
+              <a tabindex="0" href={entry.data.path} class="gallery-img stamp" id={entry.id}>
+                <img alt={entry.data.title} title={entry.data.title} class="thumb" src={entry.data.thumbnailPath}
                     width="192px" height="192px" style="object-fit: cover;" loading="lazy" />
               </a>
             )})

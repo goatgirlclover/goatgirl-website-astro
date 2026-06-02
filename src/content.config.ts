@@ -1,18 +1,18 @@
-import { defineCollection } from 'astro:content';
-import { z } from 'astro/zod';
-import { glob } from 'astro/loaders';
+import { defineCollection } from "astro:content";
+import { z } from "astro/zod";
+import { glob } from "astro/loaders";
 // @ts-ignore
 import fs from "fs";
 
 const blog = defineCollection({
-	loader: glob({ base: './src/content/blog', pattern: '**/*.{md,mdx}' }),
+	loader: glob({ base: "./src/content/blog", pattern: "**/*.{md,mdx}" }),
 	schema: z.object({
-			title: z.string(),
-			description: z.string(),
-			// Transform string to Date object
-			pubDate: z.coerce.date(),
-			updatedDate: z.coerce.date().optional(),
-    }),
+		title: z.string(),
+		description: z.string(),
+		// Transform string to Date object
+		pubDate: z.coerce.date(),
+		updatedDate: z.coerce.date().optional(),
+	}),
 });
 
 export type GalleryEntry = z.infer<typeof GallerySchema>;
@@ -33,16 +33,16 @@ const GallerySchema = z.object({
 });
 
 const gallery = defineCollection({
-	loader: async() => {
+	loader: async () => {
 		var galleryEntries: GalleryEntry[] = [];
 		fs.readdirSync("./src/content/gallery/").forEach(async (file: string) => {
 			if (file.endsWith(".txt")) {
 				const entryID = file.slice(0, -4);
 				const fullFilePath = "./src/content/gallery/" + file;
-				const info = fs.readFileSync(fullFilePath, 'utf-8').split(/\r?\n/);
-				const resolution = info[4].split('x');
+				const info = fs.readFileSync(fullFilePath, "utf-8").split(/\r?\n/);
+				const resolution = info[4].split("x");
 
-				const parsedEntry:GalleryEntry = ({
+				const parsedEntry: GalleryEntry = {
 					id: entryID,
 					imagePath: "/gallery/img/" + entryID + ".png",
 					thumbnailPath: "/gallery/thumb/" + entryID + ".jpg",
@@ -56,14 +56,14 @@ const gallery = defineCollection({
 
 					imageWidth: Number(resolution[0].trim()),
 					imageHeight: Number(resolution[1].trim()),
-				})
+				};
 
 				galleryEntries.push(parsedEntry);
 			}
 		});
 
 		return galleryEntries;
-    },
+	},
 	schema: GallerySchema,
 });
 

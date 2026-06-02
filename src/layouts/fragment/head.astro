@@ -1,23 +1,41 @@
 ---
-import '../../styles/style.css';
-import Meta from './meta.astro';
-const { title = "goatpupclover", description = undefined, ogType = "website", pubDate = undefined, updatedDate = undefined } = Astro.props;
+import "../../styles/style.css";
+import Meta from "./meta.astro";
+const {
+	title = "goatpupclover",
+	description = undefined,
+	ogType = "website",
+	pubDate = undefined,
+	updatedDate = undefined,
+} = Astro.props;
 
-var publishedTime = pubDate?.toISOString(); 
-var modifiedTime = updatedDate?.toISOString(); 
-publishedTime = publishedTime?.substring(0, publishedTime?.indexOf('T'));
-modifiedTime = modifiedTime?.substring(0, modifiedTime?.indexOf('T'));
+var publishedTime = pubDate?.toISOString();
+var modifiedTime = updatedDate?.toISOString();
+publishedTime = publishedTime?.substring(0, publishedTime?.indexOf("T"));
+modifiedTime = modifiedTime?.substring(0, modifiedTime?.indexOf("T"));
 
 const ogImage = import.meta.env.SITE + "/assets/img/embed-banner.png";
 ---
 
 <head>
-  <Meta title={title} />
-  <meta property="og:image" content={ogImage}>
-  <meta property="og:type" content={ogType}>
-  { description && <meta property="og:description" content={description} /> }
-  
-  {(ogType == "article") && <meta property='article:author' content='goatpupclover' />}
-  {(ogType == "article" && pubDate) && <meta property='article:published_time' content={publishedTime} />}
-  {(ogType == "article" && updatedDate) && <meta property='article:modified_time' content={modifiedTime} />}
+	<Meta title={title} />
+	<meta property="og:image" content={ogImage} />
+	<meta property="og:type" content={ogType} />
+	{description && <meta property="og:description" content={description} />}
+
+	{
+		ogType == "article" && (
+			<meta property="article:author" content="goatpupclover" />
+		)
+	}
+	{
+		ogType == "article" && pubDate && (
+			<meta property="article:published_time" content={publishedTime} />
+		)
+	}
+	{
+		ogType == "article" && updatedDate && (
+			<meta property="article:modified_time" content={modifiedTime} />
+		)
+	}
 </head>

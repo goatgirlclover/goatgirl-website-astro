@@ -1,261 +1,281 @@
 /* HOMEPAGE */
 .flex-sections .homepage-main {
-  flex-basis: 30em !important;
-  flex-grow: 99 !important;
-  flex-shrink: 1 !important;
+	flex-basis: 30em !important;
+	flex-grow: 99 !important;
+	flex-shrink: 1 !important;
 }
 
 /* HOMEPAGE - STATUS.CAFE */
-#statuscafe-username, #statuscafe-username * {
-  font-size: 0.9rem;
-  overflow: visible;
-} 
+#statuscafe-username,
+#statuscafe-username * {
+	font-size: 0.9rem;
+	overflow: visible;
+}
 
-#statuscafe-username .emoji-spacer { margin-left: 0.15em; margin-right: 0.15em; }
+#statuscafe-username .emoji-spacer {
+	margin-left: 0.15em;
+	margin-right: 0.15em;
+}
 
 #statuscafe-content {
-  font-weight: 500;
-  overflow: visible;
+	font-weight: 500;
+	overflow: visible;
 }
 
 #status-section {
-  float: right;
-  min-width: min-content;
-  margin-top: auto;
+	float: right;
+	min-width: min-content;
+	margin-top: auto;
 }
 
 #status-section h2 {
-  margin-bottom: 8px;
+	margin-bottom: 8px;
 }
 
 .status-holder {
-  display: flex;
-  justify-content: right;
-  flex-wrap: wrap;
-  gap: 8px;
-  overflow: hidden;
-  padding: 2px;
+	display: flex;
+	justify-content: right;
+	flex-wrap: wrap;
+	gap: 8px;
+	overflow: hidden;
+	padding: 2px;
 }
 
 #status-goat {
-  width: 256px; 
-  height: auto;
-  user-select: none; 
-  -webkit-user-select: none;
-  position: relative;
+	width: 256px;
+	height: auto;
+	user-select: none;
+	-webkit-user-select: none;
+	position: relative;
 }
 
 #status-goat > img {
-  width: 100%;
-  height: auto;
-  /*filter: drop-shadow(3px 3px var(--drop-shadow));*/
+	width: 100%;
+	height: auto;
+	/*filter: drop-shadow(3px 3px var(--drop-shadow));*/
 }
 
 #status-goat::before {
-  font-family: Pangolin, sans-serif;
-  content: attr(data-before);
-  position: absolute;
-  left: -25px;
-  top: 2px;
-  transform: rotate(-8deg);
-  font-size: 1.1em;
+	font-family: Pangolin, sans-serif;
+	content: attr(data-before);
+	position: absolute;
+	left: -25px;
+	top: 2px;
+	transform: rotate(-8deg);
+	font-size: 1.1em;
 }
 
 #status-bubble {
-  height: fit-content;
-  flex: 1 0 auto;
-  width: 0;
-  overflow-wrap: break-word;
-  max-width: 100%;
-  width: min-content;
-  min-width: 11em;
-  margin-right: 0 !important; /* no flicker when changing style */
+	height: fit-content;
+	flex: 1 0 auto;
+	width: 0;
+	overflow-wrap: break-word;
+	max-width: 100%;
+	width: min-content;
+	min-width: 11em;
+	margin-right: 0 !important; /* no flicker when changing style */
 }
 
 /* HOMEPAGE - LAST.FM */
 #lastfm-section {
-  display: flex;
-  flex-direction: column;
-  flex: 0 1 18rem;
-  margin: auto;
-  text-align: center;
+	display: flex;
+	flex-direction: column;
+	flex: 0 1 18rem;
+	margin: auto;
+	text-align: center;
 }
 
 #lastfm-section > h2 {
-  margin-bottom: 5px !important;
-  text-align: left;
+	margin-bottom: 5px !important;
+	text-align: left;
 }
 
-.lastfm-widget  {
-  margin: 0 auto;
-  border: 3px solid var(--contrast-color);
-  padding: 4px;
-  border-radius: 10px;
-  position: relative;
+.lastfm-widget {
+	margin: 0 auto;
+	border: 3px solid var(--contrast-color);
+	padding: 4px;
+	border-radius: 10px;
+	position: relative;
 }
 
 .lastfm-cover {
-  display: block;
-  height: auto;
-  width: 256px;
-  margin: 0 auto;
-  margin-top: -12px;
-  box-shadow: 3px 3px var(--contrast-color);
-  border-radius: 5px;
-  margin-bottom: 4px;
+	display: block;
+	height: auto;
+	width: 256px;
+	margin: 0 auto;
+	margin-top: -12px;
+	box-shadow: 3px 3px var(--contrast-color);
+	border-radius: 5px;
+	margin-bottom: 4px;
 }
 
 #lastfm-song {
-  font-weight: bolder;
-  font-size: smaller;
-  top: -0.45em;
-  position: relative;
-  display: block;
-  margin-bottom: 0.1em;
-  margin-top: 0.2em;
+	font-weight: bolder;
+	font-size: smaller;
+	top: -0.45em;
+	position: relative;
+	display: block;
+	margin-bottom: 0.1em;
+	margin-top: 0.2em;
 }
 
 #lastfm-song:hover {
-  font-weight: 800;
+	font-weight: 800;
 }
 
-.lastfm-widget small, .lastfm-widget small > a {
-  font-size: x-small;
-  font-weight: 400; 
-  line-height: 1px;
+.lastfm-widget small,
+.lastfm-widget small > a {
+	font-size: x-small;
+	font-weight: 400;
+	line-height: 1px;
 }
 
 .lastfm-widget small {
-  top: -1.65em;
-  position: relative;
+	top: -1.65em;
+	position: relative;
 }
 
-.lastfm-widget small > a, #lastfm-song {
-  color: var(--text-color);
+.lastfm-widget small > a,
+#lastfm-song {
+	color: var(--text-color);
 }
 
 .lastfm-widget small > a:hover {
-  font-weight: 500;
+	font-weight: 500;
 }
 
 #lastfm-status {
-  font-weight: 400;
-  font-size: small;
+	font-weight: 400;
+	font-size: small;
 }
 
 #lastfm-refresh {
-  position: absolute;
-  right: 5px;
-  cursor: pointer;
-  user-select: none;
-  -webkit-user-select: none;
+	position: absolute;
+	right: 5px;
+	cursor: pointer;
+	user-select: none;
+	-webkit-user-select: none;
 }
 
-:root:not(:has(.darkModeCheckbox:checked)) #lastfm-refresh { 
-  filter: invert(1); 
+:root:not(:has(.darkModeCheckbox:checked)) #lastfm-refresh {
+	filter: invert(1);
 }
 
 /* COUNTDOWN */
-.countdown { 
-  padding: 0.5em; 
-  margin: 0 auto; 
-  border-radius: 100px; 
-  border: 3px solid var(--contrast-color);
+.countdown {
+	padding: 0.5em;
+	margin: 0 auto;
+	border-radius: 100px;
+	border: 3px solid var(--contrast-color);
 }
 
 .countdown.unbeatable {
-  background-image: url(/assets/unbeatableBanner.png); 
-  background-position: bottom 35% left; 
-  background-size: cover; 
-  text-align: right;
-  p {
-    position: relative; 
-    bottom: 3px;
-    text-shadow: 1px 1px 0px black;
-  }
+	background-image: url(/assets/unbeatableBanner.png);
+	background-position: bottom 35% left;
+	background-size: cover;
+	text-align: right;
+	p {
+		position: relative;
+		bottom: 3px;
+		text-shadow: 1px 1px 0px black;
+	}
 }
 
 :root.light-mode .countdown.unbeatable {
-  background-image: url(/assets/unbeatableBannerLight.png);
-} 
- 
+	background-image: url(/assets/unbeatableBannerLight.png);
+}
+
 .page-split {
-  gap: 20px;
-  background-color: var(--contrast-color);
+	gap: 20px;
+	background-color: var(--contrast-color);
 }
 
 .page-split > :is(section, aside) {
-  background-color: var(--content-background);
-  outline: 9px solid var(--content-background);
+	background-color: var(--content-background);
+	outline: 9px solid var(--content-background);
 }
 
 .page-split > section {
-  flex: 99 1 640px !important;
-  /* border-right: 3px solid black;
+	flex: 99 1 640px !important;
+	/* border-right: 3px solid black;
   padding-right: 13px; */
 }
 
 .page-split > :is(section, aside):last-child {
-  flex: 1 1 312px !important;
-  justify-content: center;
-  align-items: center;
+	flex: 1 1 312px !important;
+	justify-content: center;
+	align-items: center;
 }
 
 .page-split > :is(section, aside):last-child > section + section {
-  margin-top: 12px;
+	margin-top: 12px;
 }
 
-#latest { align-items: center; }
-#latest-gallery { flex: 99 1 256px; text-align: center; }
-#latest-blog { flex: 1 1 20em; text-align: right; }
+#latest {
+	align-items: center;
+}
+#latest-gallery {
+	flex: 99 1 256px;
+	text-align: center;
+}
+#latest-blog {
+	flex: 1 1 20em;
+	text-align: right;
+}
 
 #latest-gallery .gallery-img {
-  width: fit-content;
-  height: auto;
-  max-width: none;
-  min-width: auto;
-  min-height: auto;
-  max-height: none;
-  margin: auto;
-  padding: 2px;
+	width: fit-content;
+	height: auto;
+	max-width: none;
+	min-width: auto;
+	min-height: auto;
+	max-height: none;
+	margin: auto;
+	padding: 2px;
 }
 
-#latest-gallery a {display: block; }
-#latest-gallery h1 { margin-bottom: 0; }
+#latest-gallery a {
+	display: block;
+}
+#latest-gallery h1 {
+	margin-bottom: 0;
+}
 
 #latest-gallery .gallery-img img {
-  width: auto;
-  height: auto;
-  max-height: 256px;
-  display: block;
+	width: auto;
+	height: auto;
+	max-height: 256px;
+	display: block;
 }
 
 #latest > section {
-  padding: 12px;
+	padding: 12px;
 }
 
 aside #latest > section {
-  padding: 6px;
+	padding: 6px;
 }
 
 aside #latest-gallery .gallery-img img {
-  max-height: 192px;
+	max-height: 192px;
 }
 
-aside #latest { gap: 0; }
+aside #latest {
+	gap: 0;
+}
 
 aside #latest-blog p:last-child {
-  display: none;
+	display: none;
 }
 
 aside #latest-blog :is(p, h2) {
-  margin: 4px;
+	margin: 4px;
 }
 
 aside > .flex-sections {
-  margin: 4px 0;
+	margin: 4px 0;
 }
 
 aside > #site-changelog {
-  margin-top: 4px;
+	margin-top: 4px;
 }

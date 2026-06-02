@@ -1,8 +1,8 @@
 ---
-import Meta from './meta.astro';
+import Meta from "./meta.astro";
 
-import '../../styles/style.css';
-import '../../styles/gallery.css';
+import "../../styles/style.css";
+import "../../styles/gallery.css";
 const { title, description, image, url = import.meta.env.SITE } = Astro.props;
 
 // title = "!title! - goatpupclover"
@@ -10,19 +10,19 @@ const { title, description, image, url = import.meta.env.SITE } = Astro.props;
 // image = "/gallery/img/!filename!.png"
 // url should automatically be converted at build by Astro...
 
-const longImage = url + image; 
+const longImage = url + image;
 ---
 
 <head>
-  <Meta title={title} />
+	<Meta title={title} />
 
-  <meta property="og:description" content={description}> 
-  <meta property="og:type" content="website"> 
-  <meta property="og:image" content={longImage}> 
-  <meta property="og:image:type" content="image/png"> 
-  
-  <meta name="twitter:title" content={title}> 
-  <meta name="twitter:description" content={description}> 
-  <meta name="twitter:card" content="summary_large_image"> 
-  <meta name="twitter:image" content={longImage}> 
+	<meta property="og:description" content={description} />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content={longImage} />
+	<meta property="og:image:type" content="image/png" />
+
+	<meta name="twitter:title" content={title} />
+	<meta name="twitter:description" content={description} />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:image" content={longImage} />
 </head>

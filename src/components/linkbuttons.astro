@@ -1,30 +1,38 @@
 ---
-interface Props { displayLabel?: boolean };
+interface Props {
+	displayLabel?: boolean;
+}
 const { displayLabel = true } = Astro.props;
 
 const links = {
-    Bluesky: "https://bsky.app/profile/goatpup.party",
-    Tumblr: "https://goatpupclover.tumblr.com",
-    Itaku: "https://itaku.ee/profile/goatpupclover",
-    FurAffinity: "https://www.furaffinity.net/user/goatgirlclover",
-    Newgrounds: "https://goatgirlclover.newgrounds.com/",
-    Github: "https://github.com/goatgirlclover",
-    LastFM: "https://www.last.fm/user/scoop9"
-}
-
+	Bluesky: "https://bsky.app/profile/goatpup.party",
+	Tumblr: "https://goatpupclover.tumblr.com",
+	Itaku: "https://itaku.ee/profile/goatpupclover",
+	FurAffinity: "https://www.furaffinity.net/user/goatgirlclover",
+	Newgrounds: "https://goatgirlclover.newgrounds.com/",
+	Github: "https://github.com/goatgirlclover",
+	LastFM: "https://www.last.fm/user/scoop9",
+};
 ---
 
 {
-    Object.entries(links).map(([key, value]) => (
-        <a title={displayLabel ? key : undefined} class={"social-media " + key.toLowerCase()} 
-        target="_blank" rel="noopener" href={value} tabindex="0">
-            <img 
-                width={key === "Itaku" && displayLabel ? "48px" : "32px"}
-                height="32px" 
-                src={"/assets/icons/social/" + key.toLowerCase() + ".svg"} 
-                alt={key + " logo"} 
-                loading="lazy" />
-            {displayLabel && <p>{key}</p>}
-        </a>
-    ))
+	Object.entries(links).map(([key, value]) => (
+		<a
+			title={displayLabel ? key : undefined}
+			class={"social-media " + key.toLowerCase()}
+			target="_blank"
+			rel="noopener"
+			href={value}
+			tabindex="0"
+		>
+			<img
+				width={key === "Itaku" && displayLabel ? "48px" : "32px"}
+				height="32px"
+				src={"/assets/icons/social/" + key.toLowerCase() + ".svg"}
+				alt={key + " logo"}
+				loading="lazy"
+			/>
+			{displayLabel && <p>{key}</p>}
+		</a>
+	))
 }

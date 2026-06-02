@@ -1,36 +1,54 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import type { MarkdownHeading } from 'astro';
-import FormattedDate from '../components/FormattedDate.astro';
+import type { CollectionEntry } from "astro:content";
+import type { MarkdownHeading } from "astro";
+import FormattedDate from "../components/FormattedDate.astro";
 
 import Base from "./base.astro";
-import BlogNav from '../components/blog-nav.astro';
-import BlogToc from '../components/blog-toc.astro';
+import BlogNav from "../components/blog-nav.astro";
+import BlogToc from "../components/blog-toc.astro";
 
-import '../styles/blog.css';
+import "../styles/blog.css";
 
-type Props = CollectionEntry<'blog'>['data'] & { headings: MarkdownHeading[] };
+type Props = CollectionEntry<"blog">["data"] & { headings: MarkdownHeading[] };
 
-const { title, description, pubDate, updatedDate = undefined, headings } = Astro.props;
+const {
+	title,
+	description,
+	pubDate,
+	updatedDate = undefined,
+	headings,
+} = Astro.props;
 const displayTitle = title.concat(" - goatpupclover");
 ---
 
-<Base title={displayTitle} description={description} activePage="blog" 
-  ogType="article" pubDate={pubDate} updatedDate={updatedDate}>
-  <header class="blog-info">
-    <h1>{title}</h1>
-    <p>{description}</p>
-    <small>published <FormattedDate date={pubDate}/></small>
-    {updatedDate && <small>last updated <FormattedDate date={updatedDate}/></small>}
-  </header>
+<Base
+	title={displayTitle}
+	description={description}
+	activePage="blog"
+	ogType="article"
+	pubDate={pubDate}
+	updatedDate={updatedDate}
+>
+	<header class="blog-info">
+		<h1>{title}</h1>
+		<p>{description}</p>
+		<small>published <FormattedDate date={pubDate} /></small>
+		{
+			updatedDate && (
+				<small>
+					last updated <FormattedDate date={updatedDate} />
+				</small>
+			)
+		}
+	</header>
 
-  <BlogToc headings={headings} />
+	<BlogToc headings={headings} />
 
-  <hr />
+	<hr />
 
-  <article class="blog-content"><slot></slot></article>
+	<article class="blog-content"><slot /></article>
 
-  <hr />
+	<hr />
 
-  <footer class="blog-footer"><BlogNav /></footer>
+	<footer class="blog-footer"><BlogNav /></footer>
 </Base>
