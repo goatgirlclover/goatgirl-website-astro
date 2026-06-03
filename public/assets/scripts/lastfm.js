@@ -1,5 +1,7 @@
 /* Modified version of https://github.com/DaInfLoop/website-v4 LastFM code */
 
+const username = "scoop9";
+
 var canRefresh = true;
 const music_status = document.getElementById("lastfm-status");
 const song = document.getElementById("lastfm-song");
@@ -33,7 +35,7 @@ function fetchLastFM() {
 	image.setAttribute("title", "album cover: not loaded!");
 	image.setAttribute("alt", "album cover: not loaded!");
 
-	fetch("https://lastfm-last-played.biancarosa.com.br/scoop9/latest-song")
+	fetch(`https://lastfm-last-played.biancarosa.com.br/${username}/latest-song`)
 		.then((response) => {
 			if (!response.ok) {
 				music_status.textContent = response.status;
@@ -51,11 +53,12 @@ function fetchLastFM() {
 				music_status.textContent = json.response;
 			} else {
 				const track = json.track;
+				var album = track.album["#text"];
 
 				if (track["@attr"]?.nowplaying == "true") {
-					music_status.textContent = "now playing";
+					music_status.textContent = "is now listening to...";
 				} else {
-					music_status.textContent = "last played";
+					music_status.textContent = "last listened to...";
 				}
 
 				song.textContent = `${track.name} - ${track.artist["#text"]}`;
@@ -63,8 +66,18 @@ function fetchLastFM() {
 				song.target = "_blank";
 
 				image.src = track.image[3]["#text"] || fallbackCover;
+				if (image.src === fallbackCover) {
+					window
+						.albumArt(track.artist["#text"], {
+							track: track.name,
+							size: "large",
+						})
+						.then((cover) => {
+							image.src = cover[0] || fallbackCover;
+							// album = cover[1];
+						});
+				}
 
-				const album = track.album["#text"];
 				const alt =
 					album && album.length > 0
 						? (image.src === fallbackCover ? "" : "album art for ") +

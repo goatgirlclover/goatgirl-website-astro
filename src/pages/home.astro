@@ -113,7 +113,7 @@ import FormattedDate from "../components/FormattedDate.astro";
 		<section id="latest-gallery">
 			<h2>latest artwork:</h2>
 			<a href={latestGalleryEntry.data.path}>
-				<div class="marching-squares gallery-img">
+				<div class="stamp gallery-img">
 					<img
 						width="192px"
 						height="192px"
@@ -182,30 +182,46 @@ import FormattedDate from "../components/FormattedDate.astro";
 		</section>
 
 		<section id="lastfm-section">
-			<p class="lastfm-widget striped">
-				<strong id="lastfm-status"></strong>
+			<div class="lastfm-widget striped">
 				<img
 					id="lastfm-refresh"
 					alt="Refresh Last.FM widget"
 					onclick="fetchLastFM()"
 					src="/assets/icons/refresh.svg"
 				/>
-				<a id="lastfm-song"></a>
-				<small
-					>powered by
-					<a
-						href="https://github.com/biancarosa/lastfm-last-played"
-						target="_blank">@biancarosa/lastfm-last-played</a
-					>
-				</small>
-				<img
-					class="lastfm-cover"
-					src="https://lastfm.freetls.fastly.net/i/u/300x300/c6f59c1e5e7240a4c0d427abd71f3dbb.jpg"
-					alt="album cover: not loaded!"
-					title="album cover: not loaded!"
-				/>
-			</p>
+				<div class="lastfm-widget-content">
+					<h2>scoop9 on last.fm</h2>
+					<strong id="lastfm-status"></strong>
 
+					<a id="lastfm-song"></a>
+
+					<img
+						class="lastfm-cover"
+						src="https://lastfm.freetls.fastly.net/i/u/300x300/c6f59c1e5e7240a4c0d427abd71f3dbb.jpg"
+						alt="album cover: not loaded!"
+						title="album cover: not loaded!"
+					/>
+
+					<small
+						>powered by
+						<a
+							href="https://github.com/biancarosa/lastfm-last-played"
+							target="_blank">@biancarosa/lastfm-last-played</a
+						>
+						<br />&
+						<a
+							href="https://github.com/lacymorrow/album-art"
+							target="_blank">@lacymorrow/album-art</a
+						>
+					</small>
+				</div>
+			</div>
+
+			<script
+				is:inline
+				defer
+				type="text/javascript"
+				src="/assets/scripts/album-art.js"></script>
 			<script
 				is:inline
 				defer

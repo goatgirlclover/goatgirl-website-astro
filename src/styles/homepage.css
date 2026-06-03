@@ -80,9 +80,9 @@
 #lastfm-section {
 	display: flex;
 	flex-direction: column;
-	flex: 0 1 18rem;
-	margin: auto;
+	flex: 0 1 20rem;
 	text-align: center;
+	position: relative;
 }
 
 #lastfm-section > h2 {
@@ -91,22 +91,38 @@
 }
 
 .lastfm-widget {
-	margin: 0 auto;
 	border: 3px solid var(--contrast-color);
 	padding: 4px;
 	border-radius: 10px;
-	position: relative;
+	position: absolute;
+	display: block;
+	text-align: center;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.lastfm-widget-content {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	overflow: hidden;
+}
+
+.lastfm-widget-content > h2 {
+	margin: 0;
 }
 
 .lastfm-cover {
 	display: block;
-	height: auto;
-	width: 256px;
+	flex: 1;
+	width: auto;
 	margin: 0 auto;
-	margin-top: -12px;
 	box-shadow: 3px 3px var(--contrast-color);
 	border-radius: 5px;
 	margin-bottom: 4px;
+	min-height: 0;
 }
 
 #lastfm-song {
@@ -115,8 +131,7 @@
 	top: -0.45em;
 	position: relative;
 	display: block;
-	margin-bottom: 0.1em;
-	margin-top: 0.2em;
+	padding-top: 0.3em;
 }
 
 #lastfm-song:hover {
@@ -127,12 +142,12 @@
 .lastfm-widget small > a {
 	font-size: x-small;
 	font-weight: 400;
-	line-height: 1px;
 }
 
 .lastfm-widget small {
-	top: -1.65em;
 	position: relative;
+	display: block;
+	text-align: right;
 }
 
 .lastfm-widget small > a,
@@ -230,7 +245,7 @@
 	min-width: auto;
 	min-height: auto;
 	max-height: none;
-	margin: auto;
+	margin: 24px auto;
 	padding: 2px;
 }
 
