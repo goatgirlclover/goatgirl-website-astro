@@ -4,47 +4,47 @@ const { activePage } = Astro.props;
 ---
 
 <header id="site-header">
-	<div>
-		<a href="/home/" tabindex="0" id="site-logo">
-			<img
-				loading="eager"
-				width="512"
-				height="187"
-				alt="goatgirlclover!"
-				src="/assets/img/logoPink.png"
-			/>
-		</a>
-		<div>
-			<nav class="header-links">
-				<a
-					href="/gallery/"
-					class={activePage == "gallery" ? "active-page" : undefined}
-					tabindex="0"><span>🎨 art</span></a
-				>
-				<!-- <a href="/comms/" class={activePage == "comms" ? "active-page" : undefined} tabindex="0"><span>💸 commissions</span></a> -->
-				<a
-					href="/blog/"
-					class={activePage == "blog" ? "active-page" : undefined}
-					tabindex="0"><span>💬 blog</span></a
-				>
-				<a
-					href="/about/"
-					class={activePage == "about" ? "active-page" : undefined}
-					tabindex="0"><span>🐕 about</span></a
-				>
-				<a
-					href="/links/"
-					class={activePage == "links" ? "active-page" : undefined}
-					tabindex="0"><span>🌐 links</span></a
-				>
-				<a
-					href="/guestbook/"
-					class={activePage == "guestbook"
-						? "active-page"
-						: undefined}
-					tabindex="0"><span>📓 guestbook</span></a
-				>
-			</nav>
-		</div>
-	</div>
+    <div>
+        <a href="/home/" tabindex="0" id="site-logo">
+            <img
+                loading="eager"
+                width="512"
+                height="187"
+                alt="goatgirlclover!"
+                src="/assets/img/logoPink.png"
+            />
+        </a>
+        <div>
+            <nav class="header-links">
+                <a
+                    href="/gallery/"
+                    class={activePage == "gallery" ? "active-page" : undefined}
+                    tabindex="0"><span>🎨 art</span></a
+                >
+                <!-- <a href="/comms/" class={activePage == "comms" ? "active-page" : undefined} tabindex="0"><span>💸 commissions</span></a> -->
+                <a
+                    href="/blog/"
+                    class={activePage == "blog" ? "active-page" : undefined}
+                    tabindex="0"><span>💬 blog</span></a
+                >
+                <a
+                    href="/about/"
+                    class={activePage == "about" ? "active-page" : undefined}
+                    tabindex="0"><span>🐕 about</span></a
+                >
+                <a
+                    href="/links/"
+                    class={activePage == "links" ? "active-page" : undefined}
+                    tabindex="0"><span>🌐 links</span></a
+                >
+                <a
+                    href="/guestbook/"
+                    class={activePage == "guestbook"
+                        ? "active-page"
+                        : undefined}
+                    tabindex="0"><span>📓 guestbook</span></a
+                >
+            </nav>
+        </div>
+    </div>
 </header>

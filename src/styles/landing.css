@@ -1,43 +1,43 @@
 #landing-body {
-	align-items: center;
-	display: flex;
-	justify-content: center;
-	min-width: 100vw;
-	min-height: 100vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-width: 100vw;
+    min-height: 100vh;
 }
 
 #landing-body #site-body {
-	flex-basis: 1300px;
+    flex-basis: 1300px;
 }
 
 #landing-text > h1 {
-	margin-top: 0;
+    margin-top: 0;
 }
 
 #enter-button {
-	width: fit-content;
-	font-size: 1.1em;
-	background-color: #e5347d;
-	background-color: var(--accent-color);
-	display: block;
-	padding: 0.5em 1em;
-	border: 2px solid black;
-	border: 2px solid var(--contrast-color);
-	border-radius: 12px;
-	margin-bottom: 12px;
+    width: fit-content;
+    font-size: 1.1em;
+    background-color: #e5347d;
+    background-color: var(--accent-color);
+    display: block;
+    padding: 0.5em 1em;
+    border: 2px solid black;
+    border: 2px solid var(--contrast-color);
+    border-radius: 12px;
+    margin-bottom: 12px;
 }
 
 #enter-button:hover {
-	border-color: white;
-	border-color: var(--text-color);
+    border-color: white;
+    border-color: var(--text-color);
 }
 
 #enter-button > a > h1 {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 #enter-button > a {
-	text-decoration: none;
-	color: white;
+    text-decoration: none;
+    color: white;
 }

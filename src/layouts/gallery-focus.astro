@@ -9,9 +9,9 @@ import { marked } from "marked";
 const { title, description, image, alt, width, height } = Astro.props;
 const longTitle = title.concat(" - goatpupclover");
 const shortTitle = longTitle
-	.replace(/^"(.+(?="$))"$/, "$1")
-	.split("- goatpupclover")[0]
-	.trim(); /* yes this is inefficient but i don't car. i forgot what exactly that code does and especially that regex */
+    .replace(/^"(.+(?="$))"$/, "$1")
+    .split("- goatpupclover")[0]
+    .trim(); /* yes this is inefficient but i don't car. i forgot what exactly that code does and especially that regex */
 
 const mdDescription = sanitizeHtml(await marked.parse(description));
 const safeTitle = longTitle.replace(/"/g, "&quot;");
@@ -20,88 +20,88 @@ const safeAlt = alt.replace(/"/g, "&quot;");
 
 import { galleryEntries } from "../pages/gallery.astro";
 const currentEntryIndex = galleryEntries.findIndex(
-	(galleryEntries) => galleryEntries.id == Astro.params.slug,
+    (galleryEntries) => galleryEntries.id == Astro.params.slug,
 );
 const previousEntry =
-	currentEntryIndex + 1 === galleryEntries.length
-		? undefined
-		: galleryEntries[currentEntryIndex + 1];
+    currentEntryIndex + 1 === galleryEntries.length
+        ? undefined
+        : galleryEntries[currentEntryIndex + 1];
 const nextEntry =
-	currentEntryIndex === 0 ? undefined : galleryEntries[currentEntryIndex - 1];
+    currentEntryIndex === 0 ? undefined : galleryEntries[currentEntryIndex - 1];
 ---
 
 <html lang="en">
-	<HeadGallery
-		title={safeTitle}
-		description={safeDescription}
-		image={image}
-	/>
-	<Body activePage="gallery">
-		<div id="gallery-focus">
-			<header class="focus-header">
-				<a tabindex="0" href="/gallery/" class="gallery-back"
-					><h2>back to gallery</h2></a
-				>
-			</header>
+    <HeadGallery
+        title={safeTitle}
+        description={safeDescription}
+        image={image}
+    />
+    <Body activePage="gallery">
+        <div id="gallery-focus">
+            <header class="focus-header">
+                <a tabindex="0" href="/gallery/" class="gallery-back"
+                    ><h2>back to gallery</h2></a
+                >
+            </header>
 
-			<section class="focus-container">
-				<a
-					tabindex="0"
-					href={image}
-					target="_blank"
-					class="art stamp-aligned"
-				>
-					<img
-						class="width={width}"
-						height={height}
-						src={image}
-						alt={safeAlt}
-					/></a
-				>
-				<div class="info" set:html={mdDescription}>
-					<h1 class="title">{shortTitle}</h1>
-				</div>
-			</section>
+            <section class="focus-container">
+                <a
+                    tabindex="0"
+                    href={image}
+                    target="_blank"
+                    class="art stamp-aligned"
+                >
+                    <img
+                        class="width={width}"
+                        height={height}
+                        src={image}
+                        alt={safeAlt}
+                    /></a
+                >
+                <div class="info" set:html={mdDescription}>
+                    <h1 class="title">{shortTitle}</h1>
+                </div>
+            </section>
 
-			<hr />
-			<footer class="focus-footer">
-				{
-					(previousEntry || nextEntry) && (
-						<nav>
-							{previousEntry && (
-								<p class="next">
-									next artwork: <br />
-									<a href={previousEntry.data.path}>
-										{previousEntry.data.title}
-									</a>
-								</p>
-							)}
-							{nextEntry && (
-								<p class="prev">
-									previous artwork: <br />
-									<a href={nextEntry.data.path}>
-										{nextEntry.data.title}
-									</a>
-								</p>
-							)}
-						</nav>
-					)
-				}
-			</footer>
-		</div>
-	</Body>
-	<script is:inline type="text/javascript" src="/assets/scripts/darkmode.js"
-	></script>
-	<script is:inline type="text/javascript">
-		const prefersReduced =
-			window.matchMedia(`(prefers-reduced-motion: reduce)`) === true ||
-			window.matchMedia(`(prefers-reduced-motion: reduce)`).matches ===
-				true;
-		if (localStorage.getItem("reducedMotion") === null && prefersReduced) {
-			localStorage.setItem("reducedMotion", true);
-			toggleReducedMotion();
-		}
-	</script>
+            <hr />
+            <footer class="focus-footer">
+                {
+                    (previousEntry || nextEntry) && (
+                        <nav>
+                            {previousEntry && (
+                                <p class="next">
+                                    next artwork: <br />
+                                    <a href={previousEntry.data.path}>
+                                        {previousEntry.data.title}
+                                    </a>
+                                </p>
+                            )}
+                            {nextEntry && (
+                                <p class="prev">
+                                    previous artwork: <br />
+                                    <a href={nextEntry.data.path}>
+                                        {nextEntry.data.title}
+                                    </a>
+                                </p>
+                            )}
+                        </nav>
+                    )
+                }
+            </footer>
+        </div>
+    </Body>
+    <script is:inline type="text/javascript" src="/assets/scripts/darkmode.js"
+    ></script>
+    <script is:inline type="text/javascript">
+        const prefersReduced =
+            window.matchMedia(`(prefers-reduced-motion: reduce)`) === true ||
+            window.matchMedia(`(prefers-reduced-motion: reduce)`).matches ===
+                true;
+        if (localStorage.getItem("reducedMotion") === null && prefersReduced) {
+            localStorage.setItem("reducedMotion", true);
+            toggleReducedMotion();
+        }
+    </script>
 
 
 </html>

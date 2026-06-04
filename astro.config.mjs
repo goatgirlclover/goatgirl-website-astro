@@ -9,38 +9,38 @@ import { loadEnv } from "vite";
 import nekoweb from "@indiefellas/astro-adapter-nekoweb";
 
 const { NEKOWEB_API_KEY, NEKOWEB_COOKIE } = loadEnv(
-	// @ts-expect-error
-	process.env.NODE_ENV ?? "production",
-	// @ts-expect-error
-	process.cwd(),
-	"",
+  // @ts-expect-error
+  process.env.NODE_ENV ?? "production",
+  // @ts-expect-error
+  process.cwd(),
+  "",
 );
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://goatpup.party",
+  site: "https://goatpup.party",
 
-	image: { service: passthroughImageService() },
+  image: { service: passthroughImageService() },
 
-	markdown: {
-		processor: unified({
-			rehypePlugins: [rehypeExternalLinks, rehypeAstroRelativeMarkdownLinks],
-		}),
+  markdown: {
+    processor: unified({
+      rehypePlugins: [rehypeExternalLinks, rehypeAstroRelativeMarkdownLinks],
+    }),
 
-		shikiConfig: {
-			themes: {
-				light: "github-light",
-				dark: "github-dark-high-contrast",
-			},
-		},
-	},
+    shikiConfig: {
+      themes: {
+        light: "github-light",
+        dark: "github-dark-high-contrast",
+      },
+    },
+  },
 
-	adapter: nekoweb({
-		apiKey: NEKOWEB_API_KEY,
-		cookie: NEKOWEB_COOKIE,
-		siteName: "goatgirl",
-		domain: "goatpup.party",
-	}),
+  adapter: nekoweb({
+    apiKey: NEKOWEB_API_KEY,
+    cookie: NEKOWEB_COOKIE,
+    siteName: "goatgirl",
+    domain: "goatpup.party",
+  }),
 
-	trailingSlash: "always",
+  trailingSlash: "always",
 });

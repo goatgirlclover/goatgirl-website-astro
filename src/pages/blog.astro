@@ -6,32 +6,32 @@ import "../styles/blog.css";
 import Base from "../layouts/base.astro";
 
 export const posts = (await getCollection("blog")).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 ---
 
 <Base title="blog - goatpupclover" activePage="blog">
-	<header class="blog-index-header">
-		<h1>blog posts</h1>
-		<a class="rss" href="feed.xml">
-			<img src="/assets/icons/rss.png" width="40px" height="40px" />
-		</a>
-	</header>
-	<section class="blog-posts">
-		{
-			posts.map((post, i) => (
-				<div class="post">
-					<div>
-						<a class="title" href={`/blog/post/${post.id}/`}>
-							<h2>{post.data.title}</h2>
-						</a>
-						<p class="date">
-							<FormattedDate date={post.data.pubDate} />
-						</p>
-					</div>
-					<p class="desc">{post.data.description}</p>
-				</div>
-			))
-		}
-	</section>
+    <header class="blog-index-header">
+        <h1>blog posts</h1>
+        <a class="rss" href="feed.xml">
+            <img src="/assets/icons/rss.png" width="40px" height="40px" />
+        </a>
+    </header>
+    <section class="blog-posts">
+        {
+            posts.map((post, i) => (
+                <div class="post">
+                    <div>
+                        <a class="title" href={`/blog/post/${post.id}/`}>
+                            <h2>{post.data.title}</h2>
+                        </a>
+                        <p class="date">
+                            <FormattedDate date={post.data.pubDate} />
+                        </p>
+                    </div>
+                    <p class="desc">{post.data.description}</p>
+                </div>
+            ))
+        }
+    </section>
 </Base>

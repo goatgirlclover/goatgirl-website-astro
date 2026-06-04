@@ -1,127 +1,127 @@
 /* BLOG POST */
 .blog-body {
-	max-width: 920px;
+    max-width: 920px;
 }
 
 .blog-info {
-	margin-bottom: 12px;
+    margin-bottom: 12px;
 }
 
 .blog-info > :not(:first-child) {
-	margin-top: 4px;
-	margin-bottom: 4px;
+    margin-top: 4px;
+    margin-bottom: 4px;
 }
 
 .blog-info > :first-child {
-	margin-top: 0;
-	margin-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .blog-info > small + small::before {
-	content: "·";
-	padding: 0.5em;
-	margin-left: -2px;
-	font-weight: 900;
+    content: "·";
+    padding: 0.5em;
+    margin-left: -2px;
+    font-weight: 900;
 }
 
 .blog-info + hr,
 .blog-content + hr,
 .blog-toc + hr {
-	border: none;
-	border-bottom: 3px dashed var(--text-color) !important;
+    border: none;
+    border-bottom: 3px dashed var(--text-color) !important;
 }
 
 .blog-content {
-	margin-top: 1.25em;
+    margin-top: 1.25em;
 }
 
 .blog-content p > img {
-	max-height: 360px;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+    max-height: 360px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .blog-content hr {
-	width: 75%;
-	margin-top: 25px;
-	margin-bottom: 25px;
+    width: 75%;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 .blog-content #footnote-label {
-	visibility: hidden;
-	height: 0;
+    visibility: hidden;
+    height: 0;
 }
 .blog-content .footnotes {
-	border-top: 3px dashed var(--contrast-color);
+    border-top: 3px dashed var(--contrast-color);
 }
 
 .blog-content .footnotes .data-footnote-backref {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 .blog-footer nav {
-	display: flex;
-	flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 .blog-footer nav > p {
-	flex: 1 0 10em;
-	margin: 0;
-	text-align: center;
+    flex: 1 0 10em;
+    margin: 0;
+    text-align: center;
 }
 .blog-footer nav > p:first-child {
-	text-align: left;
+    text-align: left;
 }
 .blog-footer nav > p:last-child {
-	text-align: right;
+    text-align: right;
 }
 
 .blog-toc > h2 {
-	margin-top: 0;
+    margin-top: 0;
 }
 .blog-toc {
-	margin: 1em 0;
+    margin: 1em 0;
 }
 
 /* BLOG INDEX */
 .blog-index-header {
-	position: relative;
-	border-bottom: 3px solid var(--text-color);
-	padding-bottom: 1.25em;
-	margin-bottom: 1.25em;
+    position: relative;
+    border-bottom: 3px solid var(--text-color);
+    padding-bottom: 1.25em;
+    margin-bottom: 1.25em;
 }
 
 .blog-index-header > h1 {
-	margin: 0;
+    margin: 0;
 }
 .blog-index-header > .rss {
-	width: 40px;
-	height: 40px;
-	right: 0;
-	top: 2px;
-	position: absolute;
+    width: 40px;
+    height: 40px;
+    right: 0;
+    top: 2px;
+    position: absolute;
 }
 
 .blog-posts .post:not(:last-child) {
-	margin-bottom: 1em;
-	padding-bottom: 1em;
-	border-bottom: 3px dashed var(--contrast-color);
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    border-bottom: 3px dashed var(--contrast-color);
 }
 
 .blog-posts .post div {
-	display: flex;
-	align-items: center;
-	gap: 0 1em;
-	flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    gap: 0 1em;
+    flex-wrap: wrap;
 }
 
 .blog-posts .post div *,
 .blog-posts .post .desc {
-	margin: 0;
+    margin: 0;
 }
 .blog-posts .post .title {
-	margin-bottom: 4px;
+    margin-bottom: 4px;
 }
 .blog-posts .post .date {
-	font-size: 1em;
+    font-size: 1em;
 }

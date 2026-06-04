@@ -12,43 +12,43 @@ import "../styles/blog.css";
 type Props = CollectionEntry<"blog">["data"] & { headings: MarkdownHeading[] };
 
 const {
-	title,
-	description,
-	pubDate,
-	updatedDate = undefined,
-	headings,
+    title,
+    description,
+    pubDate,
+    updatedDate = undefined,
+    headings,
 } = Astro.props;
 const displayTitle = title.concat(" - goatpupclover");
 ---
 
 <Base
-	title={displayTitle}
-	description={description}
-	activePage="blog"
-	ogType="article"
-	pubDate={pubDate}
-	updatedDate={updatedDate}
+    title={displayTitle}
+    description={description}
+    activePage="blog"
+    ogType="article"
+    pubDate={pubDate}
+    updatedDate={updatedDate}
 >
-	<header class="blog-info">
-		<h1>{title}</h1>
-		<p>{description}</p>
-		<small>published <FormattedDate date={pubDate} /></small>
-		{
-			updatedDate && (
-				<small>
-					last updated <FormattedDate date={updatedDate} />
-				</small>
-			)
-		}
-	</header>
+    <header class="blog-info">
+        <h1>{title}</h1>
+        <p>{description}</p>
+        <small>published <FormattedDate date={pubDate} /></small>
+        {
+            updatedDate && (
+                <small>
+                    last updated <FormattedDate date={updatedDate} />
+                </small>
+            )
+        }
+    </header>
 
-	<BlogToc headings={headings} />
+    <BlogToc headings={headings} />
 
-	<hr />
+    <hr />
 
-	<article class="blog-content"><slot /></article>
+    <article class="blog-content"><slot /></article>
 
-	<hr />
+    <hr />
 
-	<footer class="blog-footer"><BlogNav /></footer>
+    <footer class="blog-footer"><BlogNav /></footer>
 </Base>

@@ -1,50 +1,50 @@
 /* LINKS - BUTTONS */
 .button-holder {
-	display: flex;
-	flex-wrap: wrap;
-	margin: auto;
-	justify-content: center;
-	padding-top: 10px;
-	gap: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+    padding-top: 10px;
+    gap: 4px;
 }
 
 .button-holder > img,
 .button-holder > a,
 .site-button {
-	outline: 1px dashed rgb(100, 100, 100);
-	image-rendering: auto; /* crisp-edges and such make wigglies on my high DPI monitor :( */
-	width: 88px;
-	height: 31px;
-	margin: 0;
+    outline: 1px dashed rgb(100, 100, 100);
+    image-rendering: auto; /* crisp-edges and such make wigglies on my high DPI monitor :( */
+    width: 88px;
+    height: 31px;
+    margin: 0;
 }
 
 aside .site-button {
-	transform-origin: 150%;
+    transform-origin: 150%;
 }
 
 .button-holder > img:hover,
 .button-holder > a:hover,
 .site-button:hover {
-	/*transform: scale(1.05);*/
-	outline: none;
-	padding: 1px;
-	margin: -1px;
-	/* marching-squares set elsewhere */
+    /*transform: scale(1.05);*/
+    outline: none;
+    padding: 1px;
+    margin: -1px;
+    /* marching-squares set elsewhere */
 }
 
 .cool-sites > h1 {
-	margin-bottom: 4px;
+    margin-bottom: 4px;
 }
 
 /* LINKS - WEBRING */
 .flex-sections .webring iframe {
-	float: right;
+    float: right;
 }
 
 .flex-sections .webring {
-	flex: 0 1 0;
+    flex: 0 1 0;
 }
 
 .main-socials > p {
-	margin-bottom: 0;
+    margin-bottom: 0;
 }

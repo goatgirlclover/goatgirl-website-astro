@@ -4,7 +4,7 @@ setlocal enabledelayedexpansion
 set "workingdir=%UserProfile%\Documents\website\scripts\"
 set "gallerydir=%UserProfile%\Documents\website\astro\src\content\gallery\"
 
-cd %workingdir%  
+cd %workingdir%
 
 set "filename=%~n1"
 echo !filename!
@@ -42,21 +42,21 @@ if not exist %infodir% (
 if exist %infodir% (
 
 	setlocal disabledelayedexpansion
-	for /F "delims=" %%c in (%infodir%) do ( 
+	for /F "delims=" %%c in (%infodir%) do (
 		setlocal enabledelayedexpansion
-		if !num!==0 ( 
+		if !num!==0 (
 			setlocal disabledelayedexpansion
 			set "title=%%c"
 			setlocal enabledelayedexpansion
 		)
-		
+
 		set "num=1"
 	)
 
 	setlocal disabledelayedexpansion
-	for /F "skip=1 delims=" %%c in (%infodir%) do ( 
+	for /F "skip=1 delims=" %%c in (%infodir%) do (
 		setlocal enabledelayedexpansion
-		if !num!==1 ( 
+		if !num!==1 (
 			setlocal disabledelayedexpansion
 			set "desc=%%c"
 			setlocal enabledelayedexpansion
@@ -65,9 +65,9 @@ if exist %infodir% (
 	)
 
 	setlocal disabledelayedexpansion
-	for /F "skip=2 delims=" %%c in (%infodir%) do ( 
+	for /F "skip=2 delims=" %%c in (%infodir%) do (
 		setlocal enabledelayedexpansion
-		if !num!==2 ( 
+		if !num!==2 (
 			setlocal disabledelayedexpansion
 			set "postdate=%%c"
 			setlocal enabledelayedexpansion
@@ -76,9 +76,9 @@ if exist %infodir% (
 	)
 
 	setlocal disabledelayedexpansion
-	for /F "skip=3 delims=" %%c in (%infodir%) do ( 
+	for /F "skip=3 delims=" %%c in (%infodir%) do (
 		setlocal enabledelayedexpansion
-		if !num!==3 ( 
+		if !num!==3 (
 			setlocal disabledelayedexpansion
 			set "alttext=%%c"
 			setlocal enabledelayedexpansion

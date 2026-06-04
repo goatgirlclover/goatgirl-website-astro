@@ -5,9 +5,9 @@ const { activePage = "home" } = Astro.props;
 ---
 
 <body class={activePage === "blog" ? "blog-body" : ""}>
-	<SiteHeader activePage={activePage} />
-	<div id="site-body">
-		<main><slot /></main>
-		<SiteFooter />
-	</div>
+    <SiteHeader activePage={activePage} />
+    <div id="site-body">
+        <main><slot /></main>
+        <SiteFooter />
+    </div>
 </body>

@@ -2,36 +2,36 @@
 import Head from "../layouts/fragment/head.astro";
 import Body from "../layouts/fragment/body.astro";
 const {
-	title = "goatpupclover",
-	activePage = "home",
-	description = undefined,
-	ogType = "website",
-	pubDate = undefined,
-	updatedDate = undefined,
+    title = "goatpupclover",
+    activePage = "home",
+    description = undefined,
+    ogType = "website",
+    pubDate = undefined,
+    updatedDate = undefined,
 } = Astro.props;
 ---
 
 <html lang="en">
-	<Head
-		title={title}
-		description={description}
-		ogType={ogType}
-		pubDate={pubDate}
-		updatedDate={updatedDate}
-	/>
-	<Body activePage={activePage}><slot /></Body>
-	<script is:inline type="text/javascript" src="/assets/scripts/darkmode.js"
-	></script>
-	<script is:inline type="text/javascript">
-		const prefersReduced =
-			window.matchMedia(`(prefers-reduced-motion: reduce)`) === true ||
-			window.matchMedia(`(prefers-reduced-motion: reduce)`).matches ===
-				true;
-		if (localStorage.getItem("reducedMotion") === null && prefersReduced) {
-			localStorage.setItem("reducedMotion", true);
-			toggleReducedMotion();
-		}
-	</script>
+    <Head
+        title={title}
+        description={description}
+        ogType={ogType}
+        pubDate={pubDate}
+        updatedDate={updatedDate}
+    />
+    <Body activePage={activePage}><slot /></Body>
+    <script is:inline type="text/javascript" src="/assets/scripts/darkmode.js"
+    ></script>
+    <script is:inline type="text/javascript">
+        const prefersReduced =
+            window.matchMedia(`(prefers-reduced-motion: reduce)`) === true ||
+            window.matchMedia(`(prefers-reduced-motion: reduce)`).matches ===
+                true;
+        if (localStorage.getItem("reducedMotion") === null && prefersReduced) {
+            localStorage.setItem("reducedMotion", true);
+            toggleReducedMotion();
+        }
+    </script>
 
 
 </html>
