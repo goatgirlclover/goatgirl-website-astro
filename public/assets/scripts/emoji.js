@@ -1,3 +1,4 @@
+/* disabled
 const privateMSAlt = {
   "10167a": "genderqueer pride flag",
   "10167b": "intersex pride flag",
@@ -223,3 +224,4 @@ if (sessionStorage.getItem("loadedMSEmojiFont") === "true") {
     });
   });
 }
+*/

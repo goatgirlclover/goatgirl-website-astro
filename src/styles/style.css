@@ -441,7 +441,7 @@ a { cursor: url("/assets/cursor_hover.png") 10 1, pointer; } */
     top: auto;
 }
 
-/* EMOJI (Mutant Standard */
+/* EMOJI */
 .emojiText {
     font-family: FluentEmojiFlat, system-ui;
     display: inline;
