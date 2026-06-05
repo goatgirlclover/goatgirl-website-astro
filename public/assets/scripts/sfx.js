@@ -6,9 +6,11 @@ var soundEffects = {
   select: "/assets/sfx/UI_Select.wav",
   openExternal: "/assets/sfx/UI_Cmn_Open_Short.wav",
   click: "/assets/sfx/UI_Decide_Small.wav",
+
+  bleat: "/assets/sfx/clover_bleat.wav",
 };
 
-var globalVolume = 0.3;
+var globalVolume = 0.25;
 
 function loadSound(name, url) {
   var request = new XMLHttpRequest();
@@ -55,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .querySelectorAll("a:is(:not(.art)), .button-holder>*")
     .forEach((a) => {
       a.addEventListener("mouseenter", () => {
-        playSound("select");
+        playSound("select", 0.5);
       });
 
       a.addEventListener("click", (event) => {
