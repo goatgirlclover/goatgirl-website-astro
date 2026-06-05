@@ -49,31 +49,40 @@ function playSound(name, volume = 1) {
   }
 }
 
+function applyLinkSoundEffectsTo(a) {
+  if (a.getAttribute("data-sfx") === "true") {
+    return;
+  }
+
+  a.addEventListener("mouseenter", () => {
+    playSound("select", 0.5);
+  });
+
+  a.addEventListener("click", (event) => {
+    if (a.target == "_blank") {
+      playSound("openExternal");
+    } else {
+      event.preventDefault();
+      var source = playSound("click");
+      if (source) {
+        source.onended = () => (window.location.href = a.href);
+      } else {
+        window.location.href = a.href;
+      }
+    }
+  });
+
+  a.setAttribute("data-sfx", "true");
+}
+
 document.addEventListener("DOMContentLoaded", function () {
+  const selector = "a:is(:not(.art)), .button-holder>*";
   audioContext = new AudioContext();
   loadAllSounds();
 
-  document.body
-    .querySelectorAll("a:is(:not(.art)), .button-holder>*")
-    .forEach((a) => {
-      a.addEventListener("mouseenter", () => {
-        playSound("select", 0.5);
-      });
-
-      a.addEventListener("click", (event) => {
-        if (a.target == "_blank") {
-          playSound("openExternal");
-        } else {
-          event.preventDefault();
-          var source = playSound("click");
-          if (source) {
-            source.onended = () => (window.location.href = a.href);
-          } else {
-            window.location.href = a.href;
-          }
-        }
-      });
-    });
+  document.body.querySelectorAll(selector).forEach((a) => {
+    applyLinkSoundEffectsTo(a);
+  });
 
   document.body
     .querySelectorAll("#status-goat, details summary")
@@ -82,4 +91,8 @@ document.addEventListener("DOMContentLoaded", function () {
         playSound("click");
       });
     });
+
+  insertionQ(selector).every(function (a) {
+    applyLinkSoundEffectsTo(a);
+  });
 });
