@@ -151,7 +151,7 @@
 }
 
 .lastfm-widget small > a,
-#lastfm-song {
+#lastfm-song:not(:hover) {
     color: var(--text-color);
 }
 

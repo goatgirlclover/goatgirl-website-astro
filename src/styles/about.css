@@ -192,8 +192,12 @@
     top: 0.4em;
 }
 
+.data-entry > .flex-sections {
+    margin-bottom: 0;
+}
 .data-entry > p:last-child {
     margin-bottom: 0;
+    margin-top: 0;
 }
 
 /* FAV MUSIC */
