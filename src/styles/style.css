@@ -350,7 +350,7 @@ a:active {
     border-radius: 15%;
 }
 .rss:hover {
-    outline: 2px solid white;
+    outline: 2px solid var(--text-color);
 }
 
 img {
@@ -651,8 +651,16 @@ section:not(:has(+ hr)) > center > :last-child {
     background-color: white;
     border-image: url("/assets/stamp2.png") 128 / 32px round;
     border-image-outset: 12px;
-    filter: drop-shadow(3px 3px var(--darker-bg-25));
+    filter: drop-shadow(2px 0px 0px var(--drop-shadow))
+        drop-shadow(-2px 0px 0px var(--drop-shadow))
+        drop-shadow(0px 2px 0px var(--drop-shadow))
+        drop-shadow(0px -2px 0px var(--drop-shadow))
+        drop-shadow(3px 3px var(--darker-bg-25));
     outline-offset: -1px;
+}
+
+.stamp:not(:focus-visible),
+.stamp-aligned:not(:focus-visible) {
     outline: 2px solid black;
 }
 
@@ -887,11 +895,15 @@ aside #site-changelog {
     max-height: 132px;
 }
 
-#site-logo:hover img {
-    transform: scale(1.05);
+#site-logo:hover img,
+#site-logo:focus-visible img {
     filter: drop-shadow(2px 0 0 white) drop-shadow(0 2px 0 white)
         drop-shadow(-2px 0 0 white) drop-shadow(0 -2px 0 white)
         drop-shadow(3px 3px var(--dark-drop-shadow));
+}
+
+#site-logo:hover img {
+    transform: scale(1.05);
 }
 
 #site-header nav a {
@@ -1071,9 +1083,9 @@ aside #site-changelog {
     color: var(--text-color);
 }
 
-/* #site-footer .footer-buttons button:hover,
-#site-footer .footer-buttons button:focus { color: var(--clover-pink); }
-#site-footer .footer-buttons button:active { color: black; } */
+#site-footer .footer-buttons button:focus-visible {
+    color: var(--accent-color);
+}
 
 #site-footer .footer-buttons > :is(button, div) + :is(button, div),
 #site-footer #stats > p + p {
