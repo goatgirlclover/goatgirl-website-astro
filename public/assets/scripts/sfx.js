@@ -11,6 +11,18 @@ var soundEffects = {
 };
 
 var globalVolume = 0.25;
+var muted = false;
+
+function toggleSFX() {
+  muted = !muted;
+  localStorage.setItem("sound", !muted);
+
+  document
+    .querySelector("button.sfx")
+    .setAttribute("data-aftercontent", muted ? ": off" : ": on");
+  if (document.getElementById("soundinput"))
+    document.getElementById("soundinput").checked = muted;
+}
 
 function loadSound(name, url) {
   var request = new XMLHttpRequest();
@@ -33,6 +45,9 @@ function loadAllSounds() {
 }
 
 function playSound(name, volume = 1) {
+  if (muted) {
+    return;
+  }
   var buffer = buffers[name];
   if (buffer) {
     var source = audioContext.createBufferSource();
@@ -76,6 +91,10 @@ function applyLinkSoundEffectsTo(a) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  if (localStorage.getItem("sound") === "false") {
+    toggleSFX();
+  }
+
   const selector = "a:is(:not(.art)), .button-holder>*";
   audioContext = new AudioContext();
   loadAllSounds();

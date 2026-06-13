@@ -22,14 +22,15 @@ import "../styles/landing.css";
                     </p>
                     <ul>
                         <li>
-                            this site is very mobile friendly - or at least i
-                            try to make it so!
+                            this site is very mobile friendly, or at least i try
+                            to make it so!
                         </li>
                         <li>
                             this site has a dark theme, a moving background, and
-                            other in-motion elements by default. if you're not
-                            into that, these elements can be toggled at the
-                            site's footer, or right here:
+                            other in-motion elements by default. it also has
+                            some neat sound effects! if you're not into those,
+                            you can toggle these elements at the site's footer,
+                            or right here:
                         </li>
                         <ul>
                             <input
@@ -49,6 +50,15 @@ import "../styles/landing.css";
                             <label for="reducedmotioninput"
                                 >enable reduced motion</label
                             >
+                            <br />
+                            <input
+                                onclick="toggleSFX()"
+                                type="checkbox"
+                                id="soundinput"
+                                name="soundinput"
+                            />
+                            <label for="soundinput">disable sound effects</label
+                            >
                         </ul>
                         <li>
                             while many parts of this site use JavaScript, all of
@@ -57,11 +67,11 @@ import "../styles/landing.css";
                         </li>
                         <ul>
                             <li>
-                                note that the light mode/reduced motion toggles
-                                require JavaScript to work! system preference on
-                                reduced motion is respected (though the site
-                                toggle can override it), but preference on dark
-                                mode isn't
+                                note that the light mode/reduced motion/etc
+                                toggles require JavaScript to work! system
+                                preference on reduced motion is respected
+                                (though the site toggle can override it), but
+                                preference on dark mode isn't
                             </li>
                         </ul>
                         <li>
@@ -99,6 +109,8 @@ import "../styles/landing.css";
             localStorage.getItem("lightMode") === "true";
         document.getElementById("reducedmotioninput").checked =
             localStorage.getItem("reducedMotion") === "true";
+        document.getElementById("soundinput").checked =
+            localStorage.getItem("sound") === "false";
 
         function rememberVisitedLanding() {
             if (localStorage.getItem("skipLandingPage") === "true") {
